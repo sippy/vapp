@@ -1,0 +1,177 @@
+# encoding: utf-8
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+
+354|あなたのパスワードを変更になりました。
+367|もう一度パスワードを入力してシャップを押してください。
+373|カード番号入力してシャップを押して下さい。
+381|パスワードが間違います。パスワードを入れて、四角符号を入れて下さい。
+382|パスワードを入れて、四角符号を入れて下さい。
+388|一
+389|一分
+393|一秒
+394|七
+395|七万
+397|七分
+398|七十
+399|七十分
+400|七十時
+401|七十秒
+402|七千
+403|七千分
+404|七千時
+405|七千秒
+408|七百
+409|七百分
+410|七百時
+411|七百秒
+412|七秒
+413|万
+414|三
+415|三分
+416|三十分
+417|三十時
+418|三十秒
+419|三千
+420|三千分
+421|三千時
+422|三千秒
+425|三百
+426|三百分
+427|三百時
+428|三百秒
+429|三秒
+430|九
+431|九分
+432|九十分
+433|九十時
+434|九十秒
+435|九千
+436|九千分
+437|九千時
+438|九千秒
+441|九百
+442|九百分
+443|九百時
+444|九百秒
+445|九秒
+446|二
+447|二分
+448|二十分
+449|二十時
+450|二十秒
+451|二千
+452|二千分
+453|二千時
+454|二千秒
+455|二時
+457|二百
+458|二百分
+459|二百時
+460|二百秒
+461|二秒
+462|五
+463|五分
+464|五十分
+465|五十時
+466|五十秒
+467|五千
+468|五千分
+469|五千時
+470|五千秒
+473|五百
+474|五百分
+475|五百時
+476|五百秒
+477|五秒
+481|八
+482|八分
+483|八十分
+484|八十時
+485|八十秒
+486|八千
+487|八千分
+488|八千時
+489|八千秒
+492|八百
+493|八百分
+494|八百時
+495|八百秒
+496|八秒
+497|六
+498|六分
+499|六十分
+500|六十時
+501|六十秒
+502|六千
+503|六千分
+504|六千時
+505|六千秒
+508|六百
+509|六百分
+510|六百時
+511|六百秒
+512|六秒
+513|十
+516|十分
+519|十秒
+520|千
+521|千分
+522|千時
+523|千秒
+524|古い
+525|四
+526|四万
+528|四分
+529|四十
+530|四十分
+531|四十時
+532|四十秒
+533|四千
+534|四千分
+535|四千時
+536|四千秒
+540|四百分
+541|四百時
+542|四百秒
+543|四秒
+546|押して下さい。
+547|新しい
+559|百
+560|百分
+561|百時
+562|百秒
+566|貴方の新パスワードは正しくない、もう一度押して下さい。
+568|通事ない時留守番電話入れたい場合は１を押して下さい。電話中留守番電話入れたい場合は２を押して下さい。名前登録したい場合は３を押して下さい。パスワード変更したい場合は４を押して下さい。メニュー戻りたい場合は＊をおしてください。
+569|零
+570|零秒
+601|一時
+602|七時
+603|三時
+604|九時
+605|五時
+606|八時
+607|六時
+608|十時
+609|四時
+610|四百

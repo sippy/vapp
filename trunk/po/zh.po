@@ -1,0 +1,270 @@
+# Chinese translations for vapp package.
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-09 17:21+0300\n"
+"PO-Revision-Date: 2007-09-19 14:03+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../vapp/IvrUtils.py:54
+msgid "Please enter your PIN code."
+msgstr "*Please enter your PIN code."
+
+#: ../vapp/IvrUtils.py:60
+msgid "Wrong PIN code. Please enter your PIN code."
+msgstr "密碼不正确. 請输入密碼按 # 号结束."
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:64
+msgid "new"
+msgstr "新"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:66
+msgid "old"
+msgstr "旧"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:68
+msgid "work"
+msgstr ""
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:70
+msgid "family"
+msgstr ""
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:72
+msgid "friends"
+msgstr ""
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:74
+msgid "folder five"
+msgstr ""
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:76
+msgid "folder six"
+msgstr ""
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:78
+msgid "folder seven"
+msgstr ""
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:80
+msgid "folder eight"
+msgstr ""
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:82
+msgid "folder nine"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:65
+msgid "To leave a message please enter a mailbox number"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:99
+msgid "Extension is on the phone."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:101
+msgid "Extension is unavailable."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:102
+#: ../vapp/voicemail/AsteriskVMRecord.py:106
+msgid "Please leave your message after the tone. When done hang up or press the pound key"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:125
+#: ../vapp/voicemail/AsteriskVoicemail.py:72
+#: ../vapp/voicemail/AsteriskVoicemail.py:94
+msgid "Good bye"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:138
+#: ../vapp/voicemail/AsteriskVoicemail.py:291
+msgid "Your message has been saved."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:169
+#: ../vapp/voicemail/AsteriskVoicemail.py:314
+msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:171
+#: ../vapp/voicemail/AsteriskVoicemail.py:316
+msgid "Press three to rerecord your message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:173
+#: ../vapp/voicemail/AsteriskVoicemail.py:232
+#: ../vapp/voicemail/AsteriskVoicemail.py:318
+msgid "or pound to cancel"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:106
+msgid "Change to which folder?"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:118
+#: ../vapp/voicemail/AsteriskVoicemail.py:129
+#: ../vapp/voicemail/AsteriskVoicemail.py:141
+#: ../vapp/voicemail/AsteriskVoicemail.py:165
+msgid "no more messages"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:134
+msgid "Message deleted."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:136
+msgid "Message undeleted."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:147
+msgid "which folder should I save the message to?"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:154
+msgid "message %(num)n saved to %(folder)s"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:156
+msgid "Sorry but the user's mailbox can't accept more messages."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:187
+#, python-format
+msgid "Press one for %s messages"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:188
+msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:191
+msgid "Press four for the previous message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:192
+msgid "Press three for advanced options. Press five to repeat the current message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:194
+msgid "Press six to play the next message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:196
+msgid "Press seven to undelete this message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:198
+msgid "Press seven to delete this message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:199
+msgid "Or nine to save this message."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:200
+msgid "Press star for help or a pound to exit."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:210
+msgid "You have %(num)n new"
+msgid_plural "You have %(num)n new"
+msgstr[0] ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:213
+msgid "and %n old"
+msgid_plural "and %n old"
+msgstr[0] ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:214
+msgid "message"
+msgid_plural "messages"
+msgstr[0] ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:218
+#, python-format
+msgid "You have no %s messages"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:227
+msgid "press"
+msgstr "請拨."
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:230
+#, python-format
+msgid "for %s"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:239
+msgid "Please enter your new PIN code followed by the pound key."
+msgstr "請输入新的密碼,按井号结束."
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:240
+msgid "Please reenter your PIN code followed by the pound key."
+msgstr "請重新输入新的密碼,按井号结束."
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:245
+msgid "The PIN codes you've entered and reentered did not match. Please try again."
+msgstr "你的新密碼不对,請重新输入."
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:248
+msgid "Your PIN code has been changed."
+msgstr "你的密碼己变换完毕."
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:251
+msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
+msgstr "按1,記彔你未能接到的信息;按2,記彔你煩忙時的信息;按3,記彔你的姓名;按4,更改密碼.按 * 字键回到主菜单."
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:256
+msgid "After the tone say your unavailable message and then press the pound key."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:258
+msgid "After the tone say your busy message and then press the pound key."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:260
+msgid "After the tone say your name and then press the pound key."
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:325
+msgid "first message received %[S]D"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:327
+msgid "last message received %[S]D"
+msgstr ""
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:329
+msgid "message %(num)n received %(date)[S]D"
+msgstr ""
+

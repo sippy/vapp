@@ -1,0 +1,176 @@
+# encoding: utf-8
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+
+4|Aralık
+7|Ağustos
+11|Bir sonraki mesaja geçmek için altıya basın.
+14|Bu mesajı silme işlemini durdurmak için yediye basın.
+15|Bu mesajı silmek için yediye basın.
+16|Dosya değiştirmek için iki ye basın. Gelişmiş özellikler için üç e basın. Posta kutusu seçenekleri için sıfıra basın.
+17|Ekim
+18|Eylül
+19|Gelişmiş seçenekler için üçe basın. Mevcut mesajı tekrar dinlemek için beşe basın.
+20|Girdiğiniz ve tekrar girdiğiniz pin numarası yalnış. Lütfen tekrar deneyiniz.
+22|Hangi dosyayı değiştireceksin?
+23|Hatalı PİN numarası
+25|Haziran
+26|Hoşçakalın
+27|Kasım
+28|Kaydın kabul edilmesi için bire basın. Kaydı dinlemek için ikiye basın Mesajınızın kaydedilmesi için üçe basın
+29|Kullanıcı mail kutusu başka mesaj alamıyor.
+30|Lütfen PIN numarasını yeniden giriniz sonra diez tuşuna basınız.
+31|Lütfen PİN numarasını girin
+40|Lütfen yeni PİN numarası giriniz sonra diez tuşuna basınız.
+41|Mart
+42|Mayıs
+43|Mesaj bırakmak için lütfen mail kutusu numarasını girin
+44|Mesaj hangi dosyaya kaydedilecek.
+45|Mesaj silindi.
+46|Mesaj silinmedi.
+47|Mesajınız kaydedilmiştir.
+48|Mesajınızın yeniden kaydedilmesi için üçe basın.
+52|Nisan
+59|Ocak
+60|PIN numaranız değiştirildi.
+65|Temmuz
+68|Ulaşılamaz mesajınızı kaydetmek için 1 e basın. Meşgul mesajınızı kaydetmek için 2 ye basın. İsminizi kaydetmek için 3 e basın. Pin numarasını değiştirmek için 4 e basın. Ana menüye dönmek için yıldız tuşuna basınız.
+69|Veya kaydetmek için dokuza basın.
+70|Yardım için yıldız tuşuna çıkmak için diez tuşuna basın.
+71|Zil sesinden sonra isminizi kaydedin ve sonra diez tuşuna basın.
+72|Zil sesinden sonra lütfen mesajınızı bırakın. Çıkmak için telefonu kapatın veya diez tuşuna basın
+73|Zil sesinden sonra meşgul mesajınızı kaydedin ve sonra diez tuşuna basın.
+74|Zil sesinden sonra ulaşılamaz mesajınızı kaydedin ve sonra diez tuşuna basın.
+75|aile
+76|alti
+77|altmış
+78|altmışıncı
+79|altıncı
+81|arkadaşlar
+82|basın
+83|başka mesajınız yoktur
+84|beş
+85|beşinci
+86|bin
+87|bininci
+88|bir
+89|birinci
+90|bugün
+91|dakika
+92|doksan
+93|doksanıncı
+94|dokuz
+95|dokuzuncu
+97|dosya altı
+98|dosya beş
+99|dosya dokuz
+100|dosya sekiz
+101|dosya yedi
+102|dördüncü
+103|dört
+104|dün
+106|eksi
+107|elli
+108|ellinci
+109|eski
+110|iki
+111|ikinci
+112|ilk mesaj alındı
+113|için
+114|iş
+115|kaydedilmiştir.
+116|kirk
+118|kırkıncı
+119|less than minus one billion
+120|mesaj
+121|mesaj alındı
+122|mesaj için bir e basın
+123|mesajınız var
+124|mesajınız yoktur
+125|milyon
+126|milyonuncu
+127|more than one billion
+128|on
+129|onalti
+130|onaltıncı
+131|onbeş
+132|onbeşinci
+133|onbir
+134|onbirinci
+135|ondokuz
+136|ondokuzuncu
+137|ondördüncü
+138|ondört
+139|oniki
+140|onikinci
+141|onsekiz
+142|onsekizinci
+143|onuncu
+144|onyedi
+145|onyedinci
+146|onüç
+147|onüçüncü
+148|otuz
+149|otuzuncu
+151|saat
+152|saniye
+153|sekiz
+154|sekizinci
+155|seksen
+156|sekseninci
+158|sifir
+159|son mesaj alındı
+162|ve
+163|veya çıkmak için diez tusuna
+164|yarın
+165|yedi
+166|yedinci
+167|yeni
+168|yeni ye sahipsiniz
+169|yetmiş
+170|yetmişinci
+171|yirmi
+172|yirminci
+173|yüz
+174|yüzüncü
+175|Önceki mesaj için dörde basın.
+176|Öğleden Sonra
+177|Öğleden Önce
+178|üç
+179|üçüncü
+180|Şubat
+183|Lütfen PİN numaranızı girin
+# Numbers with postpositions
+194|1e
+195|2ye
+196|3e
+197|4e
+198|5e
+199|6ya
+200|7ye
+201|8e
+202|9a
+203|0a
+
+257|Dahili numara kullanilamaz.
+258|Dahili numara kullanilmaktadir.

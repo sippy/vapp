@@ -1,0 +1,173 @@
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+
+2|for mailbox options.
+zero|zero
+6|to change folders.
+seven|seven
+six|six
+five|five
+three|three
+two|two
+one|one
+14|to repeat the current message.
+1|for advanced options.
+49|Press star for help or a pound to exit.
+12|to play the next message.
+17|to undelete this message.
+10|to delete this message.
+15|to rerecord your message.
+11|to listen to it.
+4|to accept this recording.
+for|for
+3|for the previous message.
+four|four
+press|press
+press_num|Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu.
+19|A-M
+23|After the tone say your
+24|busy
+25|name
+26|unavailable
+85|message
+27|and then press the pound key.
+28|April
+29|August
+34|Change to which folder?
+35|December
+extension_is_on_the_phone|Extension is on the phone.
+extension_is_unavailable|Extension is unavailable.
+36|February
+37|good bye
+38|January
+39|July
+40|June
+41|March
+42|May
+43|Message deleted.
+44|Message undeleted.
+45|November
+46|October
+62|or
+nine|nine
+18|to save this message.
+20|P-M
+enter_pin_code|Please enter your PIN code.
+new_PIN|Please enter your new PIN code followed by the pound key.
+47|Please leave your message after the tone. When done hang up or press the pound key
+reenter_pin|Please reenter your PIN code followed by the pound key.
+52|September
+
+and|and
+61|at
+eight|eight
+eighteen|eighteen
+63|eighteenth
+64|eightieth
+65|eightth
+eighty|eighty
+eleven|eleven
+66|eleventh
+fifteen|fifteen
+68|fifteenth
+70|fiftieth
+fifty|fifty
+71|first
+fourteen|fourteen
+77|fourteenth
+78|fourth
+79|fourtieth
+fourty|fourty
+hour|hour
+hours|hours
+hundred|hundred
+82|hundredth
+84|less than minus one billion
+million|million
+87|millionth
+88|minus
+minute|minute
+minutes|minutes
+89|more than one billion
+nineteen|nineteen
+90|nineteenth
+91|nineth
+92|ninetieth
+ninety|ninety
+second|second
+seconds|seconds
+seventeen|seventeen
+99|seventeenth
+100|seventh
+101|seventieth
+seventy|seventy
+sixteen|sixteen
+102|sixteenth
+103|sixth
+104|sixtieth
+sixty|sixty
+ten|ten
+105|tenth
+106|third
+thirteen|thirteen
+107|thirteenth
+108|thirtieth
+thirty|thirty
+thousand|thousand
+109|thousandth
+twelve|twelve
+110|twelveth
+twenty|twenty
+113|zeroth
+double_oh|double oh
+fifth|fifth
+oh|oh
+twentieth|twentieth
+today|today
+tomorrow|tomorrow
+yesterday|yesterday
+wrong_pin|Wrong PIN code.
+new|new
+old|old
+you_have|You have
+pin_changed|Your PIN code has been changed.
+try_again|The PIN codes you've entered and reentered did not match. Please try again.
+86|messages
+no|no
+96|or pound to cancel
+80|friends
+67|family
+73|folder five
+76|folder six
+75|folder seven
+72|folder eight
+74|folder nine
+93|no more messages
+59|Your message has been saved.
+83|last
+97|received
+98|saved to
+111|which folder should I save the message to?
+112|work
+53|Sorry but the user's mailbox can't accept more messages.
+54|To leave a message please enter a mailbox number

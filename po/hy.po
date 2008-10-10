@@ -1,0 +1,273 @@
+# Armenian translations for vapp package.
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vapp 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-09 17:21+0300\n"
+"PO-Revision-Date: 2007-10-23 11:17+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../vapp/IvrUtils.py:54
+msgid "Please enter your PIN code."
+msgstr "Խնդրում ենք մուտքագրել ձեր PIN կոդը "
+
+#: ../vapp/IvrUtils.py:60
+msgid "Wrong PIN code. Please enter your PIN code."
+msgstr "Ձեր մուտքագրած PIN կոդը սխալ է: Խնդրում ենք մուտքագրել ձեր PIN կոդը"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:64
+msgid "new"
+msgstr "նոր"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:66
+msgid "old"
+msgstr "հին"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:68
+msgid "work"
+msgstr "աշխատանքային"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:70
+msgid "family"
+msgstr "ընտանիք"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:72
+msgid "friends"
+msgstr "ընկերներ"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:74
+msgid "folder five"
+msgstr "արկղ հինգ"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:76
+msgid "folder six"
+msgstr "արկղ վեց"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:78
+msgid "folder seven"
+msgstr "արկղ յոթ "
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:80
+msgid "folder eight"
+msgstr "արկղ ութ"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:82
+msgid "folder nine"
+msgstr "արկղ ինը"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:65
+msgid "To leave a message please enter a mailbox number"
+msgstr "Հաղորդագրություն թողնելու համար խնդրում ենք մուտքագրել արկղի համարը"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:99
+msgid "Extension is on the phone."
+msgstr "Հեռախոսահամարը զբաղված է:"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:101
+msgid "Extension is unavailable."
+msgstr "Հեռախոսահամարը անհասանելի է:"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:102
+#: ../vapp/voicemail/AsteriskVMRecord.py:106
+msgid "Please leave your message after the tone. When done hang up or press the pound key"
+msgstr "Թողեք ձեր հաղորդագրությունը ազդանշանից  հետո: Ավարտելուց հետո կախեք լսափողը կամ սեղմեք վանդականիշ:"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:125
+#: ../vapp/voicemail/AsteriskVoicemail.py:72
+#: ../vapp/voicemail/AsteriskVoicemail.py:94
+msgid "Good bye"
+msgstr "Ցտեսություն"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:138
+#: ../vapp/voicemail/AsteriskVoicemail.py:291
+msgid "Your message has been saved."
+msgstr "Ձեր հաղորդագրությունը պահպանված է:"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:169
+#: ../vapp/voicemail/AsteriskVoicemail.py:314
+msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
+msgstr " Այս ձայնագրությունը հաստատելու համար սեղմեք մեկ: Այն լսելու համար սեղմեք երկու: Հաղորդագրությունը նորից ձայնագրելու համար սեղմեք երեք:"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:171
+#: ../vapp/voicemail/AsteriskVoicemail.py:316
+msgid "Press three to rerecord your message."
+msgstr "Հաղորդագրությունը նորից ձայնագրելու համար սեղմեք երեք:"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:173
+#: ../vapp/voicemail/AsteriskVoicemail.py:232
+#: ../vapp/voicemail/AsteriskVoicemail.py:318
+msgid "or pound to cancel"
+msgstr "Կամ վանդականիշ` գործողությունից հրաժարվելու համար"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:106
+msgid "Change to which folder?"
+msgstr "Որ արկղին եք ցանկանում անցնել"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:118
+#: ../vapp/voicemail/AsteriskVoicemail.py:129
+#: ../vapp/voicemail/AsteriskVoicemail.py:141
+#: ../vapp/voicemail/AsteriskVoicemail.py:165
+msgid "no more messages"
+msgstr "Այլևս հաղորդագրություններ չկան"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:134
+msgid "Message deleted."
+msgstr "Հաղորդագրությունը հեռացված է:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:136
+msgid "Message undeleted."
+msgstr "Հաղորդագրությունը վերականգնված է:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:147
+msgid "which folder should I save the message to?"
+msgstr "Որ արկղում եք ցանկանում պահպանել հաղորդագրությունը?"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:154
+msgid "message %(num)n saved to %(folder)s"
+msgstr "%(num)n հաղորդագրությունը պահպանվեց %(folder)s արկղում"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:156
+msgid "Sorry but the user's mailbox can't accept more messages."
+msgstr "Ցավոք օգտագործողի ձայնային արկղը այլևս հաղորդագրություններ ընդունել չի կարող:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:187
+#, python-format
+msgid "Press one for %s messages"
+msgstr "Խնդրում ենք սեղմել մեկ %s հաղորդագրության համար"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:188
+msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
+msgstr "Արկղը փոխելու համար սեղմեք երկու: Լրացուցիչ կարգաբերումների համար սեղմեք երեք: Ձայնային արկղի կարգաբերումների համար սեղմեք զերո:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:191
+msgid "Press four for the previous message."
+msgstr "Նախորդ հաղորդագրության համար սեղմեք չորս:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:192
+msgid "Press three for advanced options. Press five to repeat the current message."
+msgstr "Լրացուցիչ կարգաբերումների համար սեղմեք երեք: Այս հաղորդագրությունը նորից լսելու համար սեղմեք հինգ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:194
+msgid "Press six to play the next message."
+msgstr "Հաջորդ հաղորդագրությունը լսելու համար սեղմեք վեց:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:196
+msgid "Press seven to undelete this message."
+msgstr "Այս հաղորդագրությունը վերականգնելու համար սեղմեք յոթ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:198
+msgid "Press seven to delete this message."
+msgstr "Այս հաղորդագրությունը հեռացնելու համար սեղմեք յոթ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:199
+msgid "Or nine to save this message."
+msgstr "Կամ ինը այս հաղորդագրությունը պահպանելու համար:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:200
+msgid "Press star for help or a pound to exit."
+msgstr "Օժանդակություն ստանալու համար պնդրում ենք սեղմել աստղանիշ, իսկ ավարտելու համար` վանդականիշ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:210
+msgid "You have %(num)n new"
+msgid_plural "You have %(num)n new"
+msgstr[0] "Դուք ունեք %(num)n նոր"
+msgstr[1] "Դուք ունեք %(num)n նոր"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:213
+msgid "and %n old"
+msgid_plural "and %n old"
+msgstr[0] "և %n հին"
+msgstr[1] "և %n հին"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:214
+msgid "message"
+msgid_plural "messages"
+msgstr[0] "հաղորդագրություն"
+msgstr[1] "հաղորդագրություններ"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:218
+#, python-format
+msgid "You have no %s messages"
+msgstr "Դուք %s հաղորդագրություններ չունեք:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:227
+msgid "press"
+msgstr "սեղմեք"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:230
+#, python-format
+msgid "for %s"
+msgstr "%s-ի համար"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:239
+msgid "Please enter your new PIN code followed by the pound key."
+msgstr "Խնդրում ենք  մուտքագրել ձեր նոր PIN կոդը, այնուհետև սեղմել վանդականիշ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:240
+msgid "Please reenter your PIN code followed by the pound key."
+msgstr "Խնդրում ենք  վերամուտքագրել ձեր նոր PIN կոդը, այնուհետև սեղմել վանդականիշ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:245
+msgid "The PIN codes you've entered and reentered did not match. Please try again."
+msgstr "Ձեր մուտքագրած և վերամուտքագրած PIN կոդերը չեն համընկնում: Խնդրում ենք փորձել նորից:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:248
+msgid "Your PIN code has been changed."
+msgstr "Ձեր PIN կոդը փոխված է:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:251
+msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
+msgstr "Ձայնագրելու համար հաղորդագրությունը, որը կհնչի Ձեր անհասանելի լինելու դեպքում, սեղմեք 1: Ձայնագրելու համար հաղորդագրությունը, որը կհնչի Ձեր զբաղված լինելու դեպքում, սեղմեք 2: Ձեր անունը ձայնագրելու համար սեղմեք 3: PIN կոդը փոխելու համար սեղմեք 4: Հիմնական մենյու վերադառնալու համար սեղմեք աստղանիշ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:256
+msgid "After the tone say your unavailable message and then press the pound key."
+msgstr "Ազդանշանից հետո կարդացեք հաղորդագրությունը, որը կհնչի Ձեր անհասանելի լինելու դեպքում, այնուհետև սեղմեք վանդականիշ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:258
+msgid "After the tone say your busy message and then press the pound key."
+msgstr "Ազդանշանից հետո ձայնագրեք հաղորդագրությունը, որը կհնչի Ձեր զբաղված լինելու դեպքում, այնուհետև սեղմեք վանդականիշ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:260
+msgid "After the tone say your name and then press the pound key."
+msgstr "Ազդանշանից հետո արտասանեք Ձեր անունը, այնուհետև սեղմեք վանդականիշ:"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:325
+msgid "first message received %[S]D"
+msgstr "առաջին հաղորդագրությունը ստացվել է %[S]D"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:327
+msgid "last message received %[S]D"
+msgstr "վերջին հաղորդագրությունը ստացվել է %[S]D"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:329
+msgid "message %(num)n received %(date)[S]D"
+msgstr "%(num)n հաղորդագրությունը ստացվել է %(date)[S]D"
+

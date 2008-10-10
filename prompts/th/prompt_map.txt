@@ -1,0 +1,70 @@
+# encoding: utf-8
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+
+1|ศูนย์
+2|สิบ
+3|สิบเอ็ด
+4|สิบสอง
+5|สิบสาม
+6|สิบสี่
+7|สิบห้า
+8|สิบหก
+9|สิบเจ็ด
+10|สิบแปด
+11|สิบเก้า
+12|หนึ่ง
+13|เอ็ด
+14|ยี่สิบ
+15|สอง
+16|สามสิบ
+17|สาม
+18|สี่สิบ
+19|สี่
+20|ห้าสิบ
+21|ห้า
+22|หกสิบ
+23|หก
+24|เจ็ดสิบ
+25|เจ็ด
+26|แปดสิบ
+27|แปด
+28|เก้าสิบ
+29|เก้า
+34|ร้อย
+35|ล้าน
+36|พัน
+37|ใหม่
+38|เดิม
+48|ชั่วโมง
+49|นาที
+50|วินาที
+54|กด1 บันทึกข้อความเมื่อไม่สามารถติดต่อได้. กด2 บันทึกข้อความเมื่อไม่ว่าง. กด3 บันทึกชื่อของท่าน กด4 เปลี่ยนรหัสส่วนตัว. กดดอกจันเพื่อกลับสู่รายการหลัก
+60|หมื่น
+61|แสน
+62|กรุณาใส่รหัสส่วนตัว ตามด้วยเครื่องหมายสี่เหลี่ยม
+63|รหัสส่วนตัวไม่ถูกต้องค่ะ
+P1/1|กรุณาใส่รหัสส่วนตัวใหม่ ตามด้วยเครื่องหมายสี่เหลี่ยม
+P1/2|กรุณาใส่รหัสส่วนตัวใหม่อีกครั้ง ตามด้วยเครื่องหมายสี่เหลี่ยม
+P1/4|รหัสส่วนตัวใหม่ของคุณไม่ตรงกัน.กรุณากดใหม่อีกครั้ง
+P1/7|รหัสส่วนตัวของคุณได้ถูกเปลี่ยนเรียบร้อยแล้วค่ะ

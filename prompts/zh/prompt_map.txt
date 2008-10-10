@@ -1,0 +1,53 @@
+# encoding: utf-8
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+
+1|一
+3|七
+215|万
+6|三
+216|个小时
+10|九
+12|二
+14|五
+217|亿
+22|你的密碼己变换完毕.
+23|你的新密碼不对,請重新输入.
+33|八
+35|六
+218|分钟
+39|十
+219|千
+47|四
+208|密碼不正确. 請输入密碼按 # 号结束.
+56|按1,記彔你未能接到的信息;按2,記彔你煩忙時的信息;按3,記彔你的姓名;按4,更改密碼.按 * 字键回到主菜单.
+64|新
+67|旧
+212|百
+213|秒
+74|請拨.
+81|請输入新的密碼,按井号结束.
+83|請重新输入新的密碼,按井号结束.
+214|負
+86|零
+87|*Please enter your PIN code.

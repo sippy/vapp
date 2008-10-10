@@ -1,0 +1,80 @@
+# Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
+#
+# This file is part of SIPPY VAPP, a free IVR library.
+#
+# SIPPY VAPP is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# For a license to use the SIPPY VAPP software under conditions
+# other than those described here, or to purchase support for this
+# software, please contact Sippy Software, Inc. by e-mail at the
+# following addresses: sales@sippysoft.com.
+#
+# SIPPY VAPP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+
+from Agi import AgiHandler, AgiError, AgiKeyStroke
+from BasePlugin import BasePlugin
+from PluginHandler import PluginHandler, loadPlugins
+from Locale import Locale
+from ConfigParser import ConfigParser
+import sys
+import os
+
+logger = None
+
+_translation_config = ConfigParser()
+
+def default_pot_files():
+    files = []
+    cfg = _translation_config
+    for section in cfg.sections():
+        if (cfg.has_option(section, 'po_dir') and 
+                cfg.has_option(section, 'text_domain')):
+            files.append(os.path.join(cfg.get(section, 'po_dir'), 
+                    cfg.get(section, 'text_domain') + ".pot"))
+    return files
+
+def default_prompt_dirs():
+    dirs = []
+    cfg = _translation_config
+    for section in cfg.sections():
+        if cfg.has_option(section, 'prompt_catalog_dir'):
+            dirs.append(cfg.get(section, 'prompt_catalog_dir'))
+    return dirs
+
+def _init_translation_config():
+    local_dir = sys.path[0]
+    if local_dir == '':
+        local_dir = '.'
+    local_configs = [ local_dir + "/.vapp.conf" ]
+    cwd = os.getcwd()
+    if cwd != local_dir:
+        local_configs.append(cwd + "/.vapp.conf")
+
+    _translation_config.read(["/usr/local/etc/vapp.conf"] + local_configs)
+
+    if not _translation_config.has_section('default'):
+        _translation_config.add_section('default')
+
+    if not _translation_config.has_option('default', 'text_domain'):
+        _translation_config.set('default', 'text_domain', 'vapp')
+
+    if not _translation_config.has_option('default', 'po_dir'):
+        _translation_config.set('default', 'po_dir', '/usr/local/share/vapp/po')
+
+    if not _translation_config.has_option('default', 'msg_catalog_dir'):
+        _translation_config.set('default', 'msg_catalog_dir', '/usr/local/share/locale')
+
+    if not _translation_config.has_option('default', 'prompt_catalog_dir'):
+        _translation_config.set('default', 'prompt_catalog_dir', '/usr/local/share/vapp/prompts')
+
+_init_translation_config()

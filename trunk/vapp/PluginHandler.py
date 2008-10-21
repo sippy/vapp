@@ -39,9 +39,6 @@ from SpeechSynth.PromptException import PromptException
 _plugins = dict()
 _daemons = dict()
 
-_textSynth = dict()
-_speechSynth = dict()
-
 def loadPlugins(additional_plugin_packages = [], exclude_modules = []):
     """
     This procedure must be called before using the PluginHandler class.
@@ -124,6 +121,12 @@ class PluginHandler(BaseIvrHandler):
     """
     Class that manages a set of IVR plugins (see BasePlugin).
     """
+    # static members
+    __textSynthCache = dict()
+    __speechSynthCache = dict()
+    __localeCache = dict()
+
+    # normal members
     __session_handler = None
     __session_handler_name = None
     __locale = None
@@ -216,21 +219,23 @@ class PluginHandler(BaseIvrHandler):
     #
     def speechSynth(self):
 	locale_name = self.locale().name()
-	if (not _speechSynth.has_key(locale_name)):
-            _speechSynth[locale_name] = self.createSpeechSynth(locale_name)
-	return _speechSynth[locale_name]
+	if (not self.__speechSynthCache.has_key(locale_name)):
+            self.__speechSynthCache.setdefault(locale_name, self.createSpeechSynth(locale_name))
+	return self.__speechSynthCache[locale_name]
 
     def createSpeechSynth(self, locale_name):
         return SpeechSynth.Chunked.Chunked(locale_name)
 
     def textSynth(self):
 	locale_name = self.locale().name()
-	if (not _textSynth.has_key(locale_name)):
-	    _textSynth[locale_name] = TextSynth(self.locale())
-	return _textSynth[locale_name]
+	if (not self.__textSynthCache.has_key(locale_name)):
+	    self.__textSynthCache.setdefault(locale_name, TextSynth(self.locale()))
+	return self.__textSynthCache[locale_name]
 
-    def setLocale(self, locale):
-	self.__locale = self.createLocale(locale)
+    def setLocale(self, locale_name):
+        if (not self.__localeCache.has_key(locale_name)):
+            self.__localeCache.setdefault(locale_name, self.createLocale(locale_name))
+	self.__locale = self.__localeCache[locale_name]
 
     def createLocale(self, name):
         return vapp.Locale(name)

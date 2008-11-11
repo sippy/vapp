@@ -39,13 +39,12 @@ from SpeechSynth.PromptException import PromptException
 _plugins = dict()
 _daemons = dict()
 
-def loadPlugins(additional_plugin_packages = [], exclude_modules = []):
+def loadPlugins(plugin_packages, exclude_modules = []):
     """
     This procedure must be called before using the PluginHandler class.
-    It searches and loads all available IVR plugins in 'vapp_ivr_plugins'
-    package and then in any additional packages specified in the
-    additional_plugin_packages parameter. The exclude_modules parameter
-    can contain a list of module names that must not be loaded.
+    It searches and loads all available IVR plugins from packages specified 
+    in the plugin_packages parameter (array of strings). The exclude_modules 
+    parameter can contain a list of module names that must not be loaded.
 
     Note that the vapp.logger must be set before the call to this
     function.
@@ -53,10 +52,7 @@ def loadPlugins(additional_plugin_packages = [], exclude_modules = []):
     logger = vapp.logger
     if (logger == None):
 	raise Exception("Cannot run without logger instance. Please place a logger instance to vapp.logger before running this function.")
-    all_plugin_packages = [ "vapp_ivr_plugins" ]
-    #all_plugin_packages = [ ]
-    all_plugin_packages += additional_plugin_packages
-    for pkg_name in all_plugin_packages:
+    for pkg_name in plugin_packages:
         plugins_found = 0
         try:
             pkg = __import__(pkg_name, fromlist = [''])

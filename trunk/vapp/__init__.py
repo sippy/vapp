@@ -23,7 +23,7 @@
 
 from Agi import AgiHandler, AgiError, AgiKeyStroke
 from BasePlugin import BasePlugin
-from PluginHandler import PluginHandler, loadPlugins
+from PluginHandler import PluginHandler, loadPlugins, pluginInstance
 from Locale import Locale
 from ConfigParser import ConfigParser
 import sys

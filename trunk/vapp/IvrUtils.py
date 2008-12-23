@@ -72,6 +72,7 @@ class SipDialer:
     """
     __authname = ""
     __md5secret = ""
+    __password = ""
     __call_id = None
     __idx = 10
     __max_duration = None
@@ -147,6 +148,9 @@ class SipDialer:
         """
 	self.__md5secret = md5secret
 
+    def setPassword(self, password):
+        self.__password = password
+
     def setSipProxy(self, proxy):
         """
         Set destination SIP proxy
@@ -185,7 +189,7 @@ class SipDialer:
 	    agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__cli, self.__cli))
 	    self.__misc_vars_set = True
 
-        arg = "SIP/%s::%s:%s@%s||H" % (dest, self.__md5secret, self.__authname, self.__sip_proxy)
+        arg = "SIP/%s:%s:%s:%s@%s||H" % (dest, self.__password, self.__md5secret, self.__authname, self.__sip_proxy)
 
 	if (self.__max_duration != None and self.__max_duration > 0):
 	    arg += 'S(%d)' % self.__max_duration

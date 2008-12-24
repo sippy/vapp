@@ -31,9 +31,9 @@ PROMPT_BUSY = 1
 PROMPT_NAME = 2
 
 class Prompt:
-    def __init__(self):
+    def __init__(self, tmpdir):
         self.__files = []
-	self.__basename = tempfile.mktemp(dir = self.options().tmpDir())
+	self.__basename = tempfile.mktemp(dir = tmpdir)
 
     def addAudio(self, data, ext):
         fname = ("%s%s" % (self.__basename, ext))

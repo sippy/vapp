@@ -116,8 +116,8 @@ class TextSynth:
 		if (flags != None):
 		    if ('D' in flags):
 			say_date = False
-		    if ('M' in flags):
-			say_date = False
+		    if ('T' in flags):
+			say_time = False
 		    if ('S' in flags):
 			say_seconds = False
 		repl = self.__tts.sayDatetime(val, say_date, say_time, say_seconds, flags)

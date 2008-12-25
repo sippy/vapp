@@ -60,7 +60,11 @@ def _init_translation_config():
     if cwd != local_dir:
         local_configs.append(cwd + "/.vapp.conf")
 
-    _translation_config.read(["/usr/local/etc/vapp.conf"] + local_configs)
+    if sys.prefix == '/usr':
+        sys_etc_dir = ''
+    else:
+        sys_etc_dir = sys.prefix
+    _translation_config.read([sys_etc_dir + "/etc/vapp.conf"] + local_configs)
 
     if not _translation_config.has_section('default'):
         _translation_config.add_section('default')
@@ -69,12 +73,12 @@ def _init_translation_config():
         _translation_config.set('default', 'text_domain', 'vapp')
 
     if not _translation_config.has_option('default', 'po_dir'):
-        _translation_config.set('default', 'po_dir', '/usr/local/share/vapp/po')
+        _translation_config.set('default', 'po_dir', sys.prefix + '/share/vapp/po')
 
     if not _translation_config.has_option('default', 'msg_catalog_dir'):
-        _translation_config.set('default', 'msg_catalog_dir', '/usr/local/share/locale')
+        _translation_config.set('default', 'msg_catalog_dir', sys.prefix + '/share/locale')
 
     if not _translation_config.has_option('default', 'prompt_catalog_dir'):
-        _translation_config.set('default', 'prompt_catalog_dir', '/usr/local/share/vapp/prompts')
+        _translation_config.set('default', 'prompt_catalog_dir', sys.prefix + '/share/vapp/prompts')
 
 _init_translation_config()

@@ -23,6 +23,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
+import os, sys
 from distutils.core import setup, Extension
 
 VERSION = "0.01"
@@ -39,6 +40,18 @@ IVR application framework designed to use the Asterisk AGI or
 OpenPBX OGI protocol.
 """
 
+tmp = os.walk('prompts')
+prompts = []
+for root, dirs, files in tmp:
+    if '.svn' in dirs:
+        dirs.remove('.svn')
+    if len(files) == 0:
+        continue
+    prompt_files = []
+    for f in files:
+        prompt_files.append(os.path.join(root, f))
+    prompts.append((os.path.join('share/vapp', root), prompt_files))
+
 setup(name = "vapp",
       version = VERSION,
       description = "Python implementation of Asterisk AGI and OpenPBX OGI interface",
@@ -52,5 +65,6 @@ setup(name = "vapp",
       packages = [ 'vapp', 'vapp.TextSynth', 'vapp.SpeechSynth',
                    'vapp.voicemail' ],
       scripts = [ 'scripts/vapp_prompt_utils.py' ],
+      data_files = [ ('share/vapp/po/', [ 'po/vapp.pot' ]) ] + prompts,
       platforms = "Python 2.4 and later"
       )

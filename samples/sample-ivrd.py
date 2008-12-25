@@ -49,7 +49,6 @@ def daemonize():
     if (os.fork() != 0):
         os._exit(0)
     os.setsid()
-    os.chdir("/")
     fd = os.open("/dev/null", os.O_RDWR, 0)
     os.dup2(fd, sys.__stdin__.fileno())
     os.dup2(fd, sys.__stdout__.fileno())

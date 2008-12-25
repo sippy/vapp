@@ -274,7 +274,7 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
             retval += sayNumber(date_time.day, True, "") + " "
             yh = int(date_time.year / 100)
             yl = date_time.year % 100
-            if (yl > 0):
+            if (yl > 0 and date_time.year < 2000)):
                 retval += sayNumber(yh, False, "") + " "
                 if (yl < 10):
                     retval += _phrase_noop("oh") + " "

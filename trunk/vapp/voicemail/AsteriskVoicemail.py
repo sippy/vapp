@@ -92,9 +92,9 @@ class AbstractPlugin(BasePlugin):
 		    'intro':self.mainIntro \
 	    })
 	    self.say(self._tts("Good bye"))
+            self.hangup()
 	except AgiError:
 	    pass
-        self.hangup()
         self.vm_storage.finalize()
 
     def firstMessage(self):

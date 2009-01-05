@@ -279,7 +279,10 @@ class AsteriskManager(threading.Thread):
 	    else:
 		listen_fds = [self.__sock, self.__read_cmd]
 
-	    rlist, wlist, xlist = select.select(listen_fds, [], [], timeout)
+            try:
+                rlist, wlist, xlist = select.select(listen_fds, [], [], timeout)
+            except select.error:
+                continue # Ignore 'Interrupted system call' and friends
 
 	    if (self.__read_cmd in rlist):
 		os.read(self.__read_cmd, 10)

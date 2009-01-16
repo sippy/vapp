@@ -254,7 +254,9 @@ class PhraseContainer:
 	if (lang == 'en' or lang == 'es' or lang == 'hy' or lang == 'fr'):
 	    self.__plurals = [ 0, 1 ]
 	elif (lang == 'ru'):
-	    self.__plurals = [ 0, 1, 2 ]
+	    self.__plurals = [ 1, 2, 4 ]
+	elif (lang == 'ar'):
+	    self.__plurals = [ 1, 2, 3 ]
         elif (lang == 'th' or lang == 'zh' or lang == 'ja' or lang == 'tr'):
             self.__plurals = [ 0 ]
         else:

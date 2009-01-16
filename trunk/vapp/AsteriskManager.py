@@ -416,6 +416,13 @@ class AsteriskManager(threading.Thread):
 	qry += "\r\n"
         self.__send_cmd(qry)
 
+    def absoluteTimeout(self, chan, timeout):
+        qry = ("Action: AbsoluteTimeout\r\n"
+               "Channel: %s\r\n" 
+               "Timeout: %s\r\n"
+               "\r\n" % (chan, str(timeout)))
+        self.__send_cmd(qry)
+
     def hangup(self, chan_name):
 	qry = ("Action: Hangup\r\n"
 	       "Channel: %s\r\n"

@@ -28,12 +28,17 @@ import sys
 import codecs
 import re
 import os
+import random
+import datetime
 from os.path import join, abspath
 import gettext
 import vapp
 from vapp.SpeechSynth.PromptException import PromptException
 import logging
 import pkgutil
+from vapp import TextSynth
+
+TAG_RE = r'((%\([^)]*\)\[[^]]*\][nsdD]|%\([^)]*\)[nsdD]|%[nsdD]|%\[[^]]*\][nsdD]))'
 
 logger = logging
 
@@ -65,9 +70,11 @@ COMMANDS:
     list orphans	- list unused prompt files for the specified language
     verify mappings     - check existence of prompt files (no phrase check)
     make stoplist       - create stop list from unmapped phrases
+    generate tests      - find all dynamic messages and generate test data
+                          for them to allow to see the final phrases.
 """)
     
-class PhraseContainer:
+class PhraseContainer(object):
     def __init__(self, lang, opts):
 	self.setLang(lang)
 	self.__opts = opts
@@ -78,6 +85,7 @@ class PhraseContainer:
         self.control_phrases = {}
         self.opt_hash = {}
         self.__stoplist = {}
+        self.__tagged = []
 
         self.__load_stoplist()
 	self.__load_phrases()
@@ -149,7 +157,7 @@ class PhraseContainer:
 	    #
 	    # Split prase into chunks
 	    #
-	    for chunk in re.split(r'\s*((%\([^)]*\)\[[^]]*\][nsdD]|%\([^)]*\)[nsdD]|%[nsdD]|%\[[^]]*\][nsdD]))\s*', translated_message):
+	    for chunk in re.split('\s*' + TAG_RE + '\s*', translated_message):
 		if (chunk.startswith('%') or chunk == ''):
 		    continue
 		# only punctuation left
@@ -176,13 +184,13 @@ class PhraseContainer:
 		#
 		# Split phrase into chunks
 		#
-		for chunk in re.split(r'\s*((%\([^)]*\)\[[^]]*\][nsdD]|%\([^)]*\)[nsdD]|%[nsdD]|%\[[^]]*\][nsdD]))\s*', translated_message):
+		for chunk in re.split('\s*' + TAG_RE + '\s*', translated_message):
 		    if (chunk.startswith('%') or chunk == ''):
 			continue
                     if (i == 1):
-                        self.addPhrase(chunk, singular, translated_message)
+                        self.addPhrase(chunk, singular, translated_message, i)
                     else:
-                        self.addPhrase(chunk, plural, translated_message)
+                        self.addPhrase(chunk, plural, translated_message, i)
 
 	#
 	# Read appropriate language module
@@ -221,8 +229,8 @@ class PhraseContainer:
 	self.__raw_msgs_plural.append((msg, msg_plural))
 
     def checkTags(self, orig_phrase, translated_phrase):
-	original_tags = re.findall(r'((%\([^)]*\)\[[^]]*\][nsdD]|%\([^)]*\)[nsdD]|%[nsdD]|%\[[^]]*\][nsdD]))', orig_phrase)
-	translated_tags = re.findall(r'((%\([^)]*\)\[[^]]*\][nsdD]|%\([^)]*\)[nsdD]|%[nsdD]|%\[[^]]*\][nsdD]))', translated_phrase)
+	original_tags = re.findall(TAG_RE, orig_phrase)
+	translated_tags = re.findall(TAG_RE, translated_phrase)
 	if (len(original_tags) > 0):
 	    orig = []
 	    for tag in original_tags:
@@ -332,7 +340,13 @@ class PhraseContainer:
                         cnt += self.addPhrase(c.chunk, c.orig_phrases()[idx], c.orig_local()[idx])
 	print("%d chunks created by the optimization process" % cnt)
 
-    def addPhrase(self, chunk, orig_eng, orig_local):
+    def addPhrase(self, chunk, orig_eng, orig_local, def_val = None):
+        if orig_eng != None:
+            res = re.findall(TAG_RE, orig_local)
+            if len(res) > 0:
+                tup = (orig_eng, orig_local, def_val)
+                if tup not in self.__tagged:
+                    self.__tagged.append(tup)
         if self.__stoplist.has_key(orig_eng):
             return
         if (not self.orig_local_by_chunk.has_key(chunk)):
@@ -362,6 +376,8 @@ class PhraseContainer:
 
     def chunkCount(self):
 	return len(self.orig_eng_by_chunk.keys())
+
+    tagged = property(lambda self : self.__tagged)
 
 class Opts:
     filter_untranslated = False
@@ -426,6 +442,9 @@ class Checker:
 	    elif (argv[len(argv) - 2] == 'make'):
 		if (argv[len(argv) - 1] == 'stoplist'):
                     handler = self.makeStopList
+            elif (argv[-2] == 'generate'):
+                if (argv[-1] == 'tests'):
+                    handler = self.generateTests
             if (handler == None):
 		raise MyException("error: No command found")
 
@@ -439,6 +458,77 @@ class Checker:
             usage(e)
         except getopt.GetoptError, e:
             usage(e)
+
+    def _generateTest(self, tag, def_val):
+        mode = tag[-1]
+        flags = re.findall('\[(.+)\]', tag)
+        if len(flags) > 0:
+            flags = flags[0]
+        else:
+            flags = ""
+        if mode == 's':
+            return ""
+        if mode == 'n':
+            if 'D' in flags: # string of digits
+                retval = ""
+                for i in range(10):
+                    x = int(random.random() * 10)
+                    retval += str(x)
+                return retval
+            else: # number
+                if def_val != None:
+                    return def_val
+                else:
+                    return int(random.random() * 10000)
+        elif mode == 'd': # duration
+            return int(random.random() * 10000)
+        elif mode == 'D': # date
+            return datetime.datetime.fromtimestamp(random.random() * 2000000000)
+
+    def generateTests(self):
+	out_fname = "test-" + self.__lang
+        out_fname += ".html"
+	out = codecs.open(out_fname, "w", 'utf-8')
+	self.writeHeader(out)
+        out.write("""
+<H2>Tests for the language %s</H2>
+<table border="1">
+<tr bgcolor="#E0E0E0">
+    <th>Localized message</th>
+    <th>Localized template</th>
+    <th>Original message</th>
+    <th>Original template</th>
+</tr>
+""" % self.__lang)
+        synth = TextSynth.TextSynth(vapp.Locale(self.__lang))
+        en_synth = TextSynth.TextSynth(vapp.Locale('en'))
+        for (phrase_en, phrase_local, def_val) in self.__phrases.tagged:
+            res = re.findall(TAG_RE, phrase_local)
+            named_params = {}
+            unnamed_params = []
+            for tag in res:
+                tag = tag[0]
+                res2 = re.findall(r'\((.+)\)', tag)
+                if len(res2) > 0:
+                    name = res2[0]
+                    named_params[name] = self._generateTest(tag, def_val)
+                else:
+                    unnamed_params.append(self._generateTest(tag, def_val))
+            p_l = synth.say(phrase_local, args = unnamed_params, kw = named_params)
+            p_en = en_synth.say(phrase_en, args = unnamed_params, kw = named_params)
+            out.write("""
+<tr>
+    <td>%s</td>
+    <td>%s</td>
+    <td>%s</td>
+    <td>%s</td>
+</tr>
+""" % (p_l, phrase_local, p_en, phrase_en))
+        out.write("""
+</table>
+</body></html>
+""")
+        print "%s created" % out_fname
 
     def doListPhrases(self):
         if (self.optimize):

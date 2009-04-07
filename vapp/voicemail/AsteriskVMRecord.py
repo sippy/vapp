@@ -93,7 +93,7 @@ class AbstractPlugin(BasePlugin):
             self.setLocale(caller_user.locale())
         try:
             if (self.prompt_id != None):
-                promptfile = self.user.preparePrompt(self.prompt_id)
+                promptfile = self.user.preparePrompt(self.prompt_id, self.format())
                 if (promptfile == None):
                     if (self.prompt_id == PROMPT_BUSY):
                         self.sayEx(self._tts("Extension is on the phone."))

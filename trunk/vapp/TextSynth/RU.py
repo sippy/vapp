@@ -1,5 +1,5 @@
 #!/usr/local/bin/python
-# -*- coding: KOI8-R -*-
+# -*- coding: UTF-8 -*-
 # Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
 #
 # This file is part of SIPPY VAPP, a free IVR library.

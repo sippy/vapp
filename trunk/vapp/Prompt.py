@@ -23,6 +23,7 @@
 
 import os
 import tempfile
+import glob
 
 __all__ = [ "Prompt", "PROMPT_UNV", "PROMPT_BUSY", "PROMPT_NAME" ]
 
@@ -32,7 +33,6 @@ PROMPT_NAME = 2
 
 class Prompt:
     def __init__(self, tmpdir):
-        self.__files = []
 	self.__basename = tempfile.mktemp(dir = tmpdir)
 
     def addAudio(self, data, ext):
@@ -40,7 +40,6 @@ class Prompt:
         f = file(fname, "w")
         f.write(data)
         f.close()
-        self.__files.append(fname)
 
     def basename(self):
         return self.__basename
@@ -49,16 +48,12 @@ class Prompt:
         self.clear()
 
     def clear(self):
-        for f in self.__files:
+        for f in glob.glob(self.__basename + "*"):
             try:
                 os.unlink(f)
             except:
                 pass
-        self.__files = []
 
     def resetBasename(self, name):
         self.clear()
         self.__basename = name
-
-    def addFile(self, fname):
-        self.__files.append(fname)

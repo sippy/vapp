@@ -240,9 +240,11 @@ def sayDuration(seconds, say_hours, say_minutes, flags):
     if (say_hours):
         hours = int(s / 3600)
         s -= hours * 3600
-    if (say_minutes):
-        minutes = int((s / 60) % 60)
-        s -= minutes * 60
+        if (say_minutes):
+            minutes = int((s / 60) % 60)
+            s -= minutes * 60
+    else:
+        minutes = int(s / 60)
     s = int(s % 60)
     if (hours > 0):
         retval += sayNumber(hours, False, None)

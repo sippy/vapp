@@ -106,6 +106,5 @@ class Chunked:
 		if (res):
 		    phrase = res[0][0].rstrip()
 		    continue
-		vapp.logger.debug("Phrase '%s' is unmapped" % msg[offset:]);
 		raise PromptException("Cannot find any match for the phrase '%s'\nMapping traceback:\n%s" % (msg[offset:], dbg_dump))
 	return retval

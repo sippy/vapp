@@ -25,4 +25,4 @@
 DOMAIN=`cat DOMAIN`
 
 find .. -name '*.py' | xargs \
-    xgettext --no-wrap --keyword -k_ntts:1,2 -k_tts -k_tts_noop -o ${DOMAIN}.pot
+    xgettext -s --no-wrap --keyword -k_ntts:1,2 -k_tts -k_tts_noop -o ${DOMAIN}.pot

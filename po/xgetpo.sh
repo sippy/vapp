@@ -23,4 +23,4 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
 find ../vapp -name '*.py' | xargs \
-    xgettext --no-wrap --keyword -k_ntts:1,2 -k_tts -k_tts_noop -o vapp.pot
+    xgettext -s --no-wrap --keyword -k_ntts:1,2 -k_tts -k_tts_noop -o vapp.pot

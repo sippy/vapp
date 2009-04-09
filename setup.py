@@ -24,7 +24,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
 import os, sys
-from distutils.command.build import build as _build
+from distutils.command.install import install as _install
 from distutils.core import setup, Extension
 import glob
 
@@ -42,14 +42,14 @@ IVR application framework designed to use the Asterisk AGI or
 OpenPBX OGI protocol.
 """
 
-class build(_build):
+class install(_install):
     def run(self):
         print "compiling gettext files"
         os.chdir("po")
         for fname in glob.glob("*.po"):
             os.spawnl(os.P_WAIT, "./compilepo.sh", "./compilepo.sh", fname[:-3])
         os.chdir(os.pardir)
-        _build.run(self)
+        _install.run(self)
 
 tmp = os.walk('prompts')
 prompts = []
@@ -78,5 +78,5 @@ setup(name = "vapp",
       scripts = [ 'scripts/vapp_prompt_utils.py' ],
       data_files = [ ('share/vapp/po/', [ 'po/vapp.pot' ]) ] + prompts,
       platforms = "Python 2.4 and later",
-      cmdclass = { 'build' : build }
+      cmdclass = { 'install' : install }
       )

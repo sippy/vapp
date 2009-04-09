@@ -28,8 +28,10 @@ then
     echo "usage: `basename $0` <locale name>"
     exit
 fi
+PREFIX=`python -c 'import sys; print sys.prefix'`
+
 LOCALE=$1
-OUTPUT_DIR="/usr/local/share/locale/${LOCALE}/LC_MESSAGES"
+OUTPUT_DIR="${PREFIX}/share/locale/${LOCALE}/LC_MESSAGES"
 DOMAIN=vapp
 
 POFILE="${LOCALE}.po"

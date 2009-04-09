@@ -1,4 +1,6 @@
-recursive-include samples *.py
+recursive-include samples *
 recursive-include po *
 recursive-include prompts *
+recursive-include etc *
 include ChangeLog
+global-exclude *~ *.pyc

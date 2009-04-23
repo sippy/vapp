@@ -27,6 +27,7 @@ Utility functions for Voicemail IVR application.
 import time
 import random
 import md5
+from Prompt import Prompt
 
 __all__ = [ "ivrAuthenticate", "AuthenticationError", "SipDialer" ]
 
@@ -78,6 +79,9 @@ class SipDialer:
     __max_duration = None
     __misc_vars_set = False
     __sip_proxy = None
+    __warn_time = None
+    __warn_phrase = None
+    __tmp_dir = None
 
     class _SipHeader:
 	def __init__(self, hdr_name, val, idx):
@@ -174,6 +178,15 @@ class SipDialer:
 	    self.__hdr_by_name[hdr_name] = hdr
 	    self.__idx += 1
 
+    def setWarningTime(self, t):
+        self.__warn_time = t
+
+    def setWarningPhrase(self, phrase):
+        self.__warn_phrase = phrase
+
+    def setTmpDir(self, d):
+        self.__tmp_dir = d
+
     def dial(self, dest, agi_handler):
         """
         Place the call. Returns nothing. Use the DIALSTATUS dialplan 
@@ -192,7 +205,17 @@ class SipDialer:
         arg = "SIP/%s:%s:%s:%s@%s||H" % (dest, self.__password, self.__md5secret, self.__authname, self.__sip_proxy)
 
 	if (self.__max_duration != None and self.__max_duration > 0):
-	    arg += 'S(%d)' % self.__max_duration
+	    arg += 'L(%d' % (self.__max_duration * 1000)
+            if (self.__warn_time != None):
+                arg += ':%d' % (self.__warn_time * 1000)
+            arg += ')'
+
+            if (self.__warn_phrase != None):
+                prompts = agi_handler.speechSynth().promptFileSequence(self.__warn_phrase, True)
+                aggregate_prompt = Prompt(self.__tmp_dir)
+                for fname in prompts:
+                    aggregate_prompt.appendFile(fname)
+                agi_handler.setVariable("_LIMIT_WARNING_FILE", aggregate_prompt.basename())
 
 	for hdr in self.__hdr_by_name.values():
 	    hdr.apply(agi_handler)

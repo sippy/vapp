@@ -57,3 +57,8 @@ class Prompt:
     def resetBasename(self, name):
         self.clear()
         self.__basename = name
+
+    def appendFile(self, fname):
+        for f in glob.glob(fname + "*"):
+            ext = f[len(fname):]
+            file(self.__basename + ext, "a").write(file(f).read())

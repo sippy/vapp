@@ -1,3 +1,7 @@
+2009-03-23 Andriy I Pylypenko <bamby@sippysoft.com>
+
+        * The Warn Before Disconnect feature has been added to the SipDialer.
+
 2008-10-10 Andriy I Pylypenko <bamby@sippysoft.com>
 
         * Public repository created.

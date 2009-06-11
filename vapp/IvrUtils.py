@@ -28,6 +28,7 @@ import time
 import random
 import md5
 from Prompt import Prompt
+from SpeechSynth.PromptException import PromptException
 
 __all__ = [ "ivrAuthenticate", "AuthenticationError", "SipDialer" ]
 
@@ -211,11 +212,14 @@ class SipDialer:
             arg += ')'
 
             if (self.__warn_phrase != None):
-                prompts = agi_handler.speechSynth().promptFileSequence(self.__warn_phrase, True)
-                aggregate_prompt = Prompt(self.__tmp_dir)
-                for fname in prompts:
-                    aggregate_prompt.appendFile(fname)
-                agi_handler.setVariable("_LIMIT_WARNING_FILE", aggregate_prompt.basename())
+                try:
+                    prompts = agi_handler.speechSynth().promptFileSequence(self.__warn_phrase, True)
+                    aggregate_prompt = Prompt(self.__tmp_dir)
+                    for fname in prompts:
+                        aggregate_prompt.appendFile(fname)
+                    agi_handler.setVariable("_LIMIT_WARNING_FILE", aggregate_prompt.basename())
+                except PromptException:
+                    pass # Phrase cannot be built
 
 	for hdr in self.__hdr_by_name.values():
 	    hdr.apply(agi_handler)

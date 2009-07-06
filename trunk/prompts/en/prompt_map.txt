@@ -96,7 +96,7 @@ fifty|fifty
 fourteen|fourteen
 77|fourteenth
 78|fourth
-79|fourtieth
+79|fortieth
 fourty|fourty
 hour|hour
 hours|hours
@@ -136,7 +136,7 @@ thirty|thirty
 thousand|thousand
 109|thousandth
 twelve|twelve
-110|twelveth
+110|twelfth
 twenty|twenty
 113|zeroth
 double_oh|double oh

@@ -1,5 +1,5 @@
 #!/usr/local/bin/python
-# -*- coding: ISO-8859-1 -*-
+# -*- coding: utf-8 -*-
 # Copyright (c) 2007-2008 Sippy Software, Inc. All rights reserved.
 #
 # This file is part of SIPPY VAPP, a free IVR library.
@@ -24,7 +24,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
 def _phrase_noop(str):
-    return str
+    return unicode(str)
 
 GENDER_FEMININE	    = 0
 GENDER_MASCULINE    = 1
@@ -59,28 +59,27 @@ ONES = [
 	_phrase_noop("diezinueve")
 	]
 
-# FIXME!
 ONES_ORDINAL = [
-	_phrase_noop("zeroth"),
-	_phrase_noop("first"),
-	_phrase_noop("second"),
-	_phrase_noop("third"),
-	_phrase_noop("fourth"),
-	_phrase_noop("fifth"),
-	_phrase_noop("sixth"),
-	_phrase_noop("seventh"),
-	_phrase_noop("eightth"),
-	_phrase_noop("nineth"),
-	_phrase_noop("tenth"),
-	_phrase_noop("eleventh"),
-	_phrase_noop("twelveth"),
-	_phrase_noop("thirteenth"),
-	_phrase_noop("fourteenth"),
-	_phrase_noop("fifteenth"),
-	_phrase_noop("sisxteenth"),
-	_phrase_noop("seventeenth"),
-	_phrase_noop("eighteenth"),
-	_phrase_noop("nineteenth")
+	"",
+	_phrase_noop("primero"),
+	_phrase_noop("segundo"),
+	_phrase_noop("tercero"),
+	_phrase_noop("cuarto"),
+	_phrase_noop("quinto"),
+	_phrase_noop("sexto"),
+	_phrase_noop("séptimo"),
+	_phrase_noop("octavo"),
+	_phrase_noop("noveno"),
+	_phrase_noop("décimo"),
+	_phrase_noop("undécimo"),
+	_phrase_noop("duodécimo"),
+	_phrase_noop("decimotercero"),
+	_phrase_noop("decimocuarto"),
+	_phrase_noop("decimoquinto"),
+	_phrase_noop("decimosexto"),
+	_phrase_noop("decimoséptimo"),
+	_phrase_noop("decimoctavo"),
+	_phrase_noop("decimonoveno")
 	]
 
 TENS = [
@@ -94,32 +93,30 @@ TENS = [
 	_phrase_noop("noventa")
 	]
 
-# FIXME!
 TENS_ORDINAL = [
-	_phrase_noop("twentieth"),
-	_phrase_noop("thirtieth"),
-	_phrase_noop("fourtieth"),
-	_phrase_noop("fiftieth"),
-	_phrase_noop("sixtieth"),
-	_phrase_noop("seventieth"),
-	_phrase_noop("eightieth"),
-	_phrase_noop("ninetieth")
+	_phrase_noop("vigésimo"),
+	_phrase_noop("trigésimo"),
+	_phrase_noop("cuadragésimo"),
+	_phrase_noop("quincuagésimo"),
+	_phrase_noop("sexagésimo"),
+	_phrase_noop("septuagésimo"),
+	_phrase_noop("octogésimo"),
+	_phrase_noop("nonagésimo")
 	]
 
-# FIXME!
 MONTHS = [ 
-	_phrase_noop("January"),
-	_phrase_noop("February"),
-	_phrase_noop("March"),
-	_phrase_noop("April"),
-	_phrase_noop("May"),
-	_phrase_noop("Jun"),
-	_phrase_noop("July"),
-	_phrase_noop("August"),
-	_phrase_noop("September"),
-	_phrase_noop("October"),
-	_phrase_noop("November"),
-	_phrase_noop("December")
+	_phrase_noop("Enero"),
+	_phrase_noop("Febrero"),
+	_phrase_noop("Marzo"),
+	_phrase_noop("Abril"),
+	_phrase_noop("Mayo"),
+	_phrase_noop("Junio"),
+	_phrase_noop("Julio"),
+	_phrase_noop("Agosto"),
+	_phrase_noop("Septiembre"),
+	_phrase_noop("Octubre"),
+	_phrase_noop("Noviembre"),
+	_phrase_noop("Diciembre")
 	]
 
 def sayNumber(number, ordinal, flags):
@@ -138,6 +135,9 @@ def sayNumber(number, ordinal, flags):
     return _sayNumber(number, ordinal, gender)
 
 def _sayNumber(number, ordinal, gender):
+    #
+    # Warning. Ordinals are correct for numbers up to 99 only.
+    #
     retval = ""
     minus = False
     if (number < 0):
@@ -147,10 +147,10 @@ def _sayNumber(number, ordinal, gender):
         if (minus):
             retval = _phrase_noop("less than minus one billion") # TODO
         else:
-            retval = _phrase_noop("more than one billion") # TODO
+            retval = _phrase_noop("más de mil millones")
     else:
         if (minus):
-            retval = _phrase_noop("minus") + " "
+            retval = _phrase_noop("menos") + " "
         num = number % 100
         num_hundreds = int((number % 1000) / 100)
         num_thousands = int(number / 1000) % 100
@@ -166,17 +166,11 @@ def _sayNumber(number, ordinal, gender):
             else:
                 retval += _phrase_noop("ciento") + " "
         if ((num_hundred_millions + num_millions) > 0):
-            tmp_ordinal = ordinal
-            if ((num + num_hundreds + num_thousands + num_hundred_thousands) > 0):
-                tmp_ordinal = False
-            if (tmp_ordinal):
-                retval += _phrase_noop("millionth") + " " # TODO
+            if (num_millions > 1 or num_hundred_millions > 0):
+                retval += __say_number(num_millions, False, GENDER_MASCULINE)
+                retval += _phrase_noop("millones") + " "
             else:
-                if (num_millions > 1 or num_hundred_millions > 0):
-                    retval += __say_number(num_millions, False, GENDER_MASCULINE)
-                    retval += _phrase_noop("millones") + " "
-                else:
-                    retval += _phrase_noop("millon") + " "
+                retval += _phrase_noop("millon") + " "
 
         # thousands
         if (num_hundred_thousands > 0):
@@ -186,27 +180,17 @@ def _sayNumber(number, ordinal, gender):
             else:
                 retval += _phrase_noop("ciento") + " "
         if ((num_hundred_thousands + num_thousands) > 0):
-            tmp_ordinal = ordinal
-            if ((num + num_hundreds) > 0):
-                tmp_ordinal = False
-            if (tmp_ordinal):
-                retval += _phrase_noop("thousandth") + " " # TODO
-            else:
-                retval += __say_number(num_thousands, False, GENDER_MASCULINE)
-                retval += _phrase_noop("mil") + " "
+            retval += __say_number(num_thousands, False, GENDER_MASCULINE)
+            retval += _phrase_noop("mil") + " "
 
-        # the rest
+        # hundreds
         if (num_hundreds > 0):
             if (num_hundreds > 1):
                 retval += __say_number(num_hundreds, False, GENDER_MASCULINE)
                 retval += _phrase_noop("cientos") + " "
             else:
                 retval += _phrase_noop("ciento") + " "
-            tmp_ordinal = ordinal
-            if (num > 0):
-                tmp_ordinal = False
-            if (tmp_ordinal):
-                retval += _phrase_noop("hundredth") + " " # TODO
+        # less than a hundred
         if (num > 0 or number == 0):
             retval += __say_number(num, ordinal, gender)
 
@@ -226,10 +210,7 @@ def __say_number(number, ordinal, gender):
     ones = number % 10
     if (tens > 0):
         if (ordinal):
-            if (ones == 0):
-                retval = TENS_ORDINAL[tens - 2] + " "
-            else:
-                retval = TENS[tens - 2] + " "
+            retval = TENS_ORDINAL[tens - 2] + " "
         else:
             retval = TENS[tens - 2] + " "
     if (tens > 0 and ones > 0):
@@ -243,26 +224,17 @@ def __say_number(number, ordinal, gender):
             retval += ONES[ones] + " "
     return retval
 
-# FIXME!
 def sayDigits(num, flags):
     retval = ""
     prev_o = False
     for i in str(num):
         if (i == '-'):
             pass
-        elif (int(i) == 0):
-            if (prev_o):
-                retval += _phrase_noop("double o") + " "
-                prev_o = False
-            else:
-                prev_o = True
+        i = int(i)
+        if (i == 1):
+            retval += UNOS[GENDER_NONE] + " "
         else:
-            if (prev_o):
-                retval += _phrase_noop("oh") + " "
-                prev_o = False
-            retval += ONES[int(i)] + " "
-    if (prev_o):
-        retval += _phrase_noop("oh")
+            retval += ONES[i] + " "
     
     return retval.rstrip()
 
@@ -304,42 +276,25 @@ def sayDuration(seconds, say_hours, say_minutes, flags):
             retval += " " + _phrase_noop("segundos")
     return retval
 
-# FIXME!
 def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
     retval = ""
     if (say_date):
-        retval += MONTHS[date_time.month - 1] + " "
         retval += sayNumber(date_time.day, True, "") + " "
-        yh = int(date_time.year / 100)
-        yl = date_time.year % 100
-        if (yl > 0):
-            retval += sayNumber(yh, False, "") + " "
-            if (yl < 10):
-                retval += _phrase_noop("oh") + " "
-            retval += sayNumber(yl, False, "") + " "
-        else:
-            retval += sayNumber(date_time.year, False, "") + " "
+        retval += _phrase_noop("de") + " "
+        retval += MONTHS[date_time.month - 1] + " "
+        retval += _phrase_noop("de") + " "
+        retval += sayNumber(date_time.year, False, "") + " "
 
     if (say_time):
-        retval += _phrase_noop("at") + " "
-        suffix = _phrase_noop("PM")
+        retval += _phrase_noop("a") + " "
         hour = date_time.hour
-        if (hour > 12):
-            hour -= 12
-            suffix = _phrase_noop("PMh")
+        if hour == 1:
+            retval += _phrase_noop("la") + " "
+        else:
+            retval += _phrase_noop("las") + " "
         retval += sayNumber(hour, False, "") + " "
         minute = date_time.minute
         if (minute > 0):
-            if (minute < 10):
-                retval += _phrase_noop("oh") + " "
+            retval += _phrase_noop("y") + " "
             retval += sayNumber(minute, False, "") + " "
-        if (say_seconds):
-            secs = date_time.second
-            retval += _phrase_noop("and") + " "
-            retval += sayNumber(secs, False, "") + " "
-            if (secs == 1):
-                retval += _phrase_noop("second") + " "
-            else:
-                retval += _phrase_noop("seconds") + " "
-        retval += suffix
-    return retval.rstrip()
+   return retval.rstrip()

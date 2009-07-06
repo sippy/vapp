@@ -62,7 +62,7 @@ ONES_ORDINAL = [
 	_phrase_noop("nineth"),
 	_phrase_noop("tenth"),
 	_phrase_noop("eleventh"),
-	_phrase_noop("twelveth"),
+	_phrase_noop("twelfth"),
 	_phrase_noop("thirteenth"),
 	_phrase_noop("fourteenth"),
 	_phrase_noop("fifteenth"),
@@ -86,7 +86,7 @@ TENS = [
 TENS_ORDINAL = [
 	_phrase_noop("twentieth"),
 	_phrase_noop("thirtieth"),
-	_phrase_noop("fourtieth"),
+	_phrase_noop("fortieth"),
 	_phrase_noop("fiftieth"),
 	_phrase_noop("sixtieth"),
 	_phrase_noop("seventieth"),

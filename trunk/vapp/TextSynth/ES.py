@@ -24,7 +24,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
 def _phrase_noop(str):
-    return unicode(str)
+    return unicode(str, 'utf-8')
 
 GENDER_FEMININE	    = 0
 GENDER_MASCULINE    = 1
@@ -304,4 +304,4 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
         if (minute > 0):
             retval += _phrase_noop("y") + " "
             retval += sayNumber(minute, False, "") + " "
-   return retval.rstrip()
+    return retval.rstrip()

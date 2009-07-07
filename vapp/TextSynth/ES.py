@@ -279,11 +279,18 @@ def sayDuration(seconds, say_hours, say_minutes, flags):
 def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
     retval = ""
     if (say_date):
-        retval += sayNumber(date_time.day, True, "") + " "
-        retval += _phrase_noop("de") + " "
-        retval += MONTHS[date_time.month - 1] + " "
-        retval += _phrase_noop("de") + " "
-        retval += sayNumber(date_time.year, False, "") + " "
+        if (date_time.date() == now.date()):
+            retval += _phrase_noop("hoy") + " " # today
+        elif (date_time.date() == now.date() - datetime.timedelta(1)):
+            retval += _phrase_noop("ayer") + " " # yesterday
+        elif (date_time.date() == now.date() + datetime.timedelta(1)):
+            retval += _phrase_noop("mañana") + " " # tomorrow
+        else:
+            retval += sayNumber(date_time.day, True, "") + " "
+            retval += _phrase_noop("de") + " "
+            retval += MONTHS[date_time.month - 1] + " "
+            retval += _phrase_noop("de") + " "
+            retval += sayNumber(date_time.year, False, "") + " "
 
     if (say_time):
         retval += _phrase_noop("a") + " "

@@ -57,6 +57,7 @@ class TextSynth:
 	# Common flags:
 	#   H - don't say hours
 	#   M - don't say minutes
+        #   S - don't say seconds
 	#
 	#
 	# %(ident)[FLAGS]D - datetime substitution
@@ -103,12 +104,15 @@ class TextSynth:
 	    elif (p.endswith('d')): # duration substitution
 		say_hours = True
 		say_minutes = True
+                say_seconds = True
 		if (flags != None):
 		    if ('H' in flags):
 			say_hours = False
 		    if ('M' in flags):
 			say_minutes = False
-		repl = self.__tts.sayDuration(val, say_hours, say_minutes, flags)
+		    if ('S' in flags):
+			say_seconds = False
+		repl = self.__tts.sayDuration(val, say_hours, say_minutes, say_seconds, flags)
 	    elif (p.endswith("D")):
 		say_date = True
 		say_time = True

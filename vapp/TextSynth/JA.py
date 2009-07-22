@@ -312,7 +312,7 @@ def sayDigits(num, flags):
     
     return retval.rstrip()
 
-def sayDuration(seconds, say_hours, say_minutes, flags):
+def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):
     retval = ""
     s = seconds
     hours = 0
@@ -326,6 +326,8 @@ def sayDuration(seconds, say_hours, say_minutes, flags):
     else:
         minutes = int(s / 60)
     s = int(s % 60)
+    if hours + minutes > 0 and not say_seconds:
+        s = 0
     if (hours > 0):
         num = hours % 10
         tens = int(hours / 10) % 10

@@ -49,7 +49,7 @@ fi
 if [ -f "$POFILE" ]
 then
     echo msgfmt -o "${OUTPUT_DIR}/${DOMAIN}.mo" -c "${POFILE}"
-    msgfmt -o "${OUTPUT_DIR}/${DOMAIN}.mo" -c "${POFILE}"
+    msgfmt -o "${OUTPUT_DIR}/${DOMAIN}.mo" -c "${POFILE}" --statistics
 else
     echo "Cannot find the ${POFILE} file!"
 fi

@@ -28,7 +28,7 @@ from distutils.command.install import install as _install
 from distutils.core import setup, Extension
 import glob
 
-VERSION = "0.03"
+VERSION = "0.04"
 
 LICENSE = """
         The vapp library is distributed under version 2 of GNU Public 

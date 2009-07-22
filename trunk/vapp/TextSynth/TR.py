@@ -176,7 +176,7 @@ def sayNumber(number, ordinal, flags):
             if (num_hundred_thousands > 1):
                     retval += __say_number(num_hundred_thousands, False)
             retval += _phrase_noop("yüz") + " "
-        if (num_thousands > 0):
+        if (num_thousands > 1):
             retval += __say_number(num_thousands, False)
         if ((num_hundred_thousands + num_thousands) > 0):
             tmp_ordinal = ordinal
@@ -189,7 +189,8 @@ def sayNumber(number, ordinal, flags):
 
         # the rest
         if (num_hundreds > 0):
-            retval += __say_number(num_hundreds, False)
+            if num_hundreds > 1:
+                retval += __say_number(num_hundreds, False)
             tmp_ordinal = ordinal
             if (num > 0):
                 tmp_ordinal = False

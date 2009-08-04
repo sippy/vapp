@@ -368,7 +368,7 @@ class AsteriskManager(threading.Thread):
 		break
 	self.__cmd_lock.release()
 
-    def originate(self, cld, timeout, sip_proxy, cli, app, app_data, md5secret = None, authname = None, action_id = None, action_listener = None, password = None, call_id = None):
+    def originate(self, cld, timeout, sip_proxy, cli, app, app_data, md5secret = None, authname = None, action_id = None, action_listener = None, password = None, call_id = None, codecs = "g729,ulaw,alaw"):
 	"""
 	This method allows to originate a call in syncronous mode using
 	SIP channel. The call is backed by application 'app' running with
@@ -401,7 +401,7 @@ class AsteriskManager(threading.Thread):
 	qry += "CallerID: %s\r\n" % cli
 	qry += "Application: %s\r\n" % app
 	qry += "Data: %s\r\n" % app_data
-	qry += "Codecs: g729,ulaw,alaw\r\n"
+	qry += "Codecs: %s\r\n" % codecs
 
         if (call_id != None):
             vars.append("_SIP_FORCE_CALLID=%s" % call_id)

@@ -28,7 +28,7 @@ from distutils.command.install import install as _install
 from distutils.core import setup, Extension
 import glob
 
-VERSION = "0.04"
+VERSION = "0.05"
 
 LICENSE = """
         The vapp library is distributed under version 2 of GNU Public 
@@ -69,8 +69,6 @@ setup(name = "vapp",
       author = "Sippy Software, Inc.",
       author_email = "support@sippysoft.com",
       license = LICENSE,
-      author = "Sippy Software Inc.",
-      author_email = "support@sippysoft.com",
       url = "http://www.sippysoft.com",
       long_description = DESCRIPTION,
       packages = [ 'vapp', 'vapp.TextSynth', 'vapp.SpeechSynth',

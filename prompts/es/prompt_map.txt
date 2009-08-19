@@ -1,0 +1,145 @@
+# encoding: utf-8
+001|Abril
+002|Adiós
+003|Agosto
+007|Cambiar a qué carpeta?
+009|Código PIN erróneo. Por favor, introduzca su código PIN.
+010|Después del tono de ocupado decir su mensaje y, a continuación, pulse la tecla de libras.
+011|Después del tono diga su nombre y, a continuación, pulse la tecla de libras.
+012|Después del tono no decir su mensaje y, a continuación, pulse la tecla de libras.
+016|Diciembre
+017|El código PIN ha sido cambiado.
+021|Enero
+024|Extensión está en el teléfono.
+025|Extensión no está disponible.
+026|Febrero
+032|Julio
+033|Junio
+035|Lo sentimos, pero el buzón del usuario no puede aceptar más mensajes.
+037|Los códigos PIN y de que ha introducido no coincide con introducirse otra vez. Por favor, inténtelo de nuevo.
+038|Marzo
+039|Mayo
+040|Mensaje eliminado.
+041|Mensaje recupera.
+051|No más mensajes
+052|Noviembre
+053|O nueve para guardar este mensaje.
+054|Octubre
+056|Para dejar un mensaje por favor, introduzca un número de buzón
+060|Por favor, deje su mensaje después del tono. Cuando termine cuelgue o presione la tecla de libras
+064|Por favor, introduzca su código PIN.
+065|Por favor, introduzca su nuevo código PIN seguido por la libra clave.
+075|Por favor, vuelva a introducir el código PIN seguido por la libra clave.
+076|Prensa de seis a jugar el siguiente mensaje.
+077|Prensa rerecord tres a su mensaje.
+078|Prensa siete para eliminar este mensaje.
+079|Prensa siete recuperar este mensaje.
+081|Pulse 1 para grabar su mensaje de no disponible. Presione 2 para grabar su mensaje de ocupado. Pulse 3 para grabar su nombre. Pulse 4 para cambiar su código PIN. Prensa estrella para volver al menú principal.
+082|Pulse cuatro para el mensaje anterior.
+083|Pulse dos para cambiar las carpetas. Pulse tres para opciones avanzadas. Pulse cero opciones de buzón de correo.
+088|Pulse para obtener ayuda o estrella una libra para salir.
+089|Pulse tres para opciones avanzadas. Pulse cinco a repetir el mensaje actual.
+091|Pulse una de aceptar esta grabación. Pulse dos para escucharlo. Prensa rerecord tres a su mensaje.
+093|Pulse uno de los mensajes de
+095|Septiembre
+097|Su mensaje se ha guardado.
+106|Usted no tiene mensajes de
+109|a
+110|amigos
+112|ayer
+113|carpeta de cinco
+114|carpeta de ocho
+115|carpeta de seis
+116|carpeta de siete
+117|carpeta nueve
+118|carpeta que debo guardar el mensaje de?
+119|catorce
+122|cero
+123|ciento
+124|cientos
+125|cinco
+126|cincuenta
+127|cuadragésimo
+128|cuareinta
+129|cuarto
+130|cuatro
+131|de
+132|decimoctavo
+133|decimocuarto
+134|decimonoveno
+135|decimoquinto
+136|decimosexto
+137|decimoséptimo
+138|decimotercero
+139|diez
+140|diezinueve
+141|dieziocho
+142|dieziseis
+143|diezisiete
+144|doce
+145|dos
+146|duodécimo
+147|duro
+148|décimo
+151|edad
+152|familia
+153|guardado en
+155|hora
+156|horas
+157|hoy
+158|la
+159|las
+160|libras o cancelar
+162|mañana
+163|menos
+164|mensaje
+165|mensajes
+166|mil
+167|millon
+168|millones
+169|minuto
+170|minutos
+171|más de mil millones
+172|nonagésimo
+173|noveno
+174|noventa
+175|nueve
+176|nuevo
+178|ochenta
+179|ocho
+180|octavo
+181|octogésimo
+182|once
+183|oprimir
+184|para
+186|primer mensaje recibido
+187|primero
+189|quince
+190|quincuagésimo
+191|quinto
+192|recibida
+195|segundo
+196|segundos
+197|seis
+198|septuagésimo
+199|sesenta
+200|setenta
+201|sexagésimo
+202|sexto
+203|siete
+204|séptimo
+205|tercero
+206|trabajo
+207|trece
+208|treinta
+209|tres
+210|trigésimo
+211|tu Tiene
+213|un
+214|una
+215|undécimo
+219|uno
+220|veinte
+221|vigésimo
+222|y
+223|último mensaje recibido

@@ -34,7 +34,7 @@ LOCALE=$1
 OUTPUT_DIR="${PREFIX}/share/locale/${LOCALE}/LC_MESSAGES"
 DOMAIN=vapp
 
-POFILE="${LOCALE}.po"
+POFILE="${LOCALE%.po}.po"
 
 if [ ! -d $OUTPUT_DIR ]
 then

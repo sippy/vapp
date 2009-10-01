@@ -30,7 +30,7 @@ then
 fi
 LOCALE=$1
 
-POFILE="${LOCALE}.po"
+POFILE="${LOCALE%.po}.po"
 if [ -f "$POFILE" ]
 then
     msgmerge --no-wrap -vv -U "$POFILE" vapp.pot

@@ -26,7 +26,7 @@ Utility functions for Voicemail IVR application.
 """
 import time
 import random
-import md5
+import hashlib
 from Prompt import Prompt
 from SpeechSynth.PromptException import PromptException
 
@@ -35,7 +35,7 @@ __all__ = [ "ivrAuthenticate", "AuthenticationError", "SipDialer" ]
 def generateSipCallId(host = '127.0.0.1'):
     if (':' in host):
         host, port = host.split(':')
-    return md5.md5(str((random.random() * 1000000000L) + time.time())).hexdigest() + '@' + host
+    return hashlib.md5(str((random.random() * 1000000000L) + time.time())).hexdigest() + '@' + host
 
 class AuthenticationError(Exception):
     pass

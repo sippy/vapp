@@ -23,6 +23,7 @@
 
 import gettext
 import vapp
+from ConfigParser import DEFAULTSECT
 
 __all__ = [ "Locale" ]
 
@@ -31,9 +32,9 @@ class Locale:
     def __init__(self, localename):
         self.__name = localename
         cfg = vapp._translation_config
-        def_domain = cfg.get('default', 'text_domain')
-        def_catalog = cfg.get('default', 'msg_catalog_dir')
-        self.__prompt_path = cfg.get('default', 'prompt_catalog_dir')
+        def_domain = cfg.get(DEFAULTSECT, 'text_domain')
+        def_catalog = cfg.get(DEFAULTSECT, 'msg_catalog_dir')
+        self.__prompt_path = cfg.get(DEFAULTSECT, 'prompt_catalog_dir')
 	try:
 	    self.__translator = gettext.translation(def_domain, def_catalog, [ localename ])
             for section in cfg.sections():

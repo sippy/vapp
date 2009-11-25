@@ -56,6 +56,8 @@ class Packet:
 	self.__destination = None
 	self.__actionId = None
         self.__other = ""
+        self.__variable = None
+        self.__value = None
 
 	for l in lines:
 	    if (l.find(": ") < 0):
@@ -86,6 +88,10 @@ class Packet:
 		self.__destination = value
 	    elif (field == 'ActionID'):
 		self.__actionId = value
+	    elif (field == 'Variable'):
+		self.__variable = value
+	    elif (field == 'Value'):
+		self.__value = value
             else:
                 self.__other += "|%s: %s" % (field, value)
 
@@ -123,6 +129,12 @@ class Packet:
 
         if (self.__message != ''):
             retval += "Message: " + self.__message + "\n"
+        
+        if (self.__variable != None):
+            retval += "Variable: " + self.__variable + "\n"
+        
+        if (self.__variable != None):
+            retval += "Value: " + self.__value + "\n"
         
         if (self.__other != ""):
             retval += self.__other + "\n"
@@ -166,6 +178,12 @@ class Packet:
     def actionId(self):
 	return self.__actionId
 
+    def variable(self):
+	return self.__variable
+
+    def value(self):
+	return self.__value
+
 
 class AsteriskManager(threading.Thread):
     """ 
@@ -198,6 +216,7 @@ class AsteriskManager(threading.Thread):
 	self.__child_by_parent = {}
 	self.__parse_buf = ""
 	self.__action_listeners = {}
+	self.__pending_call_ids = {}
 	self.__action_lock = threading.Lock()
 
 	self.__host = host
@@ -410,8 +429,10 @@ class AsteriskManager(threading.Thread):
 	    qry += "Variable: %s\r\n" % '|'.join(vars)
 
 	if (action_id != None and action_listener != None):
-	    self.__action_listeners[action_id] = action_listener
+	    self.__action_listeners[action_id] = action_listener, call_id
 	    qry += "ActionID: %s\r\n" % action_id
+            if call_id != None:
+                self.__pending_call_ids[call_id] = action_id
 
 	qry += "\r\n"
         self.__send_cmd(qry)
@@ -508,7 +529,9 @@ class AsteriskManager(threading.Thread):
 	"""
 	self.__action_lock.acquire()
 	try:
-	    self.__action_listeners.pop(action_id)
+	    listener, call_id = self.__action_listeners.pop(action_id)
+            if call_id != None:
+                self.__pending_call_ids.pop(call_id)
 	except:
 	    pass
 	self.__action_lock.release()
@@ -516,12 +539,33 @@ class AsteriskManager(threading.Thread):
     def __processPacket(self, pkt):
 	#print "### %s" % str(pkt)
 
+        if len(self.__pending_call_ids) > 0 and pkt.event() == 'Newchannel':
+            self.__send_cmd("Action: GetVar\r\n"
+                    "Channel: " + pkt.channel() + "\r\n"
+                    "Variable: SIP_FORCE_CALLID\r\n"
+                    "ActionId: " + pkt.channel() + "\r\n"
+                    "\r\n" )
+
+        if pkt.isResponse() and pkt.variable() == 'SIP_FORCE_CALLID':
+            self.__action_lock.acquire()
+            listener = None
+            try:
+                action_id = self.__pending_call_ids.pop(pkt.value())
+                channel = pkt.actionId()
+                listener, call_id = self.__action_listeners[action_id]
+            except:
+                pass
+            self.__action_lock.release()
+            if listener != None:
+                listener.processMgrPacket(pkt)
+            return
+
 	action_id = pkt.actionId()
 	listener = None
 	if (action_id != None and self.__action_listeners.has_key(action_id)):
 	    self.__action_lock.acquire()
 	    try:
-		listener = self.__action_listeners[action_id]
+		listener, call_id = self.__action_listeners[action_id]
 	    except:
 		pass
 	    self.__action_lock.release()

@@ -216,7 +216,6 @@ class AsteriskManager(threading.Thread):
 	self.__child_by_parent = {}
 	self.__parse_buf = ""
 	self.__action_listeners = {}
-	self.__pending_call_ids = {}
 	self.__action_lock = threading.Lock()
 
 	self.__host = host
@@ -425,14 +424,13 @@ class AsteriskManager(threading.Thread):
         if (call_id != None):
             vars.append("_SIP_FORCE_CALLID=%s" % call_id)
 
+	if (action_id != None and action_listener != None):
+	    self.__action_listeners[action_id] = action_listener
+	    qry += "ActionID: %s\r\n" % action_id
+            vars.append("_VAPP_ACTION_ID=%s" % action_id)
+
 	if (len(vars) > 0):
 	    qry += "Variable: %s\r\n" % '|'.join(vars)
-
-	if (action_id != None and action_listener != None):
-	    self.__action_listeners[action_id] = action_listener, call_id
-	    qry += "ActionID: %s\r\n" % action_id
-            if call_id != None:
-                self.__pending_call_ids[call_id] = action_id
 
 	qry += "\r\n"
         self.__send_cmd(qry)
@@ -529,9 +527,7 @@ class AsteriskManager(threading.Thread):
 	"""
 	self.__action_lock.acquire()
 	try:
-	    listener, call_id = self.__action_listeners.pop(action_id)
-            if call_id != None:
-                self.__pending_call_ids.pop(call_id)
+	    self.__action_listeners.pop(action_id)
 	except:
 	    pass
 	self.__action_lock.release()
@@ -539,25 +535,22 @@ class AsteriskManager(threading.Thread):
     def __processPacket(self, pkt):
 	#print "### %s" % str(pkt)
 
-        if len(self.__pending_call_ids) > 0 and pkt.event() == 'Newchannel':
+        if pkt.event() == 'Newchannel':
             self.__send_cmd("Action: GetVar\r\n"
                     "Channel: " + pkt.channel() + "\r\n"
-                    "Variable: SIP_FORCE_CALLID\r\n"
+                    "Variable: VAPP_ACTION_ID\r\n"
                     "ActionId: " + pkt.channel() + "\r\n"
                     "\r\n" )
 
-        if pkt.isResponse() and pkt.variable() == 'SIP_FORCE_CALLID':
-            self.__action_lock.acquire()
-            listener = None
-            try:
-                action_id = self.__pending_call_ids.pop(pkt.value())
-                channel = pkt.actionId()
-                listener, call_id = self.__action_listeners[action_id]
-            except:
-                pass
-            self.__action_lock.release()
+        if pkt.isResponse() and pkt.variable() == 'VAPP_ACTION_ID' and pkt.value() != '':
+            action_id = pkt.value()
+            channel = pkt.actionId()
+            listener = self.__action_listeners.get(action_id, None)
             if listener != None:
-                listener.processMgrPacket(pkt)
+                p = Packet([ "Event: Newchannel",
+                             "Channel: " + channel,
+                             "ActionID: " + action_id ])
+                listener.processMgrPacket(p)
             return
 
 	action_id = pkt.actionId()
@@ -565,7 +558,7 @@ class AsteriskManager(threading.Thread):
 	if (action_id != None and self.__action_listeners.has_key(action_id)):
 	    self.__action_lock.acquire()
 	    try:
-		listener, call_id = self.__action_listeners[action_id]
+		listener = self.__action_listeners[action_id]
 	    except:
 		pass
 	    self.__action_lock.release()

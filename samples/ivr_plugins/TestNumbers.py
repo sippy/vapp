@@ -23,7 +23,7 @@
 
 import os
 import vapp
-from ConfigParser import DEFAULTSECT
+from ConfigParser
 
 class Plugin(vapp.BasePlugin):
     def parseNetworkScript(self):
@@ -39,7 +39,7 @@ class Plugin(vapp.BasePlugin):
 	self.answer()
 	key = 1
 	locales = list()
-	base_dir = vapp._translation_config.get(DEFAULTSECT, 'prompt_catalog_dir')
+	base_dir = vapp._translation_config.get('default_config', 'prompt_catalog_dir')
 	for l in os.listdir(base_dir):
 	    if (os.access(base_dir + "/" + l + "/prompt_map.txt", os.F_OK)):
 		locales.append(l)

@@ -25,7 +25,7 @@ from Agi import AgiHandler, AgiError, AgiKeyStroke
 from BasePlugin import BasePlugin
 from PluginHandler import PluginHandler, loadPlugins, pluginInstance
 from Locale import Locale
-from ConfigParser import ConfigParser, DEFAULTSECT
+from ConfigParser import ConfigParser
 import sys
 import os
 
@@ -67,13 +67,22 @@ def _init_translation_config():
     else:
         sys_etc_dir = sys.prefix
 
-    defaults = {
-        'text_domain'       : 'vapp',
-        'po_dir'            : sys.prefix + '/share/vapp/po',
-        'msg_catalog_dir'   : sys.prefix + '/share/locale',
-        'prompt_catalog_dir': sys.prefix + '/share/vapp/prompts'
-    }
-    _translation_config = ConfigParser(defaults)
+    _translation_config = ConfigParser()
     _translation_config.read([sys_etc_dir + "/etc/vapp.conf"] + local_configs)
+
+    if not _translation_config.has_section('default_config'):
+        _translation_config.add_section('default_config')
+
+    if not _translation_config.has_option('default_config', 'text_domain'):
+        _translation_config.set('default_config', 'text_domain', 'vapp')
+
+    if not _translation_config.has_option('default_config', 'po_dir'):
+        _translation_config.set('default_config', 'po_dir', sys.prefix + '/share/vapp/po')
+
+    if not _translation_config.has_option('default_config', 'msg_catalog_dir'):
+        _translation_config.set('default_config', 'msg_catalog_dir', sys.prefix + '/share/locale')
+
+    if not _translation_config.has_option('default_config', 'prompt_catalog_dir'):
+        _translation_config.set('default_config', 'prompt_catalog_dir', sys.prefix + '/share/vapp/prompts')
 
 _init_translation_config()

@@ -71,7 +71,8 @@ class Chunked:
     def _promptFileSequence(self, msg, prepend_basedir, pmaps):
 	dbg_dump = "INIT: message '%s'\n" % msg
 	retval = list()
-	phrase = msg.lstrip().rstrip().lower()
+        msg = msg.strip()
+	phrase = msg.lower()
 	offset = 0
 	while True:
 	    found = False

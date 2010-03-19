@@ -386,7 +386,7 @@ class AsteriskManager(threading.Thread):
 		break
 	self.__cmd_lock.release()
 
-    def originate(self, cld, timeout, sip_proxy, cli, app, app_data, md5secret = None, authname = None, action_id = None, action_listener = None, password = None, call_id = None, codecs = "g729,ulaw,alaw", _vars = []):
+    def originate(self, cld, timeout, sip_proxy, cli, app, app_data, md5secret = None, authname = None, action_id = None, action_listener = None, password = None, call_id = None, codecs = "g729,ulaw,alaw", vars = []):
 	"""
 	This method allows to originate a call in syncronous mode using
 	SIP channel. The call is backed by application 'app' running with
@@ -397,7 +397,7 @@ class AsteriskManager(threading.Thread):
 	method defined. Call state change will be reported to this 
 	class via call to this method. (see also registerChannel())
 	"""
-        vars = list(_vars)
+        vars = list(vars)
 	self.__checkConnection()
 	qry = ("Action: Originate\r\n"
 	       "Async: yes\r\n")

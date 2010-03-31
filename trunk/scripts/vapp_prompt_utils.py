@@ -259,13 +259,13 @@ class PhraseContainer(object):
 	return ret
 
     def setLang(self, lang):
-	if (lang == 'en' or lang == 'es' or lang == 'hy' or lang == 'fr'):
+	if (lang in ('en', 'es', 'hy', 'fr', 'de')):
 	    self.__plurals = [ 0, 1 ]
 	elif (lang == 'ru'):
 	    self.__plurals = [ 1, 2, 5 ]
 	elif (lang == 'ar'):
 	    self.__plurals = [ 1, 2, 3 ]
-        elif (lang == 'th' or lang == 'zh' or lang == 'ja' or lang == 'tr'):
+        elif (lang in ('th', 'zh', 'ja', 'tr')):
             self.__plurals = [ 0 ]
         else:
             print("ERROR: You must define __plurals for the language %s!!!" % lang)

@@ -1,0 +1,148 @@
+# encoding: utf-8
+001|, wurde am
+002|-Nachrichten, drücken Sie bitte die 1
+003|April
+004|Arbeit
+005|August
+009|Bitte geben Sie Ihre PIN-Nummer ein.
+011|Bitte geben Sie Ihre Pin-Nummer erneut ein und drücken Sie die Raute-Taste
+015|Bitte geben Sie Ihre neue PIN-Nummer ein und drücken Sie die Raute Taste
+026|Datei : 5
+027|Datei : 6
+028|Datei : 7
+029|Datei : 8
+030|Datei : 9
+033|Dezember
+037|Die Nachricht konnte nicht gelöscht werden.
+038|Die Nachricht wurde gelöscht
+041|Die eingegebene Pin-Nummer ist falsch. Bitte versuchen Sie es noch einmal
+042|Die erste Nachricht
+044|Die letzte Nachricht ist eingegangen
+050|Die von Ihnen eingegebene Pin-Nummer ist falsch. Bitte geben Sie Ihren Pin ein
+058|Es sind keine
+059|Familie
+060|Februar
+061|Freunde
+062|Für
+063|Für Erweiterte Optionen drücken Sie bitte die 3. Um der aktuellen Nachricht abzuhören drücken Sie bitte die 5.
+064|Für Hilfe drücken Sie bitte die Stern-Taste und um aus dem Menu auszusteigen die Raute-Taste.
+068|Für ein
+078|Ihr PIN-Nummer wurde geändert.
+082|Ihre Nachricht wurde gespeichert.
+083|In welche Datei soll die Nachricht gespeichert werden
+084|Interne Nummer können Sie nicht anwenden
+085|Interne Nummer wird verwendet
+086|Januar
+087|Juli
+088|Juni
+089|Mai
+090|Million
+091|Millionen
+092|Minute
+093|Minuten
+094|März
+095|Nach dem Signalton geben Sie bitte Besetzt-Nachricht und drücken die Raute-Taste
+096|Nach dem Signalton geben Sie bitte Ihren Namen ein und drücken die Raute-Taste
+097|Nach dem Signalton geben Sie bitte die Nachricht nicht erreichbar ein und drücken die Raute-Taste.
+098|Nach dem Signalton können Sie eine Nachricht hinterlassen. Anschließend können den Hörer auflegen oder die Raute-Taste drücken.
+099|Nachricht
+100|Nachrichten
+101|Nachrichten vorhanden.
+102|November
+104|Oder Zum Speichern drücken Sie bitte die 9.
+105|Oder zum beenden drücken Sie bitte die Raute-Taste
+106|Oktober
+107|Sekunde
+108|Sekunden
+109|September
+119|Sie haben keine weitere Nachrichten
+121|Sie sind nun Besitzer einer neuen
+122|Stunde
+123|Stunden
+124|Tschüss
+126|Uhr
+131|Um die Datei zu ändern drücken Sie bitte die 2. Für erweiterte Optionen drücken Sie bitte die 3. Für Postfach-Optionen drücken Sie bitte die Null.
+132|Um die Nachricht neu zu speichern drücken Sie bitte die 3
+133|Um die Nachricht “nicht erreichbar” zu speichern, drücken Sie bitte die 1. Für das Besetzt-Nachricht und drücken Sie bitte die 2. Um Ihren Namen zu speichern, drücken Sie bitte die 3. Um die PIN-Nummer zu ändern, drücken Sie bitte die 4. Um ins Hauptmenu zurück zu kommen, drücken Sie bitte die Stern-Taste.
+136|Um die nächte Nachrıcht zu kommen,drücken Sie bitte die 6
+137|Um diese Nachricht zu löschen, drücken Sie bitte die 7.
+138|Um diesen Lösch-Vorgang zu beenden, drücken Sie bitte die 7
+139|Um ein Beispiel-Nachricht abzuhören, drücken Sie bitte die 4
+140|Um eine Nachricht zu hinterlassen, geben Sie bitte die Postfach-Nummer ein.
+145|Verzeihung aber das Postfach des Benutzers kann nicht weitere Nachrichte akzeptieren.
+146|Welche Datei möchten Sie ändern?
+147|Zum Speicher drücken Sie bitte die 1. Um die Nachricht abzuhören drücken Sie bitte die 2 und zum Speichern drücken Sie bitte die 3
+148|acht
+149|achte
+150|achtzehn
+151|achtzehnte
+152|achtzig
+153|achtzigste
+154|alt
+155|alte
+157|der
+158|drei
+159|dreizehn
+160|dreizehnte
+161|dreißig
+162|dreißigste
+163|dritte
+164|drücken
+165|ein
+166|eine
+167|eins
+168|elf
+169|elfte
+170|empfangen
+171|erhalten
+172|erste
+173|fünf
+174|fünfte
+175|fünfzehn
+176|fünfzehnte
+177|fünfzig
+178|fünfzigste
+179|gespeichert zu
+181|gestern
+182|heute
+183|hundert
+186|mehr als eine Million
+187|minus
+189|morgen
+190|neu
+191|neun
+192|neunte
+193|neunzehn
+194|neunzehnte
+195|neunzig
+196|neunzigste
+197|null
+199|sechs
+200|sechste
+201|sechzehn
+202|sechzehnte
+203|sechzig
+204|sechzigste
+205|sieben
+206|siebte
+207|siebzehn
+208|siebzehnte
+209|siebzig
+210|siebzigste
+211|tausend
+212|und
+214|vier
+215|vierte
+216|vierzehn
+217|vierzehnte
+218|vierzig
+219|vierzigste
+221|weniger als minus eine Milliarde
+224|zehn
+225|zehnte
+229|zwanzig
+230|zwanzigste
+231|zwei
+232|zweite
+233|zwölf
+234|zwölfte

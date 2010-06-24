@@ -47,7 +47,7 @@ class AbstractPlugin(BasePlugin):
         # Parse options if any
         #
         username = ""
-	logged_in = False
+        logged_in = False
         try:
             (username, opts) = self.callerid().split("|", 1)
             for opt in (opts):
@@ -58,8 +58,12 @@ class AbstractPlugin(BasePlugin):
                     username = ""
         except ValueError:
             username = self.callerid()
-	self.debug("Verifying if the callerid '%s' is our account" % username)
-        self.user = self.findUser(self.prefix + username)
+        if self.user == None:
+            self.debug("Verifying if the callerid '%s' is our account" % username)
+            self.user = self.findUser(self.prefix + username)
+        else:
+            self.debug("The user is '%s'" % self.user.username())
+
         if self.user != None:
             self.setLocale(self.user.locale())
         else:

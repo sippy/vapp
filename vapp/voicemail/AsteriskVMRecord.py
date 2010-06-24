@@ -78,11 +78,14 @@ class AbstractPlugin(BasePlugin):
                     continue
                 else:
                     self.target = self.target + c
-            self.__leaveAMessage()
+        self.__leaveAMessage()
         self.hangup()
 
     def __leaveAMessage(self):
-        self.user = self.findUser(self.target)
+        if self.user == None:
+            self.user = self.findUser(self.target)
+        self.debug("Recording a voicemail message for the user %s" % self.user.username())
+
         if (self.user == None):
             return
         #

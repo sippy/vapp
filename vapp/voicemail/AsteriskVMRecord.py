@@ -34,6 +34,7 @@ import os
 import re
 
 class AbstractPlugin(BasePlugin):
+    user = None
 
     def parseNetworkScript(self):
         """

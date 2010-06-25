@@ -35,6 +35,7 @@ import re
 
 class AbstractPlugin(BasePlugin):
     user = None
+    prompt_id = None
 
     def parseNetworkScript(self):
         """
@@ -65,9 +66,8 @@ class AbstractPlugin(BasePlugin):
             # ask the target number
 	    tmp = self.readString(self._tts("To leave a message please enter a mailbox number"), self.options().maxLoginLen())
         self.target = ""
-        self.prompt_id = None
         self.silent = False
-        if (tmp != ""):
+        if (self.user == None and tmp != ""):
             for c in tmp[2:]:
                 if (c == 's'):
                     self.silent = True

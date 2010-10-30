@@ -26,6 +26,8 @@ from vapp.Prompt import *
 import os
 
 class User:
+    vm_enabled = True
+
     def __init__(self, username):
         self.__username = username
         self.__vm_storage = VoicemailStorage(self)

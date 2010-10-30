@@ -33,6 +33,8 @@ import tempfile
 import os
 import re
 
+_empty_dict = {}
+
 class AbstractPlugin(BasePlugin):
     user = None
     prompt_id = None
@@ -85,6 +87,9 @@ class AbstractPlugin(BasePlugin):
     def __leaveAMessage(self):
         if self.user == None:
             self.user = self.findUser(self.target)
+        if not self.user.vm_enabled:
+            self.debug("The user %s is not VM Enabled" % self.user.username())
+            return
         self.debug("Recording a voicemail message for the user %s" % self.user.username())
 
         if (self.user == None):
@@ -109,23 +114,28 @@ class AbstractPlugin(BasePlugin):
             elif (not self.silent):
                 self.sayEx(self._tts("Please leave your message after the tone. When done hang up or press the pound key"))
         except AgiKeyStroke, keystroke:
-            if (keystroke.key() == '#' and self.isAutoAttendantAvailable()):
-                self.autoAttendant()
-            elif (keystroke.key() == '0' and self.isOperatorAvailable()):
-                self.dialOperator()
+            handler = self.additionalEarlyHandlers().get(keystroke.key(), None)
+            if handler != None:
+                handler() 
 
         self.message_exists = False
         (self.messageFd, self.messageFilename) = tempfile.mkstemp(suffix = "." + self.format(), dir = self.options().tmpDir())
         m = re.search("(.+)\\." + self.format() + "$", self.messageFilename)
         self.messageFilenameNoExt = m.groups()[0]
 	try:
-	    self.execMenu({ \
+            menu = { \
 		'1':self.__saveMessage, \
 		'2':self.reviewMessage, \
 		'3':self.recordMessage, \
 		'default':self.messageDefault, \
 		'quit':'t#'
-	    }, '3')
+	        }
+            for k in self.additionalHandlers().keys():
+                if menu.has_key(k):
+                    continue
+                menu[k] = self.additionalHandlers()[k]
+
+	    self.execMenu(menu , '3')
 	    self.say(self._tts("Good bye"))
 	except AgiError:
 	    pass
@@ -145,19 +155,14 @@ class AbstractPlugin(BasePlugin):
     def reviewMessage(self):
         self.streamFileEx(self.messageFilenameNoExt)
 
-    def isAutoAttendantAvailable(self):
-        return False
-
-    def isOperatorAvailable(self):
-        return False
-
     def recordMessage(self):
         self.message_exists = True
+        escapes = '#' + ''.join([x for x in self.additionalHandlers().keys() if len(x) == 1])
         try:
             self.recordFileEx(filename = self.messageFilenameNoExt, \
                               format = self.format(), \
                               timeout_msec = self.options().maxMessageTimeMsec(), \
-                              escape = '#*', \
+                              escape = escapes, \
                               beep = True, \
                               silence_sec = self.options().maxSilenceTimeSec())
         except AgiKeyStroke, keystroke:
@@ -176,3 +181,9 @@ class AbstractPlugin(BasePlugin):
             self.waitForDigitEx(600)
         self.sayEx(self._tts("or pound to cancel"))
         self.waitForDigitEx(6000)
+
+    def additionalEarlyHandlers(self):
+        return _empty_dict
+
+    def additionalHandlers(self):
+        return _empty_dict

@@ -35,6 +35,7 @@ class AbstractPlugin(BasePlugin):
     user = None
     prefix = ""
     vm_storage = None
+    logged_in = False
 
     def parseNetworkScript(self):
 	arr = self.dnid().split("_")
@@ -47,12 +48,11 @@ class AbstractPlugin(BasePlugin):
         # Parse options if any
         #
         username = ""
-        logged_in = False
         try:
             (username, opts) = self.callerid().split("|", 1)
             for opt in (opts):
                 if (opt == 's'):
-                    logged_in = True
+                    self.logged_in = True
                 elif (opt == 'p' and username != ""):
                     self.prefix = username
                     username = ""
@@ -69,12 +69,15 @@ class AbstractPlugin(BasePlugin):
         else:
             self.setLocale(self.options().defaultSystemLocale())
         try:
-	    if not logged_in:
+	    if not self.logged_in:
 		ivrAuthenticate(self)
         except AuthenticationError, e:
             self.info("Auth error: " + str(e))
             self.say(self._tts("Good bye"))
             self.hangup()
+            return
+        if not self.user.vm_enabled:
+            self.debug("The user %s is not VM enabled" % self.user.username())
             return
         self.vm_storage = self.createStorage()
 	try:

@@ -1,0 +1,138 @@
+# encoding: utf-8
+1|Apres la tonalité dites votre message que vous etes absent et tappez diaise.
+2|Apres la tonalité dites votre message que vous etes occupé et tappez sur diaise.
+3|Apres la tonalité dites votre nom et tappez diaise.
+4|Aurevoir
+12|Changer pour quelle farde?
+13|Dans quelle farde je dois sauvegarder le message?
+14|Desolé, la boite vocal ne peut plus accepter des messages.
+25|L'extension est en communication.
+26|L'extension n'est pas disponible.
+28|Le PIN code que vous avez introduit et reintroduit n'est pas le meme. Veuillez essayer plus tard.
+33|Mauvais PIN code. Veuillez introduire votre PIN code.
+34|Message effacé
+35|Message non effacé
+36|Ou neuf pour sauvegarder ce message.
+38|Pour laisser un message introduisez le numero de la boite
+46|Tapez sept pour effacer ce message.
+47|Tapez sept pour garder ce message.
+48|Tapez six pour ecouter le message suivant.
+49|Tapez trois pour les options avancées. Tapez cinq pour repeter le message actuel.
+56|Tappez
+57|Tappez deux pour changer de fardes. Tappez trois pour les options avancées. Tappez zero pour les options de la boite vocale.
+58|Tappez etoile pour obtenir l'aide ou diaise pour sortir.
+59|Tappez quatre pour le message precedent.
+60|Tappez trois pour re-enregistrer votre message
+61|Tappez un pour
+62|Tappez un pour accepter cet enregistrement. Tappez deux pour le re-ecouter. Tappez trois pour le re-enregistrer.
+63|Tappez un pour enregistrer votre message en absence. Tappez 2 pour enregistrer votre message que vous etes occupé. Tapez trois pour enregistrer votre nom. Tapez quatre pour changer votre PIN code. Tapez etoile pour retourner sur le menu principal.
+72|Veuillez introduire votre PIN code.
+73|Veuillez introduire votre nouveau PIN code suivi de la touche diaise.
+75|Veuillez laisser votre message après la tonalité. Après avoir fini, raccrochez ou appuyer sur diaise
+76|Veuillez reintroduire votre PIN code suivi de la touche diaise
+82|Votre PIN code a été changé
+85|Votre message a été sauvegardé.
+94|Vous avez pas
+105|amis
+106|ancien
+107|août
+109|aujourd'hui
+110|avril
+111|cent
+113|cents
+114|cinq
+115|cinquante
+116|cinquante et un
+117|cinquante et une
+118|demain
+119|dernier message recu
+120|deux
+121|dix
+122|dix-huit
+123|dix-neuf
+124|dix-sept
+126|dossier  six
+127|dossier cinq
+128|dossier huit
+129|dossier neuf
+130|dossier sept
+131|douze
+132|décembre
+134|et
+136|famille
+137|février
+138|heure
+139|heures
+140|hier
+141|huit
+142|janvier
+143|juillet
+144|juin
+151|mai
+152|mars
+154|message
+155|messages
+156|mille
+157|milliers
+158|million
+159|millions
+160|minute
+161|minutes
+162|moins
+163|moins que sans un milliard
+166|neuf
+167|nouveau
+168|novembre
+170|octobre
+171|onze
+172|ou diaise pour annuler
+176|plus d'un milliard
+177|plus de messages
+179|pour
+180|premier
+181|premier message recu
+182|quarante
+183|quarante et un
+184|quarante et une
+185|quatorze
+186|quatre
+187|quatre-vingt
+188|quatre-vingt-dix
+189|quatre-vingt-onze
+190|quatre-vingt-un
+191|quinze
+192|recu
+194|sauvegardé dans la
+195|seconde
+196|secondes
+197|seize
+198|sept
+199|septembre
+202|six
+203|soixante
+204|soixante et onze
+205|soixante et un
+206|soixante et une
+207|soixante-dix
+208|travail
+209|treize
+210|trente
+211|trente et un
+212|trente et une
+213|trois
+214|un
+215|une
+218|vingt
+219|vingt et un
+220|vingt et une
+221|vingt-cinq
+222|vingt-deux
+223|vingt-huit
+224|vingt-neuf
+225|vingt-quatre
+226|vingt-sept
+227|vingt-six
+228|vingt-trois
+230|vous avez
+232|zéro
+233|à

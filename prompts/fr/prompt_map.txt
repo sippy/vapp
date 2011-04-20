@@ -35,6 +35,7 @@
 94|Vous avez pas
 105|amis
 106|ancien
+106|anciens
 107|août
 109|aujourd'hui
 110|avril
@@ -82,6 +83,7 @@
 163|moins que sans un milliard
 166|neuf
 167|nouveau
+167|nouveaux
 168|novembre
 170|octobre
 171|onze

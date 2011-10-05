@@ -68,13 +68,13 @@ def sayNumber(number, ordinal, flags):
     if (number < 0):
         number = -number
         minus = True
-        retval.append(_phrase_noop("trừ đi"))
+        retval.append(_phrase_noop("âm"))
 
     if number >= 1000000:
         if minus:
-            return _phrase_noop("Less than minus one million") 
+            return _phrase_noop("Nhỏ hơn âm một triệu") 
         else:
-            return _phrase_noop("More than one million")
+            return _phrase_noop("Hơn một triệu")
 
     if number >= 1000: # and number < 10000
         retval += _say_num(number / 1000, False)
@@ -87,6 +87,7 @@ def sayNumber(number, ordinal, flags):
 
 def _say_num(num, build_started):
     ret = []
+    orig_num = num
     if num >= 100 or build_started:
         ret.append(ONES[(num % 1000) / 100])
         ret.append(_phrase_noop("trăm"))
@@ -100,16 +101,19 @@ def _say_num(num, build_started):
         ret.append(_phrase_noop("mười"))
     num = num % 10
     if num != 0:
-        if num == 1 and build_started:
+        if tens == 0 and build_started:
             ret.append(_phrase_noop("linh"))
-            ret.append(ONES[1])
+            if num == 4:
+                ret.append(_phrase_noop("tư"))
+            else:
+                ret.append(ONES[num])
         elif tens > 0 or build_started:
             if num == 1:
                 ret.append(_phrase_noop("mốt"))
-            elif num == 4:
-                ret.append(_phrase_noop("tư"))
             elif num == 5:
                 ret.append(_phrase_noop("lăm"))
+            elif num == 4 and orig_num != 14:
+                ret.append(_phrase_noop("tư"))
             else:
                 ret.append(ONES[num])
         else:
@@ -121,6 +125,8 @@ def sayDigits(num, flags):
     return " ".join([ ONES[int(x)] for x in str(num) if x.isdigit() ])
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):
+    if seconds == 0:
+        return ONES[0]
     retval = []
     s = seconds
     hours = 0
@@ -164,18 +170,21 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
             retval.append(sayNumber(date_time.day, False, None))
             retval.append(_phrase_noop("tháng"))
             if date_time.month == 1:
-                ret.append(_phrase_noop("giên"))
+                retval.append(_phrase_noop("giên"))
             elif date_time.month == 4:
-                ret.append(_phrase_noop("tư"))
+                retval.append(_phrase_noop("tư"))
             elif date_time.month == 12:
-                ret.append(_phrase_noop("chap"))
+                retval.append(_phrase_noop("chap"))
+            retval.append(_phrase_noop("năm"))
             retval.append(sayNumber(date_time.month, False, None))
             retval.append(_phrase_noop("năm"))
             retval.append(sayNumber(date_time.year, False, None))
         if say_time:
             retval.append(_phrase_noop("lúc"))
     if say_time:
-        suffix = _phrase_noop("sáng") # AM
+        suffix = _phrase_noop("sáng") # ?
+        suffix = _phrase_noop("đêm") # night
+        suffix = _phrase_noop("tối") # AM
         hour = date_time.hour
         if (hour >= 12):
             hour -= 12
@@ -209,9 +218,29 @@ if (__name__ == "__main__"):
         elif i == 3:
             sufx = "rd"
         print("  %d%s: %s" % (i, sufx, sayNumber(i, True, "")))
-    print "=== Vietnamese durations ==="
+    print "=== Durations in Vietnamese ==="
     for i in (0, 1, 23, 466, 78910, 11, 12, 100, 1004, 10003, 100002, 1000001):
         h = int(i / 3600)
         m = int(i / 60) % 60
         s = i % 60
         print("  %02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, True, None)))
+    print "=== Vietnamese date and time ==="
+    tmp = datetime.datetime.now()
+    now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
+    for i in ((now, '(today)'), 
+              (now - datetime.timedelta(1), '(yesterday)'),
+              (now + datetime.timedelta(1), '(tomorrow)'),
+              (datetime.datetime(1970, 1, 20, 12, 0), ''),
+              (datetime.datetime(2012, 2, 11, 0, 0), ''),
+              (datetime.datetime(2006, 3, 12, 9, 45), ''),
+              (datetime.datetime(2002, 4, 13, 18, 22), ''),
+              (datetime.datetime(2001, 5, 14, 1, 0), ''),
+              (datetime.datetime(1901, 6, 1, 13, 9), ''),
+              (datetime.datetime(1902, 7, 2, 14, 19), ''),
+              (datetime.datetime(1903, 8, 3, 15, 12), ''),
+              (datetime.datetime(1996, 9, 24, 23, 23), ''),
+              (datetime.datetime(1996, 10, 22, 9, 2), ''),
+              (datetime.datetime(1996, 11, 6, 14, 0), ''),
+              (datetime.datetime(1996, 12, 7, 2, 46), ''),
+        ):
+        print("  %s - %s %s" % (str(i[0])[:-3], sayDatetime(i[0], True, True, False, None), i[1]))

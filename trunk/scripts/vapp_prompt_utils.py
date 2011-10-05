@@ -265,7 +265,7 @@ class PhraseContainer(object):
 	    self.__plurals = [ 1, 2, 5 ]
 	elif (lang == 'ar'):
 	    self.__plurals = [ 1, 2, 3 ]
-        elif (lang in ('th', 'zh', 'ja', 'tr')):
+        elif (lang in ('th', 'zh', 'ja', 'tr', 'vi')):
             self.__plurals = [ 0 ]
         else:
             print("ERROR: You must define __plurals for the language %s!!!" % lang)

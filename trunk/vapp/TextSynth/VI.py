@@ -182,10 +182,17 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
         if say_time:
             retval.append(_phrase_noop("lúc"))
     if say_time:
-        suffix = _phrase_noop("sáng") # ?
-        suffix = _phrase_noop("đêm") # night
-        suffix = _phrase_noop("tối") # AM
         hour = date_time.hour
+        if hour >= 5 and hour < 11:
+            suffix = _phrase_noop("sáng")
+        elif hour >= 11 and hour < 13:
+            suffix = _phrase_noop("trưa")
+        elif hour >= 13 and hour < 18:
+            suffix = _phrase_noop("chiều")
+        elif hour >= 18 and hour < 23:
+            suffix = _phrase_noop("tối")
+        else: # from 23:00 to 05:00
+            suffix = _phrase_noop("đêm")
         if (hour >= 12):
             hour -= 12
             suffix = _phrase_noop("chiều") # PM

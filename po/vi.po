@@ -60,14 +60,12 @@ msgid "Or nine to save this message."
 msgstr "Hoặc nhấn phím số 9 để lưu tin nhắn này."
 
 #: ../vapp/IvrUtils.py:54
-#, fuzzy
 msgid "Please enter your PIN code."
-msgstr "Xin vui lòng nhập lại mã PIN của bạn"
+msgstr "Xin hãy nhập mã PIN"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:239
-#, fuzzy
 msgid "Please enter your new PIN code followed by the pound key."
-msgstr "Xin vui lòng nhập một mã dịch vụ và nhấn phím thăng"
+msgstr "Xin hãy nhập mã PIN, kết thúc bằng phím #"
 
 #: ../vapp/voicemail/AsteriskVMRecord.py:102
 #: ../vapp/voicemail/AsteriskVMRecord.py:106
@@ -75,9 +73,8 @@ msgid "Please leave your message after the tone. When done hang up or press the 
 msgstr "Xin vui lòng để lại tin nhắn của bạn sau tiếng bíp. Khi thực hiện xong thì gác máy hoặc nhấn phím thăng"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:240
-#, fuzzy
 msgid "Please reenter your PIN code followed by the pound key."
-msgstr "Xin vui lòng nhập một mã dịch vụ và nhấn phím thăng"
+msgstr "Xin hãy nhập lại mã PIN, két thúc bằng phím #"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:251
 msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
@@ -132,16 +129,15 @@ msgstr "Xin lỗi, nhưng hộp thư của người dùng không thể chấp nh
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:245
 msgid "The PIN codes you've entered and reentered did not match. Please try again."
-msgstr ""
+msgstr "Mã PIN bạn nhập không khớp nhau, xin hãy nhập lại"
 
 #: ../vapp/voicemail/AsteriskVMRecord.py:65
 msgid "To leave a message please enter a mailbox number"
 msgstr "Để để lại một tin nhắn, xin vui lòng nhập một số hộp thư"
 
 #: ../vapp/IvrUtils.py:60
-#, fuzzy
 msgid "Wrong PIN code. Please enter your PIN code."
-msgstr "Sai mã PIN. Xin vui lòng nhập mã PIN thẻ nạp tiền."
+msgstr "Mã PIN bạn nhập không đúng. Xin hãy nhập mã PIN của bạn"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:210
 msgid "You have %(num)n new"
@@ -154,9 +150,8 @@ msgid "You have no %s messages"
 msgstr "Bạn không có tin nhắn %s"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:248
-#, fuzzy
 msgid "Your PIN code has been changed."
-msgstr "Tin nhắn của bạn đã được lưu."
+msgstr "Mã PIN của bạn đã được thay đổi"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:291
 #: ../vapp/voicemail/AsteriskVMRecord.py:138

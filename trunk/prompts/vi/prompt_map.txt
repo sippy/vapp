@@ -1,0 +1,94 @@
+# encoding: utf-8
+10|Bạn có
+13|Bạn không có tin nhắn
+21|Bấm phím số 1 để ghi lại tin nhắn bạn chưa thể nhận cuộc gọi. Bấm phím số 2 để ghi lại tin nhắn báo bạn đang bận. Bấm phím số 3 để ghi lại tên của bạn. Bấm phím số 4 để thay đổi mã PIN của bạn. Nhấn phím sao để trở lại menu chính.
+36|Hoặc nhấn phím số 9 để lưu tin nhắn này.
+37|Hãy nói tên bạn sau tiếng bíp, và sau đó bấm phím thăng.
+38|Hãy để lại tin nhắn thoại thông báo bạn bận sau tiếng bíp, và sau đó bấm phím thăng.
+39|Hãy để lại tin nhắn thoại thông báo bạn chưa thể nhận cuộc gọi sau tiếng bíp, và sau đó bấm phím thăng.
+40|Hơn một triệu
+46|Mã PIN bạn nhập không khớp nhau, xin hãy nhập lại
+47|Mã PIN bạn nhập không đúng. Xin hãy nhập mã PIN của bạn
+48|Mã PIN của bạn đã được thay đổi
+50|Nhấn phím sao để được giúp đỡ hoặc nhấn phím thăng để thoát.
+51|Nhấn phím số 1 Chấp nhận bản ghi này. Nhấn phím số 2 để nghe nó .Nhấn phím số 3 để ghi lại tin nhắn của bạn.
+52|Nhấn phím số 1 cho các tin nhắn
+55|Nhấn phím số 2 để thay đổi thư mục. Nhấn phím số 3 cho các tùy chọn nâng cao. Nhấn phím số 0 cho các lựa chọn về hôp thư.
+57|Nhấn phím số 3 cho các tùy chọn nâng cao. Nhấn phím số 5 để lặp lại các tin nhắn hiện tại.
+58|Nhấn phím số 3 để ghi lại tin nhắn của bạn.
+60|Nhấn phím số 4 cho tin nhắn trước
+61|Nhấn phím số 6 để đến tin nhắn tiếp theo.
+62|Nhấn phím số 7 để lấy lại tin nhắn này.
+63|Nhấn phím số 7 để xóa tin nhắn này.
+68|Nhỏ hơn âm một triệu
+79|Số máy nội bộ không liên lạc được
+80|Số máy nội bộ đang trên đường dây
+86|Thay đổi đến thư mục nào?
+88|Tin nhắn chưa được xoá.
+89|Tin nhắn của bạn đã được lưu.
+90|Tin nhắn đã được xoá.
+91|Tôi nên lưu tin nhắn vào thư mục nào?
+95|Xin hãy nhập lại mã PIN, két thúc bằng phím #
+96|Xin hãy nhập mã PIN
+97|Xin hãy nhập mã PIN, kết thúc bằng phím #
+99|Xin lỗi, nhưng hộp thư của người dùng không thể chấp nhận thêm tin nhắn.
+114|Xin vui lòng để lại tin nhắn của bạn sau tiếng bíp. Khi thực hiện xong thì gác máy hoặc nhấn phím thăng
+118|ba
+119|bạn bè
+120|bảy
+121|bốn
+122|chap
+123|chiều
+124|cho
+125|chín
+126|cũ
+127|gia đình
+128|giây
+129|giên
+130|giờ
+131|hai
+133|hoặc thăng để hủy bỏ
+135|hôm nay
+136|hôm qua
+137|không
+138|không có thêm tin nhắn
+140|linh
+141|làm việc
+142|lúc
+143|lăm
+144|mai
+145|mươi
+146|mười
+147|mốt
+148|một
+149|mới
+150|ngàn
+151|ngày
+152|nhấn
+153|nhất
+154|nhận được
+156|năm
+157|phút
+158|sáng
+159|sáu
+161|tháng
+162|thư mục bảy
+163|thư mục chín
+164|thư mục năm
+165|thư mục sáu
+166|thư mục tám
+167|thứ
+168|tin nhắn
+169|tin nhắn nhận được cuối cùng
+170|tin nhắn nhận được đầu tiên
+171|trăm
+172|trưa
+173|tám
+174|tư
+175|tối
+176|và
+182|âm
+188|Để để lại một tin nhắn, xin vui lòng nhập một số hộp thư
+191|đêm
+194|được lưu vào
+noop|good bye

@@ -25,11 +25,9 @@
 AGI handler able to manage IVR plugins.
 """
 from threading import Thread
-import os
 import sys
 import traceback
 import pkgutil
-import vapp
 import vapp
 from BaseIvrHandler import *
 from TextSynth import *
@@ -46,11 +44,10 @@ def loadPlugins(plugin_packages, exclude_modules = []):
     in the plugin_packages parameter (array of strings). The exclude_modules 
     parameter can contain a list of module names that must not be loaded.
 
-    Note that the vapp.logger must be set before the call to this
-    function.
+    Note that the vapp.logger must be set before calling this function.
     """
-    logger = vapp.logger
-    if (logger == None):
+    _logger = vapp.logger
+    if (_logger == None):
 	raise Exception("Cannot run without logger instance. Please place a logger instance to vapp.logger before running this function.")
     for pkg_name in plugin_packages:
         plugins_found = 0
@@ -61,22 +58,22 @@ def loadPlugins(plugin_packages, exclude_modules = []):
                     continue
                 full_name = "%s.%s" % (pkg_name, modname)
                 if ((full_name in exclude_modules) or (modname in exclude_modules)):
-                    logger.debug("The %s module is disabled by administrator" % full_name)
+                    _logger.debug("The %s module is disabled by administrator" % full_name)
                     continue
                 try:
                     mod = __import__(full_name, fromlist = [''])
                 except:
                     for msg in traceback.format_exception(*sys.exc_info()):
-                        logger.error(msg)
+                        _logger.error(msg)
                     sys.exit(1)
 
                 try:
                     #
                     # import IVR plugins
                     #
-                    plugin = mod.Plugin
+                    mod.Plugin
                     _plugins[full_name] = mod
-                    logger.debug("Plugin %s imported successfully." % modname)
+                    _logger.debug("Plugin %s imported successfully." % modname)
                 except AttributeError:
                     pass
                 try:
@@ -85,7 +82,7 @@ def loadPlugins(plugin_packages, exclude_modules = []):
                     #
                     daemon = mod.Daemon()
                     _daemons[full_name] = daemon
-                    logger.debug("Daemon %s imported successfully." % modname)
+                    _logger.debug("Daemon %s imported successfully." % modname)
                     if (isinstance(daemon, Thread)):
                         daemon.setDaemon(True)
                         daemon.start()
@@ -95,7 +92,7 @@ def loadPlugins(plugin_packages, exclude_modules = []):
         except ImportError:
             pass
         if (plugins_found == 0):
-            logger.debug("No plugins found in %s package" % pkg_name)
+            _logger.debug("No plugins found in %s package" % pkg_name)
 
 def pluginInstance(mod_name):
     """

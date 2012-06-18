@@ -28,10 +28,10 @@ from Agi import *
 
 __all__ = ["BaseIvrHandler", "NoInputException", "ClearRequestException"]
 
-class NoInputException:
+class NoInputException(Exception):
     pass
 
-class ClearRequestException:
+class ClearRequestException(Exception):
     """
     The exception raised by BaseIvrHandler.readLine. Contains the input
     that has been entered before the '*' button is pressed.
@@ -47,6 +47,27 @@ class BaseIvrHandler(AgiHandler):
     Base IVR handler containing TTS support and IVR menu infrastructure.
     This is an abstract class.
     """
+
+    def options(self):
+        raise NotImplementedError()
+
+    def textSynth(self):
+        raise NotImplementedError()
+
+    def speechSynth(self):
+        raise NotImplementedError()
+
+    def parseNetworkScript(self):
+        raise NotImplementedError()
+
+    def answerSession(self):
+        raise NotImplementedError()
+
+    def handleCall(self):
+        raise NotImplementedError()
+
+    def cleanup(self):
+        raise NotImplementedError()
 
     def readLine(self, prompt, max_len, timeout_msec, editing_enabled = True):
         """

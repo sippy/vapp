@@ -38,10 +38,10 @@ class Locale:
 	    self.__translator = gettext.translation(def_domain, def_catalog, [ localename ])
             for section in cfg.sections():
                 if (cfg.has_option(section, 'msg_catalog_dir') and cfg.has_option(section, 'text_domain')):
-                    dir =  cfg.get(section, 'msg_catalog_dir')
+                    directory =  cfg.get(section, 'msg_catalog_dir')
                     domain =  cfg.get(section, 'text_domain')
                     try:
-                        tr = gettext.translation(domain, dir, [ self.__name ])
+                        tr = gettext.translation(domain, directory, [ self.__name ])
                         self.__translator.add_fallback(tr)
                     except IOError:
                         pass

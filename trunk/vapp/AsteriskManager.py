@@ -25,7 +25,6 @@
 Asterisk Manager Protocol implementation.
 """
 import os
-import time
 import sys
 import traceback
 import select
@@ -397,7 +396,7 @@ class AsteriskManager(threading.Thread):
 	method defined. Call state change will be reported to this 
 	class via call to this method. (see also registerChannel())
 	"""
-        vars = list(vars)
+        variables = list(vars)
 	self.__checkConnection()
 	qry = ("Action: Originate\r\n"
 	       "Async: yes\r\n")
@@ -422,15 +421,15 @@ class AsteriskManager(threading.Thread):
 	qry += "Codecs: %s\r\n" % codecs
 
         if (call_id != None):
-            vars.append("_SIP_FORCE_CALLID=%s" % call_id)
+            variables.append("_SIP_FORCE_CALLID=%s" % call_id)
 
 	if (action_id != None and action_listener != None):
 	    self.__action_listeners[action_id] = action_listener
 	    qry += "ActionID: %s\r\n" % action_id
-            vars.append("_VAPP_ACTION_ID=%s" % action_id)
+            variables.append("_VAPP_ACTION_ID=%s" % action_id)
 
-	if (len(vars) > 0):
-	    qry += "Variable: %s\r\n" % '|'.join(vars)
+	if (len(variables) > 0):
+	    qry += "Variable: %s\r\n" % '|'.join(variables)
 
 	qry += "\r\n"
         self.__send_cmd(qry)
@@ -484,7 +483,6 @@ class AsteriskManager(threading.Thread):
 	"""
 	Unregister listener that was registered via registerChannel().
 	"""
-	chan = listener.channel()
 	self.__chan_lock.acquire()
 	try:
 	    self.__channels.pop(listener.channel())
@@ -571,9 +569,9 @@ class AsteriskManager(threading.Thread):
 	if (chan == None):
 	    chan = pkt.source()
 
-	id = pkt.uniqueId()
-	if (id == None):
-	    id = pkt.uniqueId1()
+	unique_id = pkt.uniqueId()
+	if (unique_id == None):
+	    unique_id = pkt.uniqueId1()
 
 	self.__chan_lock.acquire()
 	try:

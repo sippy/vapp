@@ -95,8 +95,8 @@ class AbstractPlugin(BasePlugin):
 		    '9':self.saveToFolder, \
 		    '0':self.changeOptions, \
 		    'quit':'#t', \
-		    'default':self.instructions, \
-		    'intro':self.mainIntro \
+                    'default':self.instructions, \
+                    'intro':self.mainIntro \
 	    })
 	    self.say(self._tts("Good bye"))
             self.hangup()
@@ -258,7 +258,7 @@ class AbstractPlugin(BasePlugin):
         self.sayEx(self._tts("Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."))
         self.waitForDigitEx(6000)
 
-    def playRecordReview(self, prompt_id, outsidecaller = False):
+    def playRecordReview(self, prompt_id):
         if (prompt_id == PROMPT_UNV):
             self.rec_prompt = self._tts("After the tone say your unavailable message and then press the pound key.")
         elif (prompt_id == PROMPT_BUSY):
@@ -282,10 +282,10 @@ class AbstractPlugin(BasePlugin):
                 'default':self.promptDefault, \
                 'quit':'t#'
             }, '3')
-        except AgiError, e:
+        except AgiError:
             os.close(self.promptFd)
             os.unlink(self.promptFilename)
-            raise e
+            raise
         os.close(self.promptFd)
         os.unlink(self.promptFilename)
 

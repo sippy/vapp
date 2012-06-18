@@ -53,7 +53,7 @@ __all__ = [ \
         "VM_MailboxFullError"
     ]
 
-class VM_MailboxFullError:
+class VM_MailboxFullError(Exception):
     pass
 
 def _tts_noop(arg):
@@ -197,3 +197,15 @@ class AbstractVoicemailStorage:
 
     def lastMessage(self):
         return self.numOfMessages() - 1
+
+    #
+    # Abstract methods
+    #
+    def setCurrentFolder(self, folder_id):
+        raise NotImplementedError()
+
+    def currentFolderId(self):
+        raise NotImplementedError()
+
+    def numOfMessages(self):
+        raise NotImplementedError()

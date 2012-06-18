@@ -51,10 +51,8 @@ Example:
 
 """
 
-import os
 import sys
 import traceback
-import socket
 import re
 from SocketServer import StreamRequestHandler
 import vapp
@@ -63,7 +61,7 @@ __all__ = ["AgiKeyStroke", "AgiError", "AgiHandler", "AgiLongKeyStroke"]
 
 long_event_interdigit_delay = 600
 
-class AgiKeyStroke:
+class AgiKeyStroke(Exception):
     """ An exception representing a single keypress event.  """
     __keycode = None
     __key = ""
@@ -86,14 +84,14 @@ class AgiKeyStroke:
 	""" String representation of the keystroke. """
         return self.__key
 
-class AgiError:
+class AgiError(Exception):
     """ 
     An exception representing an error condition. It is usually raised when 
     hangup occurs but not limited to hangup event only. All methods of 
     AgiHandler class raise this exception upon error.
     """
 
-class AgiLongKeyStroke:
+class AgiLongKeyStroke(Exception):
     """ Class idicating that a key sequence detected.  """
     def __init__(self, seq):
 	""" Constructor. The seq is the detected key sequence. """
@@ -206,6 +204,8 @@ class AgiHandler(StreamRequestHandler, object):
 		for msg in traceback.format_exception(*sys.exc_info()):
 		    vapp.logger.error(msg)
 
+    def runSession(self):
+        raise NotImplementedError()
 
     def dumpVars(self):
 	""" 
@@ -375,19 +375,19 @@ class AgiHandler(StreamRequestHandler, object):
         if (retval != 0):
             raise AgiKeyStroke(retval)
 
-    def sayDatetime(self, unixtime, escape = "*#0123456789", format = "", tz = ""):
+    def sayDatetime(self, unixtime, escape = "*#0123456789", _format = "", tz = ""):
 	""" AGI 'SAY DATETIME' command wrapper. """
-        if (format != ""):
-            format = '"' + format + '"'
-        retval = self.__execute("SAY DATETIME " + str(unixtime) + " " + str(escape) + " " + format + " " + tz)
+        if (_format != ""):
+            _format = '"' + _format + '"'
+        retval = self.__execute("SAY DATETIME " + str(unixtime) + " " + str(escape) + " " + _format + " " + tz)
         return retval
 
-    def sayDatetimeEx(self, unixtime, escape = "*#0123456789", format = "", tz = ""):
+    def sayDatetimeEx(self, unixtime, escape = "*#0123456789", _format = "", tz = ""):
 	""" 
 	Same as sayDatetime() but raises AgiKeyStroke instead of returning 
 	key code
 	"""
-        retval = self.sayDatetime(unixtime, escape, format, tz)
+        retval = self.sayDatetime(unixtime, escape, _format, tz)
         if (retval != 0):
             raise AgiKeyStroke(retval)
 
@@ -405,10 +405,10 @@ class AgiHandler(StreamRequestHandler, object):
         if (retval != 0):
             raise AgiKeyStroke(retval)
 
-    def recordFile(self, filename, format, escape, timeout_msec, offset = None, beep = False, silence_sec = None):
+    def recordFile(self, filename, _format, escape, timeout_msec, offset = None, beep = False, silence_sec = None):
 	""" AGI 'RECORD FILE' command wrapper. """
         # strip extension from filename if it exists
-        cmd = "RECORD FILE \"" + filename + "\" " + format + " " + str(escape) + " " + str(timeout_msec)
+        cmd = "RECORD FILE \"" + filename + "\" " + _format + " " + str(escape) + " " + str(timeout_msec)
         if (offset != None):
             cmd = cmd + " " + str(offset)
         if (beep):
@@ -418,12 +418,12 @@ class AgiHandler(StreamRequestHandler, object):
         retval = self.__execute(cmd)
         return retval
 
-    def recordFileEx(self, filename, format, escape, timeout_msec, offset = None, beep = False, silence_sec = None):
+    def recordFileEx(self, filename, _format, escape, timeout_msec, offset = None, beep = False, silence_sec = None):
 	""" 
 	Same as recordFile() but raises AgiKeyStroke instead of returning 
 	key code
 	"""
-        retval = self.recordFile(filename, format, escape, timeout_msec, offset, beep, silence_sec)
+        retval = self.recordFile(filename, _format, escape, timeout_msec, offset, beep, silence_sec)
         if (retval != 0):
             raise AgiKeyStroke(retval)
 

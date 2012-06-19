@@ -48,27 +48,6 @@ class BaseIvrHandler(AgiHandler):
     This is an abstract class.
     """
 
-    def options(self):
-        raise NotImplementedError()
-
-    def textSynth(self):
-        raise NotImplementedError()
-
-    def speechSynth(self):
-        raise NotImplementedError()
-
-    def parseNetworkScript(self):
-        raise NotImplementedError()
-
-    def answerSession(self):
-        raise NotImplementedError()
-
-    def handleCall(self):
-        raise NotImplementedError()
-
-    def cleanup(self):
-        raise NotImplementedError()
-
     def readLine(self, prompt, max_len, timeout_msec, editing_enabled = True):
         """
         TTS enabled method that provides a way to read a string with 

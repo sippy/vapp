@@ -179,15 +179,3 @@ class BasePlugin:
 
     def locale(self):
 	return self.__owner.locale()
-
-    #
-    # Abstract methods
-    #
-    def findUser(self, user):
-        raise NotImplementedError()
-
-    def format(self):
-        raise NotImplementedError()
-
-    def createStorage(self):
-        raise NotImplementedError()

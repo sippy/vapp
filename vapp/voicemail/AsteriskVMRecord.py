@@ -38,6 +38,7 @@ _empty_dict = {}
 class AbstractPlugin(BasePlugin):
     user = None
     prompt_id = None
+    commercial_codecs_installed = False
 
     def parseNetworkScript(self):
         """
@@ -159,12 +160,29 @@ class AbstractPlugin(BasePlugin):
         self.message_exists = True
         escapes = '#' + ''.join([x for x in self.additionalHandlers().keys() if len(x) == 1])
         try:
-            self.recordFileEx(filename = self.messageFilenameNoExt, \
+            if self.format() == 'sln' or commercial_codecs_installed:
+                self.recordFileEx(filename = self.messageFilenameNoExt, \
                               format = self.format(), \
                               timeout_msec = self.options().maxMessageTimeMsec(), \
                               escape = escapes, \
                               beep = True, \
                               silence_sec = self.options().maxSilenceTimeSec())
+            else:
+                #
+                # If comercial codec is not installed then the silence detection
+                # is unavailable and causes the RECORD FILE to fail. So just
+                # turn the silence detection off.
+                #
+                # However if you've purchased the commercial codec, then you can disable
+                # this behaviour by setting:
+                #
+                # self.commercial_codecs_installed = True
+                #
+                self.recordFileEx(filename = self.messageFilenameNoExt, \
+                              format = self.format(), \
+                              timeout_msec = self.options().maxMessageTimeMsec(), \
+                              escape = escapes, \
+                              beep = True)
         except AgiKeyStroke, keystroke:
             if (keystroke.key() == '*' or keystroke.keyCode() == -1):
                 raise

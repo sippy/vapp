@@ -160,7 +160,7 @@ class AbstractPlugin(BasePlugin):
         self.message_exists = True
         escapes = '#' + ''.join([x for x in self.additionalHandlers().keys() if len(x) == 1])
         try:
-            if self.format() == 'sln' or commercial_codecs_installed:
+            if self.format() == 'sln' or self.commercial_codecs_installed:
                 self.recordFileEx(filename = self.messageFilenameNoExt, \
                               format = self.format(), \
                               timeout_msec = self.options().maxMessageTimeMsec(), \

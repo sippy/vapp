@@ -85,73 +85,73 @@ class SipDialer:
     __tmp_dir = None
 
     class _SipHeader:
-	def __init__(self, hdr_name, val, idx):
-	    self.__name = hdr_name
-	    self.__val = val
-	    self.__idx = idx
-	    self.__changed = True
+        def __init__(self, hdr_name, val, idx):
+            self.__name = hdr_name
+            self.__val = val
+            self.__idx = idx
+            self.__changed = True
 
-	def update(self, val):
-	    if (self.__val == val):
-		return 
-	    self.__val = val
-	    self.__changed = True
+        def update(self, val):
+            if (self.__val == val):
+                return 
+            self.__val = val
+            self.__changed = True
 
-	def apply(self, agi_handler):
-	    if (not self.__changed):
-		return
-	    var_name = "_SIPADDHEADER%d" % self.__idx
-	    if (self.__val == None):
-		agi_handler.setVariable(var_name, '')
-	    else:
-		agi_handler.setVariable(var_name, '%s: %s' % (self.__name, self.__val))
-	    self.__changed = False
+        def apply(self, agi_handler):
+            if (not self.__changed):
+                return
+            var_name = "_SIPADDHEADER%d" % self.__idx
+            if (self.__val == None):
+                agi_handler.setVariable(var_name, '')
+            else:
+                agi_handler.setVariable(var_name, '%s: %s' % (self.__name, self.__val))
+            self.__changed = False
 
     def __init__(self):
-	self.__hdr_by_name = {}
+        self.__hdr_by_name = {}
 
     def callId(self):
         """
         Returns the current value for Call-ID header to be used for 
         the call.
         """
-	return self.__call_id
+        return self.__call_id
 
     def cli(self):
         """
         Returns the current CLI value to be used for the call.
         """
-	return self.__cli
+        return self.__cli
 
     def setAuthname(self, authname):
         """
         Allows to specify the authname to be used for the call.
         """
-	self.__authname = authname
+        self.__authname = authname
 
     def setCallId(self, call_id):
         """
         Allows to specify the Call-ID to be used for the call.
         """
-	self.__call_id = call_id
+        self.__call_id = call_id
 
     def setCli(self, cli):
         """
         Allows to specify the CLI to be used for the call.
         """
-	self.__cli = cli
+        self.__cli = cli
 
     def setMaxDuration(self, duration):
         """
         Allows to specify the maximum duration of the call in seconds.
         """
-	self.__max_duration = duration
+        self.__max_duration = duration
 
     def setSecret(self, md5secret):
         """
         Allows to specify the md5secret to be used for the call.
         """
-	self.__md5secret = md5secret
+        self.__md5secret = md5secret
 
     def setPassword(self, password):
         self.__password = password
@@ -171,13 +171,13 @@ class SipDialer:
         If the 'value' is set to None then previously defined SIP header
         with the given name will be removed from the SIP request. 
         """
-	if (self.__hdr_by_name.has_key(hdr_name)):
-	    hdr = self.__hdr_by_name[hdr_name]
-	    hdr.update(value)
-	else:
-	    hdr = self._SipHeader(hdr_name, value, self.__idx)
-	    self.__hdr_by_name[hdr_name] = hdr
-	    self.__idx += 1
+        if (self.__hdr_by_name.has_key(hdr_name)):
+            hdr = self.__hdr_by_name[hdr_name]
+            hdr.update(value)
+        else:
+            hdr = self._SipHeader(hdr_name, value, self.__idx)
+            self.__hdr_by_name[hdr_name] = hdr
+            self.__idx += 1
 
     def setWarningTime(self, t):
         self.__warn_time = t
@@ -196,17 +196,17 @@ class SipDialer:
         if (self.__sip_proxy == None):
             self.__sip_proxy = agi_handler.sipProxy()
 
-	if (not self.__misc_vars_set):
-	    if (self.__call_id != None):
-		agi_handler.setVariable('_SIP_FORCE_CALLID', self.__call_id)
-	    
-	    agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__cli, self.__cli))
-	    self.__misc_vars_set = True
+        if (not self.__misc_vars_set):
+            if (self.__call_id != None):
+                agi_handler.setVariable('_SIP_FORCE_CALLID', self.__call_id)
+            
+            agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__cli, self.__cli))
+            self.__misc_vars_set = True
 
         arg = "SIP/%s:%s:%s:%s@%s||H" % (dest, self.__password, self.__md5secret, self.__authname, self.__sip_proxy)
 
-	if (self.__max_duration != None and self.__max_duration > 0):
-	    arg += 'L(%d' % (self.__max_duration * 1000)
+        if (self.__max_duration != None and self.__max_duration > 0):
+            arg += 'L(%d' % (self.__max_duration * 1000)
             if (self.__warn_time != None):
                 arg += ':%d' % (self.__warn_time * 1000)
             arg += ')'
@@ -221,7 +221,7 @@ class SipDialer:
                 except PromptException:
                     pass # Phrase cannot be built
 
-	for hdr in self.__hdr_by_name.values():
-	    hdr.apply(agi_handler)
+        for hdr in self.__hdr_by_name.values():
+            hdr.apply(agi_handler)
 
-	agi_handler.execApp('Dial', arg)
+        agi_handler.execApp('Dial', arg)

@@ -1,3 +1,10 @@
+2013-06-14 Andriy I Pylypenko <bamby@sippysoft.com>
+
+	* Version 0.25
+
+	* Allow the SipDialer class to be configured which call leg is allowed
+	to be disconnected with a user keypress.
+
 2009-06-11 Andriy I Pylypenko <bamby@sippysoft.com>
 
 	* Arabic prompts added.

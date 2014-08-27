@@ -1,3 +1,10 @@
+2014-08-27 Andriy I Pylypenko <bamby@sippysoft.com>
+
+	* Version 0.26
+
+	* Add support for the root dir setup option. This fixes problems when
+	building FreeBSD port.
+
 2013-06-14 Andriy I Pylypenko <bamby@sippysoft.com>
 
 	* Version 0.25

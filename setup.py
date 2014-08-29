@@ -47,7 +47,7 @@ class install(_install):
         print "compiling gettext files"
         os.chdir("po")
         for fname in glob.glob("*.po"):
-            os.spawnl(os.P_WAIT, "./compilepo.sh", "./compilepo.sh", fname[:-3], self.root)
+            os.spawnl(os.P_WAIT, "./compilepo.sh", "./compilepo.sh", fname[:-3], self.root, self.prefix)
         os.chdir(os.pardir)
         _install.run(self)
 

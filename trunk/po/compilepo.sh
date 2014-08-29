@@ -25,13 +25,18 @@
 
 if [ x"$1" = x ]
 then
-    echo "usage: `basename $0` <locale name> [root_dir]"
+    echo "usage: `basename $0` <locale name> [root_dir [prefix]]"
     exit
 fi
-PREFIX=`python -c 'import sys; print sys.prefix'`
-ROOT_DIR=$2
+LOCALE=${1}
+ROOT_DIR=${2}
+if [ x"$3" = x ]
+then
+    PREFIX=`python -c 'import sys; print sys.prefix'`
+else
+    PREFIX=${3}
+fi
 
-LOCALE=$1
 OUTPUT_DIR="${ROOT_DIR}${PREFIX}/share/locale/${LOCALE}/LC_MESSAGES"
 DOMAIN=vapp
 

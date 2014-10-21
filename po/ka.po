@@ -1,0 +1,581 @@
+# Georgian translations for PACKAGE package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-08 18:07+0300\n"
+"PO-Revision-Date: 2014-06-10 17:42+0200\n"
+"Last-Translator: \n"
+"Language-Team: none\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:258
+msgid "After the tone say your busy message and then press the pound key."
+msgstr " ზარის გაგონების შემდეგ დაკავების შეტყობინება ჩაიწერეთ და შემდეგ დაჭირეთ დიეზს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:260
+msgid "After the tone say your name and then press the pound key."
+msgstr "ზარის გაგონების შემდეგ სახელი ჩაიწერეთ და შემდეგ დააჭირეთ დიეზს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:256
+msgid "After the tone say your unavailable message and then press the pound key."
+msgstr "ზარის გაგონების შემდეგ ვერ დაუკავშირედებით შეტყობინება ჩაიწერეთ და შემდეგ დააჭირეთ დიეზს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:106
+msgid "Change to which folder?"
+msgstr "რომელი ფაილის შეცვლა გინდათ"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:99
+msgid "Extension is on the phone."
+msgstr "შიდა ნომერი არ ფუნქციონირებს"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:101
+msgid "Extension is unavailable."
+msgstr "შიდა ნომერი არ იკრიფება"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:72
+#: ../vapp/voicemail/AsteriskVoicemail.py:94
+#: ../vapp/voicemail/AsteriskVMRecord.py:125
+msgid "Good bye"
+msgstr "კარგათ ბრძანდებოდეთ"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:134
+msgid "Message deleted."
+msgstr "შეტყობინება წაშლილია"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:136
+msgid "Message undeleted."
+msgstr "შეტყობინება არ წაშლილა"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:199
+msgid "Or nine to save this message."
+msgstr "ანდა ჩასაწერად დააჭირეთ ცხრას"
+
+#: ../vapp/IvrUtils.py:54
+msgid "Please enter your PIN code."
+msgstr "გთხოვთ შეიყვანეთ პინ კოდი"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:239
+msgid "Please enter your new PIN code followed by the pound key."
+msgstr "გტხოვთ შეიყვანეთ ახალი პინ კოდი და დააჭირეთ დიეზს"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:102
+#: ../vapp/voicemail/AsteriskVMRecord.py:106
+msgid "Please leave your message after the tone. When done hang up or press the pound key"
+msgstr "ზუმერის შემდეგ გთხოვთ დატოვოთ შეტყობინება.გამოსასვლელად ტელეფონი გამორთეთ ანდა დააჭირეთ დიეზს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:240
+msgid "Please reenter your PIN code followed by the pound key."
+msgstr "გთხოვთ ახლიდან შეიყვანეთ პინ კოდი და შემდეგ დააჭირეთ დიეზს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:251
+msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
+msgstr "ვერ  უკავშირდება შეტყობინების ჩასაწერად დააჭირეთ1, დაკავშირების შეტყობინების  ჩასაწერად დააჭირეთ 2,სახელის ჩასაწერად დააჭირეთ 3,პინის ნომრის შესაცვლელად დააჭირეთ 4.ძირითად მენიუსი დასაბრუნებლად დააჭირეთ ფიფქს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:191
+msgid "Press four for the previous message."
+msgstr "წინა შეტყობინებისათვის დააჭ'რეთ ოთხს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:187
+#, python-format
+msgid "Press one for %s messages"
+msgstr "%s შეყობინებისათვის დააჭირეთ ერთს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:314
+#: ../vapp/voicemail/AsteriskVMRecord.py:169
+msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
+msgstr "ჩანაწერ'ს დასათანხმებლად დააჭირეთ ერთს.ჩანაწერის მოსასმენად დააჭირეთ ორს.შეტყობინების ჩასაწერად დააჭირეთ სამს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:198
+msgid "Press seven to delete this message."
+msgstr "ამ შეტყობინების წასაშლელად დააჭირეთ შვიდს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:196
+msgid "Press seven to undelete this message."
+msgstr "ამ შეტყობინების წაშლის შესაწყვეტად დააჭირეთ შვიდს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:194
+msgid "Press six to play the next message."
+msgstr "მონომდევნო შეტყობინებაზე გადასასვლელად დააჭირეთ ექვსს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:200
+msgid "Press star for help or a pound to exit."
+msgstr "დახმარებისათვის ფიფქს,გამოსვლისათვის დააჭირეთ დიეზს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:192
+msgid "Press three for advanced options. Press five to repeat the current message."
+msgstr "ფართო არჩევნისათვის დააჭირეთ სამს.არსებული შეტყობინების ხელახლად მოსმენისათვის დააჭირეთ ხუთს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:316
+#: ../vapp/voicemail/AsteriskVMRecord.py:171
+msgid "Press three to rerecord your message."
+msgstr "შეტყობინების ახლიდან ჩაწერისათვის დააჭირეთ სამს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:188
+msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
+msgstr "ფაილის შესაცვლელად დააჭირეთ ორს.ფარტო არჩევნისათვის დააჭირეთ სამს,საფოსტო ყუთის არჩევისათვის დააჭირეთ ნულს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:156
+msgid "Sorry but the user's mailbox can't accept more messages."
+msgstr "მომხმარებელი მეილის ყუთი სხვა შეტყობინებას არ იღებს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:245
+msgid "The PIN codes you've entered and reentered did not match. Please try again."
+msgstr "შესული და ახლიდან შესული პინპ არასწორია.გთხოვთ სცადოთ ხელახლად"
+
+#: ../vapp/voicemail/AsteriskVMRecord.py:65
+msgid "To leave a message please enter a mailbox number"
+msgstr "სეტყობინების დასატოვებლად გთხოვთ შედით მეილის ყუთის ნომერი"
+
+#: ../vapp/IvrUtils.py:60
+msgid "Wrong PIN code. Please enter your PIN code."
+msgstr "არასწორი პინის ნომერი.გთხოვთ შეიყვანეთ პინის ნომერი"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:210
+msgid "You have %(num)n new"
+msgid_plural "You have %(num)n new"
+msgstr[0] "%(num)n ახალი მფლობელი"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:218
+#, python-format
+msgid "You have no %s messages"
+msgstr "შეტყობინება გაქვთ %s"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:248
+msgid "Your PIN code has been changed."
+msgstr "პინის ნომერი შეცვლილია"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:291
+#: ../vapp/voicemail/AsteriskVMRecord.py:138
+msgid "Your message has been saved."
+msgstr "შეტყობინება ჩაიწერა"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:213
+msgid "and %n old"
+msgid_plural "and %n old"
+msgstr[0] "და %n ძველი"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:70
+msgid "family"
+msgstr "ოჯახი"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:325
+msgid "first message received %[S]D"
+msgstr "პირველი შეტყობინება მიღებულია %[S]D"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:80
+msgid "folder eight"
+msgstr "ფაილი რვა"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:74
+msgid "folder five"
+msgstr "ფაილი ხუთი"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:82
+msgid "folder nine"
+msgstr "ფაილი ცხრა"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:78
+msgid "folder seven"
+msgstr "ფაილი შვიდი"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:76
+msgid "folder six"
+msgstr "ფაილი ექვსი"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:230
+#, python-format
+msgid "for %s"
+msgstr "%s  სათვის"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:72
+msgid "friends"
+msgstr "მეგობრები"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:327
+msgid "last message received %[S]D"
+msgstr "ბოლო შეტყობინება მიღებულია %[S]D"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:214
+msgid "message"
+msgid_plural "messages"
+msgstr[0] "შეტყობინება გაქვთ"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:329
+msgid "message %(num)n received %(date)[S]D"
+msgstr "%(num)n შეტყობინება მიღებულია %(date)[S]D"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:154
+msgid "message %(num)n saved to %(folder)s"
+msgstr "%(num)n შეტყობინება %(folder)s ჩაიწერა"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:64
+msgid "new"
+msgstr "ახალი"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:118
+#: ../vapp/voicemail/AsteriskVoicemail.py:129
+#: ../vapp/voicemail/AsteriskVoicemail.py:141
+#: ../vapp/voicemail/AsteriskVoicemail.py:165
+msgid "no more messages"
+msgstr "სხვა შეტყობინება არ გაქვთ"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:66
+msgid "old"
+msgstr "ძველი"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:232
+#: ../vapp/voicemail/AsteriskVoicemail.py:318
+#: ../vapp/voicemail/AsteriskVMRecord.py:173
+msgid "or pound to cancel"
+msgstr "ანდა გამოსვლისათვის დიეზს"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:227
+msgid "press"
+msgstr "დააჭირეთ"
+
+#: ../vapp/voicemail/AsteriskVoicemail.py:147
+msgid "which folder should I save the message to?"
+msgstr "შეტყობინება რომელ ფაილში ჩაიწერება"
+
+#: ../vapp/voicemail/AbstractVoicemailStorage.py:68
+msgid "work"
+msgstr "სამსახური"
+
+#~ msgid "%(units)n Dinar"
+#~ msgid_plural "%(units)n Dinars"
+#~ msgstr[0] "%(units)n დინარი"
+#~ msgstr[1] "%(units)n დინარი"
+
+#~ msgid "%(units)n Hryvnia"
+#~ msgid_plural "%(units)n Hryvnias"
+#~ msgstr[0] "%(units)n გრივნა"
+#~ msgstr[1] "%(units)n გრივნა"
+
+#~ msgid "%(units)n Rupee"
+#~ msgid_plural "%(units)n Rupees"
+#~ msgstr[0] "%(units)n რუპია"
+#~ msgstr[1] "%(units)n რუპია"
+
+#~ msgid "%(units)n dollar"
+#~ msgid_plural "%(units)n dollars"
+#~ msgstr[0] "%(units)n დოლარი"
+#~ msgstr[1] "%(units)n დოლარი"
+
+#~ msgid "%(units)n euro"
+#~ msgid_plural "%(units)n euro"
+#~ msgstr[0] "%(units)n ევრო"
+#~ msgstr[1] "%(units)n ევრო"
+
+#~ msgid "%(units)n monetary unit"
+#~ msgid_plural "%(units)n monetary units"
+#~ msgstr[0] "%(units)n ერთეული"
+#~ msgstr[1] "%(units)n ფულადი ერთეული"
+
+#~ msgid "%(units)n point %(subunits)n monetary units"
+#~ msgstr "%(units)n წერტილი %(subunits)n ფულადი ერთეული"
+
+#~ msgid "%(units)n pound"
+#~ msgid_plural "%(units)n pound"
+#~ msgstr[0] "%(units)n ფუნტი"
+#~ msgstr[1] "%(units)n ფუნტი"
+
+#~ msgid "Call forwarding is now disabled."
+#~ msgstr "ზარის გადამისამართება ამჯამად გაუქმებულია"
+
+#~ msgid "Calls are now forwarded to %[D]n"
+#~ msgstr "ამჯამად ზარების გადამისამართების %[D]n"
+
+#~ msgid "Destination is busy. Please enter a destination number"
+#~ msgstr "დანიშნულების დაკავებულია. გთხოვთ შეიყვანოთ დანიშნულების ნომერი"
+
+#~ msgid "Destination is forbidden. Please enter a destination number"
+#~ msgstr "ეს ნომერი აკრძალულია საქართველოში ზარი არ გაიშვება გთხოვთ აკრიფოთ სხვა ნომერი"
+
+#~ msgid "Destination is unavailable. Please enter a destination number"
+#~ msgstr "ნომერი რომელიც თქვენ აკრიფეთ მიუწვდომელია გთხოვთ აკრიფეთ ნომერი"
+
+#~ msgid "Destination is unavailable. Please try again later."
+#~ msgstr "ნომერი რომელიც თქვენ აკრიფეთ მიუწვდომელია გთხოვთ სცადოთ ხელახლად"
+
+#~ msgid "For Georgian press %n"
+#~ msgstr "ქართული ენისთვის %n"
+
+#~ msgid "I'm sorry but you have insufficient funds to call this destination. Please enter a destination number."
+#~ msgstr "თქვენი ბალანსი ამ ზარისათვის არ არის საკმარისი გთხოვთ აკრიფეთ სასურველი ნომერი"
+
+#~ msgid "Incoming anonymous calls are now allowed."
+#~ msgstr "შემოსული ანონიმური ზარები ამჯამად დაშვებულია"
+
+#~ msgid "Incoming anonymous calls are now blocked."
+#~ msgstr "შემოსული ანონიმური ზარები ამჯამად დაბლოკილია"
+
+#~ msgid "No forwarding number specified"
+#~ msgstr "გადამისამართების ნომერი არ არის მითითებული"
+
+#~ msgid "No phone number assigned to this hot dial key."
+#~ msgstr "სწრაფი აკრეფვის ღილაკზე ნომერი არ არის დაფიქსირებული"
+
+#~ msgid "Nothing to block"
+#~ msgstr "არავითარი ბლოკირება არ ფიგურირებს"
+
+#~ msgid "Nothing to unblock"
+#~ msgstr "არავითარი გასაუქმებელი ბლოკირება არ ფიგურირებს"
+
+#~ msgid "Number %[D]n is now blocked."
+#~ msgstr "ბლოკირების ნომერი %[D]n"
+
+#~ msgid "Number %[D]n is now unblocked."
+#~ msgstr "ბლოკირების ნომერი %[D]n"
+
+#~ msgid "Please enter a destination number"
+#~ msgstr "გთხოვთ აკრიფეთ სასურველი ნომერი"
+
+#~ msgid "Please enter a destination number followed by the pound key"
+#~ msgstr "გთხოვთ აკრიფეთ სასურველი ნომერი და დააჭირეთ დიეზს"
+
+#~ msgid "Please enter a destination number followed by the pound key or enter a service code followed by the pound key"
+#~ msgstr "გთხოვთ აკრიფეთ სასურველი ნომერი და დააჭირეთ დიეზს ანდა აკრიფეთ მომსახურეობის ნომერი და დააჭირეთ დიეზს"
+
+#~ msgid "Please enter a destination number or enter a service code"
+#~ msgstr "გთხოვთ აკრიფეთ სასურველი ნომერი ან მომსახურეობის ნომერი"
+
+#~ msgid "Please enter a phone number followed by the pound key"
+#~ msgstr "გთხოვთ აკრიფეთ სასურველი ნომერი და დააჭირეთ დიეზს"
+
+#~ msgid "Please enter a service code"
+#~ msgstr "გთხოვთ აკრიფეთ მომსახურეობის ნომერი"
+
+#~ msgid "Please enter a service code followed by the pound key"
+#~ msgstr "გთხოვთ აკრიფეთ მომსახურეობის ნომერი და დააჭირეთ დიეზს"
+
+#~ msgid "Please enter top-up card PIN code."
+#~ msgstr "გთხოვთ შეიყვანეთ პინ კოდი"
+
+#~ msgid "Please enter top-up card number."
+#~ msgstr "გთხოვთ შეიყვანეთ ბარათის კოდი"
+
+#~ msgid "Please enter your access code followed by pound or hash sign."
+#~ msgstr "გთხოვთ შეიყვანეთ დამაკავშირებელი კოდი და დააჭირეთ დიეზს"
+
+#~ msgid "Please enter your card number"
+#~ msgstr "გთხოვთ შეიყვანეთ ბარათის კოდი"
+
+#~ msgid "Please enter your new PIN code"
+#~ msgstr "გთხოვთ შეიყვანეთ ახალი პინ კოდი"
+
+#~ msgid "Please make your selection."
+#~ msgstr "გთხოვთ გაკეთოთ არჩევანი"
+
+#~ msgid "Please press the hot dial key to store the phone number."
+#~ msgstr "გთხოვთ სასურველი ნომრის ღილაკზე დაფიქსირებისათვის სწრაფი დარეკვის ღილაკს დააჭირეთ"
+
+#~ msgid "Please reenter your PIN code"
+#~ msgstr "გთხოვთ ახლიდან შეიყვანეთ პინ კოდი"
+
+#~ msgid "Please select the hot dial key or press the star key to return to the main menu."
+#~ msgstr "გთხოვთ აირციეთ სწრაფი დარეკვის ღილაკი ანდა მენიუში დაბრუნებისათვის დააჭირეთ ფიფქს"
+
+#~ msgid "Please select the hot dial key you want to remove or press the star key to return to the main menu."
+#~ msgstr "თქვენ მოინდომეთ სწრაფი დარეკვის ნომრის წაშლა.გთხოვთ აირჩიეთ სწრაფი ზარის ღილაკი ანდა ძირითად მენიუში დააწირეთ ფიფქს"
+
+#~ msgid "Please select the hot dial key you want to review or press the star key to return to the main menu."
+#~ msgstr "შემოწმებისათვის გთხოვთ აირჩიეთ სწრაფი ზარის ღილაკი.ძირითად მენიუში დასაბრუნებლად დააჭირეთ ფიფქს"
+
+#~ msgid "Please wait while your call is being connected"
+#~ msgstr "გთხოვთ ზარის გასვლამდე დაელოდოთ"
+
+#~ msgid "Press 1 to add a new phone number to the hot dial list. Press 2 to delete a number from the list. Press 3 to check the hot dial list. Press star to return to the main menu."
+#~ msgstr "სწრაფი აკრეფვის სიაში ნომრის ჩასაწერად დააჭირეთ 1.სიიდან ნომრის ამოსაშლელად დააჭირეთ 2.სიის შესამოწმებლად დააჭირეთ 3.ძირითად მენიუში დასაბრუნებლად დააჭირეთ 4 "
+
+#~ msgid "Press 1 to associate your phone number with the calling card. Press 2 to continue."
+#~ msgstr "ტელეფონის ნომრის ბარათის ნომერთან დაკავსირებისათვის დააჭირეთ 1.გაგრძელებისათვის დააჭირეთ 2 "
+
+#~ msgid "Press one to confirm cancelling registration of all numbers. Press two to return to the main menu."
+#~ msgstr "ჩანაწერი ნომრების მთლიანად წაშლისათვის დააწირეთ 1.ძირიტად მენიუში დასაბრუნებლად დააჭირეთ ორს"
+
+#~ msgid "Press one to confirm cancelling registration of the number %[D]n"
+#~ msgstr "%[D]n ნომრის ჩაწერის გასაუქმებლად დააჭირეთ ერთს"
+
+#~ msgid "Press one to confirm the registration of the number %[D]n"
+#~ msgstr "%[D]n ნომრის ჩანაწერის დასამოწმებლად დააჭირეთ ერთს"
+
+#~ msgid "Press one to register your current number."
+#~ msgstr "ფიქსირებული ნომრის ჩასაწერად დააჭირეთ ერთს"
+
+#~ msgid "Press three to return to the main menu."
+#~ msgstr "ძირითად მენიუში დასაბრუნემლად დააჭირეთ სამს"
+
+#~ msgid "Press two to cancel registration of all numbers."
+#~ msgstr "ყველა ჩანაწერი ნომრის წასაშლელად დააჭირეთ ორს"
+
+#~ msgid "Press two to return to the main menu."
+#~ msgstr "ძირითად მენიუში დასაბრუნემლად დააჭირეთ სამს"
+
+#~ msgid "Registration of all numbers has been cancelled successfully."
+#~ msgstr "ჩანაწერი ნომრების წაშლა წარმატებით განხორციელდა"
+
+#~ msgid "Registration of your number has been cancelled successfully."
+#~ msgstr "ჩაწრილი ნომრის წაშლა წარმატებით განხორციელდა"
+
+#~ msgid "The Do Not Disturb turned off."
+#~ msgstr "ნუ შემაწუხებთ ფუნქცია არა არის აქტივირებული"
+
+#~ msgid "The Do Not Disturb turned on."
+#~ msgstr "ნუ შემაწუხებთ ფუნქცია  არის აქტივირებული"
+
+#~ msgid "The access code you entered is invalid. Please re-enter your access code followed by pound or hash sign."
+#~ msgstr "შეყვანილი დამაკავშირებელი კოდი არასწორია გთხოვთ დამაკავშირებელი კოდი შეიყვანეთ ხელახლად და დააჭირეთ დიეზს"
+
+#~ msgid "The hot dial key %n has been cleared successfully."
+#~ msgstr "ცხელი აკრიფეთ გასაღები %n უკვე გაწმინდეს წარმატებით"
+
+#~ msgid "The phone number %(number)[D]n assigned to the hot dial key number %(hot_key)n"
+#~ msgstr "აკრეფილი ნომერი %(number)[D]n .სწრაფი ზარის ღილაკში %(hot_key)n შევიდა"
+
+#~ msgid "The phone number %(number)[D]n will be removed from the hot dial key number %(hot_key)n. Press one to confirm removal of this number. Press star to return to the main menu."
+#~ msgstr "აკრეფილი ნომერი %(number)[D]n სწრაფი ზარისათვის %(hot_key)n ღილაკში ჩაიწერება.დასტურისათვის დააჭირეთ ერთს. ძირითად მენიუში დ ასაბრუნებლად დააჭირეთ ორს"
+
+#~ msgid "The phone number %(number)[D]n will be stored to the hot dial key number %(hot_key)n. Press one to confirm. Press star to return to the main menu."
+#~ msgstr "აკრეფილი ნომერი %(number)[D]n სწრაფი ზარისათვის %(hot_key)n ღილაკში ჩაიწერება.დასტურისათვის დააჭირეთ ერთს. ძირითად მენიუში დ ასაბრუნებლად დააჭირეთ ორს"
+
+#~ msgid "The phone number has been added successfully."
+#~ msgstr "აკრეილი ნომერი სწრაფი ზარის ღილაკში წარმატებულად ჩაიწერა"
+
+#~ msgid "The top-up has been completed successfully."
+#~ msgstr "შესვლა წარმატებით დასრულდა"
+
+#~ msgid "There is %n other caller on the call."
+#~ msgid_plural "There are %n other callers on the call."
+#~ msgstr[0] "შესვლა წარმატებით დასრულდა %n"
+#~ msgstr[1] "შესვლა წარმატებით დასრულდა %n"
+
+#~ msgid "There is no available balance left in this calling card. Please enter a new PIN."
+#~ msgstr "არ არის შესაძლებელი ბალანსის დაუტოვებიათ ამ სავიზიტო ბარათი. გთხოვთ შეიყვანოთ ბარათის ნომერი"
+
+#~ msgid "There is no available balance left in this calling card. Please enter a new card number."
+#~ msgstr "არ არის შესაძლებელი ბალანსის დაუტოვებიათ ამ სავიზიტო ბარათი. გთხოვთ შეიყვანოთ ბარათის ნომერი."
+
+#~ msgid "There is no hot dial key number %n."
+#~ msgstr "სწრაფი ზარის ღილაკში ნომერი არ არის %n"
+
+#~ msgid "This card has expired."
+#~ msgstr "ეს ბარათი გაბათილებულია"
+
+#~ msgid "This hot dial key is already in use. Please press 1 to replace the old number. Press 2 to select other key. Press star to return to the main menu."
+#~ msgstr "ეს სწრაფი ღილაკი ქმედებაშია/ძველ ნომერზე ჩანაწერის დასამატებლად გთხოვთ დააჭირეთ ერთს.სხვა ღილაკის ასაკრეფად დააჭირეთ 2.ძირითად მენიუში დასაბრუნებლად დააჭირეთ ფიფქს"
+
+#~ msgid "To recharge your calling card account using top-up card press 1. To enter another calling card number press 2."
+#~ msgstr "ეს სწრაფი ღილაკი ქმედებაშია/ძველ ნომერზე ჩანაწერის დასამატებლად გთხოვთ დააჭირეთ ერთს.სხვა ღილაკის ასაკრეფად დააჭირეთ 2.ძირითად მენიუში დასაბრუნებლად დააჭირეთ ფიფქს"
+
+#~ msgid "To redial the last dialed number please press star or enter a destination number you wish to call"
+#~ msgstr "ბოლოს დანარეკ ნომერზე დარეკვისათვის გთხოვთ დაჭირეთ ფიფქს ანდა აკრიფეთ სასურველი ნომერი"
+
+#~ msgid "Welcome to number registration service. This service allows you to associate your phone number with this calling card."
+#~ msgstr "ნომრის ჩაწერ'ს მომსახურეობაში ხართ.ეს მომსახურეობა ტელეფონის ნომერს ბარათის ნომერთან დააკავშირებს"
+
+#~ msgid "Welcome to the hot dial key service"
+#~ msgstr "სწრაფი ზარის შედგენის მომსახურეობაში ხართ"
+
+#~ msgid "Welcome. If you hear this automated message your phone has been configured properly and you can start making calls. Thank you."
+#~ msgstr "“გილოცავთ“ თუ გაიგეთ ოპერატორის ხმა ესეოგი ტელეფონი წარმატებულად არის დარეგურილებული.შეგიძლიათ დარეკოთ.გმადლობთ"
+
+#~ msgid "Wrong PIN code."
+#~ msgstr "არასწორი პინ კოდი"
+
+#~ msgid "Wrong PIN code. Please enter top-up card PIN code."
+#~ msgstr "არასწორი პინ ნომერი.გთხოვთ შეიყვანეთ პინის ნომერი"
+
+#~ msgid "Wrong card number."
+#~ msgstr "არასწორი ბარათის ნომერი"
+
+#~ msgid "Wrong card number. Please enter top-up card number."
+#~ msgstr "არასწორი ბარათის ნომერი.გთხოვთ შეიყვანეთ ბარათის ნომერი"
+
+#~ msgid "Wrong card number. Please enter your card number"
+#~ msgstr "არასწორი ბარათის ნომერი.გთხოვთ შეიყვანეთ ბარათის ნომერი"
+
+#~ msgid "You are the first caller and you will be placed on hold until the next caller arrives."
+#~ msgstr "ხაზზე პირველად თქვენ ჩაერთეთ.სხვა აბონენტის დაკავშირებამდე დაელოდეთ"
+
+#~ msgid "You can use keys 1, 2 or 3 only as a hot dial key."
+#~ msgstr "მხოლოდ 1,2 და 3 სწრაფი ზარის ღილაკი შეგიძლიათ გამოიყენოთ"
+
+#~ msgid "You currently have %n number registered."
+#~ msgid_plural "You currently have %n numbers registered."
+#~ msgstr[0] "თქვენ არ გაქვთ %n ნომერი რეგისტრირებული."
+#~ msgstr[1] "თქვენ არ გაქვთ %n ნომერი რეგისტრირებული."
+
+#~ msgid "You have exceeded the maximum number of attempts to enter card number. Please try again later."
+#~ msgstr "ბარათის ნომერით შესვლა წარუმატებელია.გთხოვთ შემდეგ ხელახლად სცადოთ"
+
+#~ msgid "You have exceeded the maximum number of attempts to enter your PIN code. Please try again later."
+#~ msgstr "ბარათის ნომერით შესვლა წარუმატებელია.გთხოვთ შემდეგ ხელახლად სცადოთ"
+
+#~ msgid "You have exceeded the maximum number of attempts to make your selection. Please try again later."
+#~ msgstr "პინის ნომრით შესვლა წარუმეტებელია.გთხოვთ შემდეგ ხელახლად სცადოთ"
+
+#~ msgid "You have not entered PIN code. Please enter top-up card PIN code."
+#~ msgstr "პინის ნომერი არ შესულხართ.გთხოვთ შეიყვანოთ პინის ნომერი"
+
+#~ msgid "You have not entered PIN code. Please enter your PIN code."
+#~ msgstr "პინის ნომერი არ შესულხართ.გთხოვთ შეიყვანოთ პინის ნომერი"
+
+#~ msgid "You have not entered PIN code. Please enter your new PIN code followed by the pound key."
+#~ msgstr "პინის ნომერი არ შესულხართ.გთხოვთ შეიყვანოთ პინის ნომერი და დააჭირეთ ერთს"
+
+#~ msgid "You have not entered PIN code. Please enter your new PIN code."
+#~ msgstr "პინის ნომერი არ შესულხართ.გთხოვთ შეიყვანოთ ახალი პინის ნომერი"
+
+#~ msgid "You have not entered a destination number. Please enter a destination number"
+#~ msgstr "სასურველი ნომერი არ შესულხართ.გთხოვთ შეიყვანოთ სასურველი ნომერი"
+
+#~ msgid "You have not entered a destination number. Please try again later."
+#~ msgstr "სასურველი ნომერი ა რ შესულხართ.გთხოვთ შემდეგ კიდევ სცადოთ"
+
+#~ msgid "You have not entered card number. Please enter top-up card number."
+#~ msgstr "ბარათის ნომერი არ შესულხართ გთხოვთ შეიყვანეთ ნომერი  "
+
+#~ msgid "You have not entered card number. Please enter your card number"
+#~ msgstr "ბარათ'ს ნომერი არ შესულხართ გთხოვთ შეიყვანეთ ნომერი"
+
+#~ msgid "You have to set your PIN to use this service. Please set your PIN and call again."
+#~ msgstr "ამ მომსახურეობისათვის საჭიროებს პინი.გტხოვტ მიუთითეთ პინი და ახლიდან დარეკეთ"
+
+#~ msgid "Your balance is"
+#~ msgstr "დაელოდეთ"
+
+#~ msgid "Your call will be disconnected in %d"
+#~ msgstr "%d შემდეგ ზარი დასრულებულია"
+
+#~ msgid "Your current number's been registered. Press 1 to cancel its registration."
+#~ msgstr "არსებული ნომერი ჩაიწერა.წასასლელად დააჭირეთ 1"
+
+#~ msgid "Your number has been registered successfully."
+#~ msgstr "ნომერი წარმატებით ჩაიწერა"
+
+#~ msgid "and %(subunits)n cent"
+#~ msgid_plural "and %(subunits)n cents"
+#~ msgstr[0] "და %(subunits)n ცენტი"
+#~ msgstr[1] "და %(subunits)n ცენტი"
+
+#~ msgid "you have %[HS]d"
+#~ msgstr "ბალანსი %[HS]d"
+
+#~ msgid "you have %[H]d"
+#~ msgstr "ბალანსი %[H]d"
+
+#~ msgid "you have %[S]d"
+#~ msgstr "ბალანსი %[S]d"
+
+#~ msgid "you have %d"
+#~ msgstr "ბალანსი %d"

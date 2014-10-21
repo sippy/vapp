@@ -29,6 +29,7 @@ from ConfigParser import ConfigParser
 import sys
 import os
 
+ARG_DELIMITER = ","
 logger = None
 
 _translation_config = None

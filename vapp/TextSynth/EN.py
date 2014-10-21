@@ -311,3 +311,25 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
                 retval += _phrase_noop("seconds") + " "
         retval += suffix
     return retval.rstrip()
+
+if __name__ == "__main__":
+    tmp = datetime.datetime.now()
+    now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
+    now = datetime.datetime(tmp.year, tmp.month, tmp.day, 10, 47, 44)
+    for i in ((now, '(today)'),
+        (now - datetime.timedelta(1), '(yesterday)'),
+        (now + datetime.timedelta(1), '(tomorrow)'),
+        (datetime.datetime(1970, 1, 20, 12, 0), ''),
+        (datetime.datetime(1996, 2, 11, 0, 0), ''),
+        (datetime.datetime(2006, 3, 11, 9, 45), ''),
+        (datetime.datetime(1996, 4, 11, 18, 22), ''),
+        (datetime.datetime(1996, 5, 11, 9, 0), ''),
+        (datetime.datetime(1996, 6, 11, 9, 9), ''),
+        (datetime.datetime(1996, 7, 11, 9, 19), ''),
+        (datetime.datetime(1996, 8, 11, 9, 12), ''),
+        (datetime.datetime(1996, 9, 11, 9, 23), ''),
+        (datetime.datetime(1996, 10, 11, 9, 2), ''),
+        (datetime.datetime(1996, 11, 11, 14, 0), ''),
+        (datetime.datetime(1996, 12, 11, 2, 46), ''),
+        ):
+            print("%s - %s %s" % (str(i[0]), sayDatetime(i[0], True, True, True, None), i[1]))

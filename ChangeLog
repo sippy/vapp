@@ -1,3 +1,16 @@
+2014-10-21 Andriy I Pylypenko <bamby@sippysoft.com>
+
+	* Version 0.27
+
+	* Add support for test generation hints.
+
+	* Add Georgian language support.
+
+	* Add support for Asterisk 11
+
+	* Add vapp.ARG_DELIMITER variable which controls how arguments to
+	Asterisk commands are joined.
+
 2014-08-27 Andriy I Pylypenko <bamby@sippysoft.com>
 
 	* Version 0.26

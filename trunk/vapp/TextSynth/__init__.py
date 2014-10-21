@@ -125,6 +125,6 @@ class TextSynth:
 		    if ('S' in flags):
 			say_seconds = False
 		repl = self.__tts.sayDatetime(val, say_date, say_time, say_seconds, flags)
-	    retval = re.sub(re.escape(p), repl, retval, 1)
+            retval = re.sub(re.escape(p), repl, retval, 1)
 	return retval
 

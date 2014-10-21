@@ -265,7 +265,7 @@ class PhraseContainer(object):
 	    self.__plurals = [ 1, 2, 5 ]
 	elif (lang == 'ar'):
 	    self.__plurals = [ 1, 2, 3 ]
-        elif (lang in ('th', 'zh', 'ja', 'tr', 'vi')):
+        elif (lang in ('th', 'zh', 'ja', 'tr', 'vi', 'ka')):
             self.__plurals = [ 0 ]
         else:
             print("ERROR: You must define __plurals for the language %s!!!" % lang)
@@ -459,7 +459,7 @@ class Checker:
         except getopt.GetoptError, e:
             usage(e)
 
-    def _generateTest(self, tag, def_val):
+    def _generateTest(self, tag, def_val, tag_name, hints):
         mode = tag[-1]
         flags = re.findall('\[(.+)\]', tag)
         if len(flags) > 0:
@@ -476,16 +476,37 @@ class Checker:
                     retval += str(x)
                 return retval
             else: # number
-                if def_val != None:
+                if False and def_val != None:
                     return def_val
                 else:
-                    return int(random.random() * 10000)
+                    start = 0
+                    stop = 10000
+                    if hints != None:
+                        if hints.startswith("range"):
+                            keyword, _start, _stop = hints.split()
+                            _tag_name = None
+                            if '(' in keyword:
+                                _tag_name = re.findall(r'\((.+)\)', keyword)[0]
+                            if _tag_name == None or tag_name == _tag_name:
+                                start = int(_start)
+                                stop = int(_stop)
+                    return random.randint(start, stop)
         elif mode == 'd': # duration
             return int(random.random() * 10000)
         elif mode == 'D': # date
             return datetime.datetime.fromtimestamp(random.random() * 2000000000)
 
     def generateTests(self):
+        test_hints = {}
+        try:
+            fd = file("vapp_test_hints.txt", "r")
+            for l in fd.xreadlines():
+                l = l.rstrip()
+                phrase, hints = l.split("|", 1)
+                test_hints[phrase] = hints
+        except IOError:
+            pass
+
 	out_fname = "test-" + self.__lang
         out_fname += ".html"
 	out = codecs.open(out_fname, "w", 'utf-8')
@@ -506,14 +527,23 @@ class Checker:
             res = re.findall(TAG_RE, phrase_local)
             named_params = {}
             unnamed_params = []
+            skip = None
             for tag in res:
                 tag = tag[0]
                 res2 = re.findall(r'\((.+)\)', tag)
+                tag_type = tag[-1]
+                if tag_type == "s" and skip == None:
+                    skip = True
+                else:
+                    skip = False
+                hints = test_hints.get(phrase_en, None)
                 if len(res2) > 0:
                     name = res2[0]
-                    named_params[name] = self._generateTest(tag, def_val)
+                    named_params[name] = self._generateTest(tag, def_val, name, hints)
                 else:
-                    unnamed_params.append(self._generateTest(tag, def_val))
+                    unnamed_params.append(self._generateTest(tag, def_val, None, hints))
+            if skip:
+                continue
             p_l = synth.say(phrase_local, args = unnamed_params, kw = named_params)
             p_en = en_synth.say(phrase_en, args = unnamed_params, kw = named_params)
             out.write("""

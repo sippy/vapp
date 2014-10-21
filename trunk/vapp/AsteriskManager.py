@@ -30,6 +30,7 @@ import traceback
 import select
 import socket
 import threading
+from . import ARG_DELIMITER
 
 __all__ = [ "AsteriskManager" ]
 
@@ -60,6 +61,8 @@ class Packet:
 
 	for l in lines:
 	    if (l.find(": ") < 0):
+                if l.find(":"):
+                    continue
 		raise Exception("Bad line received from the asterisk manager: '%s'" % l)
 	    field, value = l.split(": ", 1)
 	    if (field == 'Response'):
@@ -429,7 +432,7 @@ class AsteriskManager(threading.Thread):
             variables.append("_VAPP_ACTION_ID=%s" % action_id)
 
 	if (len(variables) > 0):
-	    qry += "Variable: %s\r\n" % '|'.join(variables)
+	    qry += "Variable: %s\r\n" % ARG_DELIMITER.join(variables)
 
 	qry += "\r\n"
         self.__send_cmd(qry)

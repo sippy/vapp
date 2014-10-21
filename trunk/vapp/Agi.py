@@ -191,6 +191,10 @@ class AgiHandler(StreamRequestHandler, object):
                     self.accountcode = line.split(' ', 1)[1]
                 elif (re.search("^[ao]gi_network_script:", line)):
                     self.network_script = line.split(' ', 1)[1]
+                elif (re.search("^[ao]gi_version:", line)):
+                    self.agi_version = line.split(' ', 1)[1]
+                elif (re.search("^[ao]gi_threadid:", line)):
+                    self.agi_threadid = line.split(' ', 1)[1]
 		elif (vapp.logger != None):
                     vapp.logger.warn("Unknown AGI header: '" + line + "'")
             except IndexError:

@@ -29,6 +29,7 @@ import random
 import hashlib
 from Prompt import Prompt
 from SpeechSynth.PromptException import PromptException
+from . import ARG_DELIMITER
 
 __all__ = [ "ivrAuthenticate", "AuthenticationError", "SipDialer" ]
 
@@ -205,7 +206,7 @@ class SipDialer:
             agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__cli, self.__cli))
             self.__misc_vars_set = True
 
-        arg = "SIP/%s:%s:%s:%s@%s||" % (dest, self.__password, self.__md5secret, self.__authname, self.__sip_proxy)
+        arg = ("SIP/%s:%s:%s:%s@%s" + ARG_DELIMITER + ARG_DELIMITER) % (dest, self.__password, self.__md5secret, self.__authname, self.__sip_proxy)
         if self.allow_disconnect_by_caller:
             arg += 'H'
         if self.allow_disconnect_by_called_party:

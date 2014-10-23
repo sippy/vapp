@@ -199,10 +199,10 @@ class SipDialer:
         if (self.__sip_proxy == None):
             self.__sip_proxy = agi_handler.sipProxy()
 
-        if (not self.__misc_vars_set):
-            if (self.__call_id != None):
-                agi_handler.setVariable('_SIP_FORCE_CALLID', self.__call_id)
+        if (self.__call_id != None):
+            agi_handler.setVariable('_SIP_FORCE_CALLID', self.__call_id)
 
+        if (not self.__misc_vars_set):
             agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__cli, self.__cli))
             self.__misc_vars_set = True
 

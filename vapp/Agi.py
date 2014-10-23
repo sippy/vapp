@@ -254,10 +254,12 @@ class AgiHandler(StreamRequestHandler, object):
 	self.wfile.write(command + "\n")
 
     def __readresponse(self):
-        response = self.rfile.readline()
-        if (response == ""):
-            return '200 result=-1 (noresponse)'
-        return response.rstrip()
+        while True:
+            response = self.rfile.readline()
+            if response.startswith("200 result="):
+                return response.rstrip()
+            elif (response == ""):
+                return '200 result=-1 (noresponse)'
 
     def __checkresult(self, response, need_string):
 	if (response == None):

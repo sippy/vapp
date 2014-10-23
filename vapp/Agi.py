@@ -243,7 +243,7 @@ class AgiHandler(StreamRequestHandler, object):
             res = self.__readresponse();
             retval = self.__checkresult(res, need_string);
         except:
-	    pass
+            pass
 	if (retval == -1):
 	    raise AgiError()
 	return retval
@@ -256,7 +256,7 @@ class AgiHandler(StreamRequestHandler, object):
     def __readresponse(self):
         while True:
             response = self.rfile.readline()
-            if response.startswith("200 result="):
+            if re.search("^[0-9][0-9][0-9] ", response):
                 return response.rstrip()
             elif (response == ""):
                 return '200 result=-1 (noresponse)'

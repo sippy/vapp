@@ -86,6 +86,7 @@ class SipDialer:
     __tmp_dir = None
     allow_disconnect_by_caller = True
     allow_disconnect_by_called_party = False
+    continue_on_hangup = False
 
     class _SipHeader:
         def __init__(self, hdr_name, val, idx):
@@ -201,8 +202,8 @@ class SipDialer:
 
         if (self.__call_id != None):
             agi_handler.setVariable('_SIP_FORCE_CALLID', self.__call_id)
-
         if (not self.__misc_vars_set):
+
             agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__cli, self.__cli))
             self.__misc_vars_set = True
 
@@ -211,6 +212,8 @@ class SipDialer:
             arg += 'H'
         if self.allow_disconnect_by_called_party:
             arg += 'h'
+        if self.continue_on_hangup:
+            arg += 'g'
 
         if (self.__max_duration != None and self.__max_duration > 0):
             arg += 'L(%d' % (self.__max_duration * 1000)

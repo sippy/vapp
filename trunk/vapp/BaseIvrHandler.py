@@ -155,9 +155,13 @@ class BaseIvrHandler(AgiHandler):
             self.handleCall()
 	    self.cleanup()
         """
-        self.parseNetworkScript()
-	self.answerSession()
-	self.handleCall()
+        try:
+            self.parseNetworkScript()
+            self.answerSession()
+            self.handleCall()
+        except:
+            self.cleanup()
+            raise
 	self.cleanup()
 	
     def execMenu(self, menu, start = None):

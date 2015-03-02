@@ -30,7 +30,7 @@ import traceback
 import select
 import socket
 import threading
-from . import ARG_DELIMITER
+from . import get_arg_delimiter
 
 __all__ = [ "AsteriskManager" ]
 
@@ -432,7 +432,7 @@ class AsteriskManager(threading.Thread):
             variables.append("_VAPP_ACTION_ID=%s" % action_id)
 
 	if (len(variables) > 0):
-	    qry += "Variable: %s\r\n" % ARG_DELIMITER.join(variables)
+	    qry += "Variable: %s\r\n" % get_arg_delimiter().join(variables)
 
 	qry += "\r\n"
         self.__send_cmd(qry)

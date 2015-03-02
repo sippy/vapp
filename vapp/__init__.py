@@ -29,7 +29,15 @@ from ConfigParser import ConfigParser
 import sys
 import os
 
-ARG_DELIMITER = ","
+__ARG_DELIMITER = "|"
+
+def get_arg_delimiter():
+    return __ARG_DELIMITER
+
+def set_arg_delimiter(newval):
+    global __ARG_DELIMITER
+    __ARG_DELIMITER = newval
+
 logger = None
 
 _translation_config = None

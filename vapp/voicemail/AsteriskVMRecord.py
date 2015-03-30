@@ -39,6 +39,7 @@ class AbstractPlugin(BasePlugin):
     user = None
     prompt_id = None
     commercial_codecs_installed = False
+    caller_user = None
 
     def parseNetworkScript(self):
         """
@@ -98,9 +99,10 @@ class AbstractPlugin(BasePlugin):
         #
         # Set the own caller locale for current session if caller is our account
         #
-        caller_user = self.findUser(self.callerid())
-        if (caller_user != None):
-            self.setLocale(caller_user.locale())
+        if self.caller_user == None:
+            self.caller_user = self.findUser(self.callerid())
+        if self.caller_user != None:
+            self.setLocale(self.caller_user.locale())
         try:
             if (self.prompt_id != None):
                 promptfile = self.user.preparePrompt(self.prompt_id, self.format())

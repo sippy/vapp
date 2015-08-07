@@ -27,7 +27,7 @@ Base class for plugins to be managed by PluginHandler.
 
 __all__ = [ "BasePlugin" ]
 
-class BasePlugin:
+class BasePlugin(object):
     """
     Abstract base class for IVR plugins.
 
@@ -163,7 +163,7 @@ class BasePlugin:
 	self.__owner.sayEx(text, args, kw, escape, long_escapes)
 
     def say(self, text, args = [], kw = {}, escape = "", long_escapes=None):
-        self.__owner.sayEx(text, args, kw, escape, long_escapes)
+        self.__owner.say(text, args, kw, escape, long_escapes)
 
     def textSynth(self):
 	return self.__owner.textSynth()

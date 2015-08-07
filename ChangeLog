@@ -1,3 +1,15 @@
+2015-08-07 Andriy I Pylypenko <bamby@sippysoft.com>
+
+	* Version 0.32
+
+	* Add ability to specify the Caller ID name when making a call.
+
+2015-06-24 Andriy I Pylypenko <bamby@sippysoft.com>
+
+	* Version 0.31
+
+	* Add ability to use custom TextSynth object.
+
 2015-03-30 Andriy I Pylypenko <bamby@sippysoft.com>
 
 	* Version 0.30

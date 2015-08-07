@@ -26,7 +26,6 @@ import re
 
 class TextSynth:
     def __init__(self, locale):
-	self.__locale = locale
         self.__tts = None
         try:
             self.__tts = __import__("TextSynth." + locale.name().upper(), fromlist = [''])

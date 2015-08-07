@@ -29,7 +29,7 @@ import random
 import hashlib
 from Prompt import Prompt
 from SpeechSynth.PromptException import PromptException
-from . import get_arg_delimiter
+from vapp import get_arg_delimiter
 
 __all__ = [ "ivrAuthenticate", "AuthenticationError", "SipDialer" ]
 
@@ -113,6 +113,8 @@ class SipDialer:
 
     def __init__(self):
         self.__hdr_by_name = {}
+        self.__cli = None
+        self.__calleridname = ""
 
     def callId(self):
         """
@@ -126,6 +128,12 @@ class SipDialer:
         Returns the current CLI value to be used for the call.
         """
         return self.__cli
+
+    def calleridName(self):
+        """
+        Returns the Caller ID Name to be used for the call.
+        """
+        return self.__calleridname
 
     def setAuthname(self, authname):
         """
@@ -144,6 +152,12 @@ class SipDialer:
         Allows to specify the CLI to be used for the call.
         """
         self.__cli = cli
+
+    def setCalleridName(self, name):
+        """
+        Allows to specify the Caller ID Name to be used for the call.
+        """
+        self.__calleridname = name
 
     def setMaxDuration(self, duration):
         """
@@ -203,8 +217,7 @@ class SipDialer:
         if (self.__call_id != None):
             agi_handler.setVariable('_SIP_FORCE_CALLID', self.__call_id)
         if (not self.__misc_vars_set):
-
-            agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__cli, self.__cli))
+            agi_handler.setVariable('CALLERID(all)', "%s <%s>" % (self.__calleridname, self.__cli))
             self.__misc_vars_set = True
 
         arg = ("SIP/%s:%s:%s:%s@%s" + get_arg_delimiter() + get_arg_delimiter()) % (dest, self.__password, self.__md5secret, self.__authname, self.__sip_proxy)

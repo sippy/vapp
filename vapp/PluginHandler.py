@@ -222,8 +222,11 @@ class PluginHandler(BaseIvrHandler):
     def textSynth(self):
 	locale_name = self.locale().name()
 	if (not self.__textSynthCache.has_key(locale_name)):
-	    self.__textSynthCache.setdefault(locale_name, TextSynth(self.locale()))
+	    self.__textSynthCache.setdefault(locale_name, self.createTextSynth(self.locale()))
 	return self.__textSynthCache[locale_name]
+
+    def createTextSynth(self, locale):
+        return TextSynth(locale)
 
     def setLocale(self, locale_name):
         if (not self.__localeCache.has_key(locale_name)):

@@ -116,6 +116,9 @@ class BasePlugin(object):
     def callerid(self):
 	return self.__owner.callerid
 
+    def calleridname(self):
+	return self.__owner.calleridname
+
     def channel(self):
 	return self.__owner.channel
 

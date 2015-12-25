@@ -30,6 +30,7 @@ import sys
 import os
 
 __ARG_DELIMITER = "|"
+commercial_codecs_installed = False
 
 def get_arg_delimiter():
     return __ARG_DELIMITER

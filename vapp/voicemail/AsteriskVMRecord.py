@@ -29,6 +29,7 @@ from AbstractVoicemailStorage import *
 from vapp.BasePlugin import *
 from vapp.Prompt import *
 from vapp.Agi import *
+import vapp
 import tempfile
 import os
 import re
@@ -38,7 +39,6 @@ _empty_dict = {}
 class AbstractPlugin(BasePlugin):
     user = None
     prompt_id = None
-    commercial_codecs_installed = False
     caller_user = None
 
     def parseNetworkScript(self):
@@ -162,29 +162,25 @@ class AbstractPlugin(BasePlugin):
         self.message_exists = True
         escapes = '#' + ''.join([x for x in self.additionalHandlers().keys() if len(x) == 1])
         try:
-            if self.format() == 'sln' or self.commercial_codecs_installed:
-                self.recordFileEx(filename = self.messageFilenameNoExt, \
-                              format = self.format(), \
-                              timeout_msec = self.options().maxMessageTimeMsec(), \
-                              escape = escapes, \
-                              beep = True, \
-                              silence_sec = self.options().maxSilenceTimeSec())
-            else:
-                #
-                # If comercial codec is not installed then the silence detection
-                # is unavailable and causes the RECORD FILE to fail. So just
-                # turn the silence detection off.
-                #
-                # However if you've purchased the commercial codec, then you can disable
-                # this behaviour by setting:
-                #
-                # self.commercial_codecs_installed = True
-                #
-                self.recordFileEx(filename = self.messageFilenameNoExt, \
-                              format = self.format(), \
-                              timeout_msec = self.options().maxMessageTimeMsec(), \
-                              escape = escapes, \
-                              beep = True)
+            #
+            # If comercial codec is not installed then the silence detection
+            # is unavailable and causes the RECORD FILE to fail. So just
+            # turn the silence detection off.
+            #
+            # However if you've purchased the commercial codec, then you can disable
+            # this behaviour by setting:
+            #
+            # vapp.commercial_codecs_installed = True
+            #
+            silence_sec = None
+            if self.format() == 'sln' or vapp.commercial_codecs_installed:
+                silence_sec = self.options().maxSilenceTimeSec()
+            self.recordFileEx(filename = self.messageFilenameNoExt, \
+                          format = self.format(), \
+                          timeout_msec = self.options().maxMessageTimeMsec(), \
+                          escape = escapes, \
+                          beep = True, \
+                          silence_sec = silence_sec)
         except AgiKeyStroke, keystroke:
             if (keystroke.key() == '*' or keystroke.keyCode() == -1):
                 raise

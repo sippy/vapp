@@ -26,6 +26,7 @@ from vapp.BasePlugin import *
 from vapp.IvrUtils import *
 from vapp.Agi import *
 from vapp.Prompt import *
+import vapp
 import tempfile
 import os
 import re
@@ -304,12 +305,25 @@ class AbstractPlugin(BasePlugin):
     def recordPrompt(self):
         self.say(self.rec_prompt)
         try:
+            #
+            # If comercial codec is not installed then the silence detection
+            # is unavailable and causes the RECORD FILE to fail. So just
+            # turn the silence detection off.
+            #
+            # However if you've purchased the commercial codec, then you can disable
+            # this behaviour by setting:
+            #
+            # vapp.commercial_codecs_installed = True
+            #
+            silence_sec = None
+            if self.format() == 'sln' or vapp.commercial_codecs_installed:
+                silence_sec = self.options().maxSilenceTimeSec()
             self.recordFileEx(filename = self.promptFilenameNoExt, \
                               format = self.format(), \
                               timeout_msec = self.options().maxGreetingTimeMsec(), \
                               escape = '#', \
                               beep = True, \
-                              silence_sec = self.options().maxSilenceTimeSec())
+                              silence_sec = silence_sec)
         except AgiKeyStroke, keystroke:
             if (keystroke.keyCode() != -1):
                 self.prompt_exists = True

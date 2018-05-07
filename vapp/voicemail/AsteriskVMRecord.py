@@ -94,6 +94,10 @@ class AbstractPlugin(BasePlugin):
         if not self.user.vm_enabled:
             self.debug("The user %s is not VM Enabled" % self.user.username())
             return
+        if self.caller_user == None:
+            self.caller_user = self.findUser(self.callerid())
+        if self.caller_user != None:
+            self.setLocale(self.caller_user.locale())
         if self.user.voicemailBoxIsFull():
             self.debug("The voicemail box of the user %s is full" % self.user.username())
             try:
@@ -108,10 +112,6 @@ class AbstractPlugin(BasePlugin):
         #
         # Set the own caller locale for current session if caller is our account
         #
-        if self.caller_user == None:
-            self.caller_user = self.findUser(self.callerid())
-        if self.caller_user != None:
-            self.setLocale(self.caller_user.locale())
         try:
             if (self.prompt_id != None):
                 promptfile = self.user.preparePrompt(self.prompt_id, self.format())

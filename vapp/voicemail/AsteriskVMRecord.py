@@ -89,13 +89,22 @@ class AbstractPlugin(BasePlugin):
     def __leaveAMessage(self):
         if self.user == None:
             self.user = self.findUser(self.target)
+            if self.user == None:
+                return
         if not self.user.vm_enabled:
             self.debug("The user %s is not VM Enabled" % self.user.username())
             return
-        self.debug("Recording a voicemail message for the user %s" % self.user.username())
-
-        if (self.user == None):
+        if self.user.voicemailBoxIsFull():
+            self.debug("The voicemail box of the user %s is full" % self.user.username())
+            try:
+                self.sayEx(self._tts("Voicemail box is full and cannot accept any messages at this time. Good bye."))
+            except AgiKeyStroke, keystroke:
+                # Give a chance to the caller to enter the additional menu.
+                handler = self.additionalEarlyHandlers().get(keystroke.key(), None)
+                if handler != None:
+                    handler()
             return
+        self.debug("Recording a voicemail message for the user %s" % self.user.username())
         #
         # Set the own caller locale for current session if caller is our account
         #
@@ -119,7 +128,7 @@ class AbstractPlugin(BasePlugin):
         except AgiKeyStroke, keystroke:
             handler = self.additionalEarlyHandlers().get(keystroke.key(), None)
             if handler != None:
-                handler() 
+                handler()
 
         self.message_exists = False
         (self.messageFd, self.messageFilename) = tempfile.mkstemp(suffix = "." + self.format(), dir = self.options().tmpDir())

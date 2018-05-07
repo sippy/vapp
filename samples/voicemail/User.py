@@ -84,6 +84,9 @@ class User:
     def saveMessage(self, fd, format, cli, logger):
         self.__vm_storage.saveMessage(fd, format, cli, logger)
 
+    def voicemailBoxIsFull(self):
+        return False
+
     def tz(self):
         return 'UTC'
 

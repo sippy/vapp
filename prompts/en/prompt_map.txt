@@ -171,3 +171,4 @@ no|no
 112|work
 53|Sorry but the user's mailbox can't accept more messages.
 54|To leave a message please enter a mailbox number
+voicemailbox_is_full|Voicemail box is full and cannot accept any messages at this time. Good bye.

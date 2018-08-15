@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 13:18+0300\n"
+"POT-Creation-Date: 2018-08-15 16:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,15 +34,15 @@ msgstr ""
 msgid "Change to which folder?"
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:114
+#: ../vapp/voicemail/AsteriskVMRecord.py:120
 msgid "Extension is on the phone."
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:116
+#: ../vapp/voicemail/AsteriskVMRecord.py:122
 msgid "Extension is unavailable."
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:145
+#: ../vapp/voicemail/AsteriskVMRecord.py:151
 #: ../vapp/voicemail/AsteriskVoicemail.py:77
 #: ../vapp/voicemail/AsteriskVoicemail.py:102
 msgid "Good bye"
@@ -68,8 +68,8 @@ msgstr ""
 msgid "Please enter your new PIN code followed by the pound key."
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:117
-#: ../vapp/voicemail/AsteriskVMRecord.py:121
+#: ../vapp/voicemail/AsteriskVMRecord.py:123
+#: ../vapp/voicemail/AsteriskVMRecord.py:127
 msgid "Please leave your message after the tone. When done hang up or press the pound key"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Press one for %s messages"
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:197
+#: ../vapp/voicemail/AsteriskVMRecord.py:203
 #: ../vapp/voicemail/AsteriskVoicemail.py:335
 msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
 msgstr ""
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Press three for advanced options. Press five to repeat the current message."
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:199
+#: ../vapp/voicemail/AsteriskVMRecord.py:205
 #: ../vapp/voicemail/AsteriskVoicemail.py:337
 msgid "Press three to rerecord your message."
 msgstr ""
@@ -136,7 +136,7 @@ msgstr ""
 msgid "To leave a message please enter a mailbox number"
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:98
+#: ../vapp/voicemail/AsteriskVMRecord.py:104
 msgid "Voicemail box is full and cannot accept any messages at this time. Good bye."
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Your PIN code has been changed."
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:158
+#: ../vapp/voicemail/AsteriskVMRecord.py:164
 #: ../vapp/voicemail/AsteriskVoicemail.py:299
 msgid "Your message has been saved."
 msgstr ""
@@ -240,7 +240,7 @@ msgstr ""
 msgid "old"
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:201
+#: ../vapp/voicemail/AsteriskVMRecord.py:207
 #: ../vapp/voicemail/AsteriskVoicemail.py:240
 #: ../vapp/voicemail/AsteriskVoicemail.py:339
 msgid "or pound to cancel"

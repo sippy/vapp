@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 18:07+0300\n"
+"POT-Creation-Date: 2018-08-15 16:00+0300\n"
 "PO-Revision-Date: 2011-09-23 12:59+0300\n"
 "Last-Translator: Andriy Pylypenko <bamby@sippysoft.com>\n"
 "Language-Team: none\n"
@@ -17,148 +17,152 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:258
+#: ../vapp/voicemail/AsteriskVoicemail.py:266
 msgid "After the tone say your busy message and then press the pound key."
 msgstr "Hãy để lại tin nhắn thoại thông báo bạn bận sau tiếng bíp, và sau đó bấm phím thăng."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:260
+#: ../vapp/voicemail/AsteriskVoicemail.py:268
 msgid "After the tone say your name and then press the pound key."
 msgstr "Hãy nói tên bạn sau tiếng bíp, và sau đó bấm phím thăng."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:256
+#: ../vapp/voicemail/AsteriskVoicemail.py:264
 msgid "After the tone say your unavailable message and then press the pound key."
 msgstr "Hãy để lại tin nhắn thoại thông báo bạn chưa thể nhận cuộc gọi sau tiếng bíp, và sau đó bấm phím thăng."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:106
+#: ../vapp/voicemail/AsteriskVoicemail.py:114
 msgid "Change to which folder?"
 msgstr "Thay đổi đến thư mục nào?"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:99
+#: ../vapp/voicemail/AsteriskVMRecord.py:120
 msgid "Extension is on the phone."
 msgstr "Số máy nội bộ đang trên đường dây"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:101
+#: ../vapp/voicemail/AsteriskVMRecord.py:122
 msgid "Extension is unavailable."
 msgstr "Số máy nội bộ không liên lạc được"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:72
-#: ../vapp/voicemail/AsteriskVoicemail.py:94
-#: ../vapp/voicemail/AsteriskVMRecord.py:125
+#: ../vapp/voicemail/AsteriskVMRecord.py:151
+#: ../vapp/voicemail/AsteriskVoicemail.py:77
+#: ../vapp/voicemail/AsteriskVoicemail.py:102
 msgid "Good bye"
 msgstr ""
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:134
+#: ../vapp/voicemail/AsteriskVoicemail.py:142
 msgid "Message deleted."
 msgstr "Tin nhắn đã được xoá."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:136
+#: ../vapp/voicemail/AsteriskVoicemail.py:144
 msgid "Message undeleted."
 msgstr "Tin nhắn chưa được xoá."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:199
+#: ../vapp/voicemail/AsteriskVoicemail.py:207
 msgid "Or nine to save this message."
 msgstr "Hoặc nhấn phím số 9 để lưu tin nhắn này."
 
-#: ../vapp/IvrUtils.py:54
+#: ../vapp/IvrUtils.py:57
 msgid "Please enter your PIN code."
 msgstr "Xin hãy nhập mã PIN"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:239
+#: ../vapp/voicemail/AsteriskVoicemail.py:247
 msgid "Please enter your new PIN code followed by the pound key."
 msgstr "Xin hãy nhập mã PIN, kết thúc bằng phím #"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:102
-#: ../vapp/voicemail/AsteriskVMRecord.py:106
+#: ../vapp/voicemail/AsteriskVMRecord.py:123
+#: ../vapp/voicemail/AsteriskVMRecord.py:127
 msgid "Please leave your message after the tone. When done hang up or press the pound key"
 msgstr "Xin vui lòng để lại tin nhắn của bạn sau tiếng bíp. Khi thực hiện xong thì gác máy hoặc nhấn phím thăng"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:248
 msgid "Please reenter your PIN code followed by the pound key."
 msgstr "Xin hãy nhập lại mã PIN, két thúc bằng phím #"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:251
+#: ../vapp/voicemail/AsteriskVoicemail.py:259
 msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
 msgstr "Bấm phím số 1 để ghi lại tin nhắn bạn chưa thể nhận cuộc gọi. Bấm phím số 2 để ghi lại tin nhắn báo bạn đang bận. Bấm phím số 3 để ghi lại tên của bạn. Bấm phím số 4 để thay đổi mã PIN của bạn. Nhấn phím sao để trở lại menu chính."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:191
+#: ../vapp/voicemail/AsteriskVoicemail.py:199
 msgid "Press four for the previous message."
 msgstr "Nhấn phím số 4 cho tin nhắn trước"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:187
+#: ../vapp/voicemail/AsteriskVoicemail.py:195
 #, python-format
 msgid "Press one for %s messages"
 msgstr "Nhấn phím số 1 cho các tin nhắn %s"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:314
-#: ../vapp/voicemail/AsteriskVMRecord.py:169
+#: ../vapp/voicemail/AsteriskVMRecord.py:203
+#: ../vapp/voicemail/AsteriskVoicemail.py:335
 msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
 msgstr "Nhấn phím số 1 Chấp nhận bản ghi này. Nhấn phím số 2 để nghe nó .Nhấn phím số 3 để ghi lại tin nhắn của bạn."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:198
+#: ../vapp/voicemail/AsteriskVoicemail.py:206
 msgid "Press seven to delete this message."
 msgstr "Nhấn phím số 7 để xóa tin nhắn này."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:196
+#: ../vapp/voicemail/AsteriskVoicemail.py:204
 msgid "Press seven to undelete this message."
 msgstr "Nhấn phím số 7 để lấy lại tin nhắn này."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:194
+#: ../vapp/voicemail/AsteriskVoicemail.py:202
 msgid "Press six to play the next message."
 msgstr "Nhấn phím số 6 để đến tin nhắn tiếp theo."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:200
+#: ../vapp/voicemail/AsteriskVoicemail.py:208
 msgid "Press star for help or a pound to exit."
 msgstr "Nhấn phím sao để được giúp đỡ hoặc nhấn phím thăng để thoát."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:192
+#: ../vapp/voicemail/AsteriskVoicemail.py:200
 msgid "Press three for advanced options. Press five to repeat the current message."
 msgstr "Nhấn phím số 3 cho các tùy chọn nâng cao. Nhấn phím số 5 để lặp lại các tin nhắn hiện tại."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:316
-#: ../vapp/voicemail/AsteriskVMRecord.py:171
+#: ../vapp/voicemail/AsteriskVMRecord.py:205
+#: ../vapp/voicemail/AsteriskVoicemail.py:337
 msgid "Press three to rerecord your message."
 msgstr "Nhấn phím số 3 để ghi lại tin nhắn của bạn."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:188
+#: ../vapp/voicemail/AsteriskVoicemail.py:196
 msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
 msgstr "Nhấn phím số 2 để thay đổi thư mục. Nhấn phím số 3 cho các tùy chọn nâng cao. Nhấn phím số 0 cho các lựa chọn về hôp thư."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:156
+#: ../vapp/voicemail/AsteriskVoicemail.py:164
 msgid "Sorry but the user's mailbox can't accept more messages."
 msgstr "Xin lỗi, nhưng hộp thư của người dùng không thể chấp nhận thêm tin nhắn."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:245
+#: ../vapp/voicemail/AsteriskVoicemail.py:253
 msgid "The PIN codes you've entered and reentered did not match. Please try again."
 msgstr "Mã PIN bạn nhập không khớp nhau, xin hãy nhập lại"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:65
+#: ../vapp/voicemail/AsteriskVMRecord.py:71
 msgid "To leave a message please enter a mailbox number"
 msgstr "Để để lại một tin nhắn, xin vui lòng nhập một số hộp thư"
 
-#: ../vapp/IvrUtils.py:60
+#: ../vapp/voicemail/AsteriskVMRecord.py:104
+msgid "Voicemail box is full and cannot accept any messages at this time. Good bye."
+msgstr ""
+
+#: ../vapp/IvrUtils.py:63
 msgid "Wrong PIN code. Please enter your PIN code."
 msgstr "Mã PIN bạn nhập không đúng. Xin hãy nhập mã PIN của bạn"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:210
+#: ../vapp/voicemail/AsteriskVoicemail.py:218
 msgid "You have %(num)n new"
 msgid_plural "You have %(num)n new"
 msgstr[0] "Bạn có %(num)n mới"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:218
+#: ../vapp/voicemail/AsteriskVoicemail.py:226
 #, python-format
 msgid "You have no %s messages"
 msgstr "Bạn không có tin nhắn %s"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:248
+#: ../vapp/voicemail/AsteriskVoicemail.py:256
 msgid "Your PIN code has been changed."
 msgstr "Mã PIN của bạn đã được thay đổi"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:291
-#: ../vapp/voicemail/AsteriskVMRecord.py:138
+#: ../vapp/voicemail/AsteriskVMRecord.py:164
+#: ../vapp/voicemail/AsteriskVoicemail.py:299
 msgid "Your message has been saved."
 msgstr "Tin nhắn của bạn đã được lưu."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:213
+#: ../vapp/voicemail/AsteriskVoicemail.py:221
 msgid "and %n old"
 msgid_plural "and %n old"
 msgstr[0] "và %n cũ"
@@ -167,7 +171,7 @@ msgstr[0] "và %n cũ"
 msgid "family"
 msgstr "gia đình"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:325
+#: ../vapp/voicemail/AsteriskVoicemail.py:346
 msgid "first message received %[S]D"
 msgstr "tin nhắn nhận được đầu tiên %[S]D"
 
@@ -191,7 +195,7 @@ msgstr "thư mục bảy"
 msgid "folder six"
 msgstr "thư mục sáu"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:230
+#: ../vapp/voicemail/AsteriskVoicemail.py:238
 #, python-format
 msgid "for %s"
 msgstr "cho %s"
@@ -200,20 +204,20 @@ msgstr "cho %s"
 msgid "friends"
 msgstr "bạn bè"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:327
+#: ../vapp/voicemail/AsteriskVoicemail.py:348
 msgid "last message received %[S]D"
 msgstr "tin nhắn nhận được cuối cùng %[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:214
+#: ../vapp/voicemail/AsteriskVoicemail.py:222
 msgid "message"
 msgid_plural "messages"
 msgstr[0] "tin nhắn"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:329
+#: ../vapp/voicemail/AsteriskVoicemail.py:350
 msgid "message %(num)n received %(date)[S]D"
 msgstr "tin nhắn %(num)n nhận được %(date)[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:154
+#: ../vapp/voicemail/AsteriskVoicemail.py:162
 msgid "message %(num)n saved to %(folder)s"
 msgstr "tin nhắn %(num)n được lưu vào %(folder)s"
 
@@ -221,10 +225,10 @@ msgstr "tin nhắn %(num)n được lưu vào %(folder)s"
 msgid "new"
 msgstr "mới"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:118
-#: ../vapp/voicemail/AsteriskVoicemail.py:129
-#: ../vapp/voicemail/AsteriskVoicemail.py:141
-#: ../vapp/voicemail/AsteriskVoicemail.py:165
+#: ../vapp/voicemail/AsteriskVoicemail.py:126
+#: ../vapp/voicemail/AsteriskVoicemail.py:137
+#: ../vapp/voicemail/AsteriskVoicemail.py:149
+#: ../vapp/voicemail/AsteriskVoicemail.py:173
 msgid "no more messages"
 msgstr "không có thêm tin nhắn"
 
@@ -232,21 +236,20 @@ msgstr "không có thêm tin nhắn"
 msgid "old"
 msgstr "cũ"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:232
-#: ../vapp/voicemail/AsteriskVoicemail.py:318
-#: ../vapp/voicemail/AsteriskVMRecord.py:173
+#: ../vapp/voicemail/AsteriskVMRecord.py:207
+#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:339
 msgid "or pound to cancel"
 msgstr "hoặc thăng để hủy bỏ"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:227
+#: ../vapp/voicemail/AsteriskVoicemail.py:235
 msgid "press"
 msgstr "nhấn"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:147
+#: ../vapp/voicemail/AsteriskVoicemail.py:155
 msgid "which folder should I save the message to?"
 msgstr "Tôi nên lưu tin nhắn vào thư mục nào?"
 
 #: ../vapp/voicemail/AbstractVoicemailStorage.py:68
 msgid "work"
 msgstr "làm việc"
-

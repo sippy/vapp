@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 18:07+0300\n"
+"POT-Creation-Date: 2018-08-15 16:00+0300\n"
 "PO-Revision-Date: 2014-06-10 17:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
@@ -18,148 +18,152 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.6.5\n"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:258
+#: ../vapp/voicemail/AsteriskVoicemail.py:266
 msgid "After the tone say your busy message and then press the pound key."
 msgstr " ზარის გაგონების შემდეგ დაკავების შეტყობინება ჩაიწერეთ და შემდეგ დაჭირეთ დიეზს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:260
+#: ../vapp/voicemail/AsteriskVoicemail.py:268
 msgid "After the tone say your name and then press the pound key."
 msgstr "ზარის გაგონების შემდეგ სახელი ჩაიწერეთ და შემდეგ დააჭირეთ დიეზს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:256
+#: ../vapp/voicemail/AsteriskVoicemail.py:264
 msgid "After the tone say your unavailable message and then press the pound key."
 msgstr "ზარის გაგონების შემდეგ ვერ დაუკავშირედებით შეტყობინება ჩაიწერეთ და შემდეგ დააჭირეთ დიეზს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:106
+#: ../vapp/voicemail/AsteriskVoicemail.py:114
 msgid "Change to which folder?"
 msgstr "რომელი ფაილის შეცვლა გინდათ"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:99
+#: ../vapp/voicemail/AsteriskVMRecord.py:120
 msgid "Extension is on the phone."
 msgstr "შიდა ნომერი არ ფუნქციონირებს"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:101
+#: ../vapp/voicemail/AsteriskVMRecord.py:122
 msgid "Extension is unavailable."
 msgstr "შიდა ნომერი არ იკრიფება"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:72
-#: ../vapp/voicemail/AsteriskVoicemail.py:94
-#: ../vapp/voicemail/AsteriskVMRecord.py:125
+#: ../vapp/voicemail/AsteriskVMRecord.py:151
+#: ../vapp/voicemail/AsteriskVoicemail.py:77
+#: ../vapp/voicemail/AsteriskVoicemail.py:102
 msgid "Good bye"
 msgstr "კარგათ ბრძანდებოდეთ"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:134
+#: ../vapp/voicemail/AsteriskVoicemail.py:142
 msgid "Message deleted."
 msgstr "შეტყობინება წაშლილია"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:136
+#: ../vapp/voicemail/AsteriskVoicemail.py:144
 msgid "Message undeleted."
 msgstr "შეტყობინება არ წაშლილა"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:199
+#: ../vapp/voicemail/AsteriskVoicemail.py:207
 msgid "Or nine to save this message."
 msgstr "ანდა ჩასაწერად დააჭირეთ ცხრას"
 
-#: ../vapp/IvrUtils.py:54
+#: ../vapp/IvrUtils.py:57
 msgid "Please enter your PIN code."
 msgstr "გთხოვთ შეიყვანეთ პინ კოდი"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:239
+#: ../vapp/voicemail/AsteriskVoicemail.py:247
 msgid "Please enter your new PIN code followed by the pound key."
 msgstr "გტხოვთ შეიყვანეთ ახალი პინ კოდი და დააჭირეთ დიეზს"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:102
-#: ../vapp/voicemail/AsteriskVMRecord.py:106
+#: ../vapp/voicemail/AsteriskVMRecord.py:123
+#: ../vapp/voicemail/AsteriskVMRecord.py:127
 msgid "Please leave your message after the tone. When done hang up or press the pound key"
 msgstr "ზუმერის შემდეგ გთხოვთ დატოვოთ შეტყობინება.გამოსასვლელად ტელეფონი გამორთეთ ანდა დააჭირეთ დიეზს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:248
 msgid "Please reenter your PIN code followed by the pound key."
 msgstr "გთხოვთ ახლიდან შეიყვანეთ პინ კოდი და შემდეგ დააჭირეთ დიეზს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:251
+#: ../vapp/voicemail/AsteriskVoicemail.py:259
 msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
 msgstr "ვერ  უკავშირდება შეტყობინების ჩასაწერად დააჭირეთ1, დაკავშირების შეტყობინების  ჩასაწერად დააჭირეთ 2,სახელის ჩასაწერად დააჭირეთ 3,პინის ნომრის შესაცვლელად დააჭირეთ 4.ძირითად მენიუსი დასაბრუნებლად დააჭირეთ ფიფქს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:191
+#: ../vapp/voicemail/AsteriskVoicemail.py:199
 msgid "Press four for the previous message."
 msgstr "წინა შეტყობინებისათვის დააჭ'რეთ ოთხს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:187
+#: ../vapp/voicemail/AsteriskVoicemail.py:195
 #, python-format
 msgid "Press one for %s messages"
 msgstr "%s შეყობინებისათვის დააჭირეთ ერთს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:314
-#: ../vapp/voicemail/AsteriskVMRecord.py:169
+#: ../vapp/voicemail/AsteriskVMRecord.py:203
+#: ../vapp/voicemail/AsteriskVoicemail.py:335
 msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
 msgstr "ჩანაწერ'ს დასათანხმებლად დააჭირეთ ერთს.ჩანაწერის მოსასმენად დააჭირეთ ორს.შეტყობინების ჩასაწერად დააჭირეთ სამს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:198
+#: ../vapp/voicemail/AsteriskVoicemail.py:206
 msgid "Press seven to delete this message."
 msgstr "ამ შეტყობინების წასაშლელად დააჭირეთ შვიდს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:196
+#: ../vapp/voicemail/AsteriskVoicemail.py:204
 msgid "Press seven to undelete this message."
 msgstr "ამ შეტყობინების წაშლის შესაწყვეტად დააჭირეთ შვიდს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:194
+#: ../vapp/voicemail/AsteriskVoicemail.py:202
 msgid "Press six to play the next message."
 msgstr "მონომდევნო შეტყობინებაზე გადასასვლელად დააჭირეთ ექვსს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:200
+#: ../vapp/voicemail/AsteriskVoicemail.py:208
 msgid "Press star for help or a pound to exit."
 msgstr "დახმარებისათვის ფიფქს,გამოსვლისათვის დააჭირეთ დიეზს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:192
+#: ../vapp/voicemail/AsteriskVoicemail.py:200
 msgid "Press three for advanced options. Press five to repeat the current message."
 msgstr "ფართო არჩევნისათვის დააჭირეთ სამს.არსებული შეტყობინების ხელახლად მოსმენისათვის დააჭირეთ ხუთს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:316
-#: ../vapp/voicemail/AsteriskVMRecord.py:171
+#: ../vapp/voicemail/AsteriskVMRecord.py:205
+#: ../vapp/voicemail/AsteriskVoicemail.py:337
 msgid "Press three to rerecord your message."
 msgstr "შეტყობინების ახლიდან ჩაწერისათვის დააჭირეთ სამს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:188
+#: ../vapp/voicemail/AsteriskVoicemail.py:196
 msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
 msgstr "ფაილის შესაცვლელად დააჭირეთ ორს.ფარტო არჩევნისათვის დააჭირეთ სამს,საფოსტო ყუთის არჩევისათვის დააჭირეთ ნულს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:156
+#: ../vapp/voicemail/AsteriskVoicemail.py:164
 msgid "Sorry but the user's mailbox can't accept more messages."
 msgstr "მომხმარებელი მეილის ყუთი სხვა შეტყობინებას არ იღებს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:245
+#: ../vapp/voicemail/AsteriskVoicemail.py:253
 msgid "The PIN codes you've entered and reentered did not match. Please try again."
 msgstr "შესული და ახლიდან შესული პინპ არასწორია.გთხოვთ სცადოთ ხელახლად"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:65
+#: ../vapp/voicemail/AsteriskVMRecord.py:71
 msgid "To leave a message please enter a mailbox number"
 msgstr "სეტყობინების დასატოვებლად გთხოვთ შედით მეილის ყუთის ნომერი"
 
-#: ../vapp/IvrUtils.py:60
+#: ../vapp/voicemail/AsteriskVMRecord.py:104
+msgid "Voicemail box is full and cannot accept any messages at this time. Good bye."
+msgstr ""
+
+#: ../vapp/IvrUtils.py:63
 msgid "Wrong PIN code. Please enter your PIN code."
 msgstr "არასწორი პინის ნომერი.გთხოვთ შეიყვანეთ პინის ნომერი"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:210
+#: ../vapp/voicemail/AsteriskVoicemail.py:218
 msgid "You have %(num)n new"
 msgid_plural "You have %(num)n new"
 msgstr[0] "%(num)n ახალი მფლობელი"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:218
+#: ../vapp/voicemail/AsteriskVoicemail.py:226
 #, python-format
 msgid "You have no %s messages"
 msgstr "შეტყობინება გაქვთ %s"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:248
+#: ../vapp/voicemail/AsteriskVoicemail.py:256
 msgid "Your PIN code has been changed."
 msgstr "პინის ნომერი შეცვლილია"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:291
-#: ../vapp/voicemail/AsteriskVMRecord.py:138
+#: ../vapp/voicemail/AsteriskVMRecord.py:164
+#: ../vapp/voicemail/AsteriskVoicemail.py:299
 msgid "Your message has been saved."
 msgstr "შეტყობინება ჩაიწერა"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:213
+#: ../vapp/voicemail/AsteriskVoicemail.py:221
 msgid "and %n old"
 msgid_plural "and %n old"
 msgstr[0] "და %n ძველი"
@@ -168,7 +172,7 @@ msgstr[0] "და %n ძველი"
 msgid "family"
 msgstr "ოჯახი"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:325
+#: ../vapp/voicemail/AsteriskVoicemail.py:346
 msgid "first message received %[S]D"
 msgstr "პირველი შეტყობინება მიღებულია %[S]D"
 
@@ -192,7 +196,7 @@ msgstr "ფაილი შვიდი"
 msgid "folder six"
 msgstr "ფაილი ექვსი"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:230
+#: ../vapp/voicemail/AsteriskVoicemail.py:238
 #, python-format
 msgid "for %s"
 msgstr "%s  სათვის"
@@ -201,20 +205,20 @@ msgstr "%s  სათვის"
 msgid "friends"
 msgstr "მეგობრები"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:327
+#: ../vapp/voicemail/AsteriskVoicemail.py:348
 msgid "last message received %[S]D"
 msgstr "ბოლო შეტყობინება მიღებულია %[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:214
+#: ../vapp/voicemail/AsteriskVoicemail.py:222
 msgid "message"
 msgid_plural "messages"
 msgstr[0] "შეტყობინება გაქვთ"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:329
+#: ../vapp/voicemail/AsteriskVoicemail.py:350
 msgid "message %(num)n received %(date)[S]D"
 msgstr "%(num)n შეტყობინება მიღებულია %(date)[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:154
+#: ../vapp/voicemail/AsteriskVoicemail.py:162
 msgid "message %(num)n saved to %(folder)s"
 msgstr "%(num)n შეტყობინება %(folder)s ჩაიწერა"
 
@@ -222,10 +226,10 @@ msgstr "%(num)n შეტყობინება %(folder)s ჩაიწერ�
 msgid "new"
 msgstr "ახალი"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:118
-#: ../vapp/voicemail/AsteriskVoicemail.py:129
-#: ../vapp/voicemail/AsteriskVoicemail.py:141
-#: ../vapp/voicemail/AsteriskVoicemail.py:165
+#: ../vapp/voicemail/AsteriskVoicemail.py:126
+#: ../vapp/voicemail/AsteriskVoicemail.py:137
+#: ../vapp/voicemail/AsteriskVoicemail.py:149
+#: ../vapp/voicemail/AsteriskVoicemail.py:173
 msgid "no more messages"
 msgstr "სხვა შეტყობინება არ გაქვთ"
 
@@ -233,17 +237,17 @@ msgstr "სხვა შეტყობინება არ გაქვთ"
 msgid "old"
 msgstr "ძველი"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:232
-#: ../vapp/voicemail/AsteriskVoicemail.py:318
-#: ../vapp/voicemail/AsteriskVMRecord.py:173
+#: ../vapp/voicemail/AsteriskVMRecord.py:207
+#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:339
 msgid "or pound to cancel"
 msgstr "ანდა გამოსვლისათვის დიეზს"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:227
+#: ../vapp/voicemail/AsteriskVoicemail.py:235
 msgid "press"
 msgstr "დააჭირეთ"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:147
+#: ../vapp/voicemail/AsteriskVoicemail.py:155
 msgid "which folder should I save the message to?"
 msgstr "შეტყობინება რომელ ფაილში ჩაიწერება"
 

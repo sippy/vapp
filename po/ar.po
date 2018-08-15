@@ -26,159 +26,164 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vapp 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 18:07+0300\n"
+"POT-Creation-Date: 2018-08-15 16:00+0300\n"
 "PO-Revision-Date: 2008-09-16 13:48+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 || n > 10 ? 0 : n==2 ? 1 : 2);\n"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:258
+#: ../vapp/voicemail/AsteriskVoicemail.py:266
 msgid "After the tone say your busy message and then press the pound key."
 msgstr "بعد ظهور نغمة رسالتك في حال انشغالك, اضغط اشارة المربع."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:260
+#: ../vapp/voicemail/AsteriskVoicemail.py:268
 msgid "After the tone say your name and then press the pound key."
 msgstr "بعد سماع الصافرة سجل اسمك ثم اضغط اشارة المربع"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:256
+#: ../vapp/voicemail/AsteriskVoicemail.py:264
 msgid "After the tone say your unavailable message and then press the pound key."
 msgstr "بعد سماع الصافرة سجل رسالتك في حال عدم توافرك ثم اضغط اشارة المربع"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:106
+#: ../vapp/voicemail/AsteriskVoicemail.py:114
 msgid "Change to which folder?"
 msgstr "التغيير لأي ملف؟"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:99
+#: ../vapp/voicemail/AsteriskVMRecord.py:120
 msgid "Extension is on the phone."
 msgstr "الرقم الفرعي على الهاتف"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:101
+#: ../vapp/voicemail/AsteriskVMRecord.py:122
 msgid "Extension is unavailable."
 msgstr "الرقم الفرعي المطلوب غير مستعمل"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:72
-#: ../vapp/voicemail/AsteriskVoicemail.py:94
-#: ../vapp/voicemail/AsteriskVMRecord.py:125
+#: ../vapp/voicemail/AsteriskVMRecord.py:151
+#: ../vapp/voicemail/AsteriskVoicemail.py:77
+#: ../vapp/voicemail/AsteriskVoicemail.py:102
 msgid "Good bye"
 msgstr "مع السلامه"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:134
+#: ../vapp/voicemail/AsteriskVoicemail.py:142
 msgid "Message deleted."
 msgstr "تمّ حذف الرسالة"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:136
+#: ../vapp/voicemail/AsteriskVoicemail.py:144
 msgid "Message undeleted."
 msgstr "لم يتم حذف الرسالة"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:199
+#: ../vapp/voicemail/AsteriskVoicemail.py:207
 msgid "Or nine to save this message."
 msgstr "أو الرقم تسعة لحفظ الرسالة"
 
-#: ../vapp/IvrUtils.py:54
+#: ../vapp/IvrUtils.py:57
 msgid "Please enter your PIN code."
 msgstr "الرجاء ادخال الرقم السري"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:239
+#: ../vapp/voicemail/AsteriskVoicemail.py:247
 msgid "Please enter your new PIN code followed by the pound key."
 msgstr "الرجاء ادخال رقم البطاقة الجديد متبوعا باشارة المربع"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:102
-#: ../vapp/voicemail/AsteriskVMRecord.py:106
+#: ../vapp/voicemail/AsteriskVMRecord.py:123
+#: ../vapp/voicemail/AsteriskVMRecord.py:127
 msgid "Please leave your message after the tone. When done hang up or press the pound key"
 msgstr "الرجاء ترك رسالتك بعد سماع النغمة. عند الانتهاء، أغلق الخط، أو ضغط على اشارة المربع"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:248
 msgid "Please reenter your PIN code followed by the pound key."
 msgstr "الرجاء ادخال رقم البطاقة مرة اخرى متبوعا باشارة المربع"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:251
+#: ../vapp/voicemail/AsteriskVoicemail.py:259
 msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
 msgstr "اضغط الرقم واحد لتسجيل رسالتك في حال عدم توافرك.اضغط الرقم اثنان لتسجيل رسالتك في حال انشغالك.اضغط الرقم ثلاثة لتسجيل اسمك.اضغط الرقم اربعة لتغيير رقمك السري.اضغط اشارة النجمة للرجوع الى القائمة الرئيسية"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:191
+#: ../vapp/voicemail/AsteriskVoicemail.py:199
 msgid "Press four for the previous message."
 msgstr "لسماع الرسالة الأخيرة أدخل الرقم أربعة"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:187
+#: ../vapp/voicemail/AsteriskVoicemail.py:195
 #, python-format
 msgid "Press one for %s messages"
 msgstr "ادخل واحد %s للمسجات"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:314
-#: ../vapp/voicemail/AsteriskVMRecord.py:169
+#: ../vapp/voicemail/AsteriskVMRecord.py:203
+#: ../vapp/voicemail/AsteriskVoicemail.py:335
 msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
 msgstr "أدخل واحد لقبول هذا التسجيل. أدخل اثنان لسماع التسجيل.ادخل ثلاثة لتسجيل رسالتك"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:198
+#: ../vapp/voicemail/AsteriskVoicemail.py:206
 msgid "Press seven to delete this message."
 msgstr "لالغاء هذه الرسالة اضغط الرقم سبعه"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:196
+#: ../vapp/voicemail/AsteriskVoicemail.py:204
 msgid "Press seven to undelete this message."
 msgstr "لابقاء هذه الرسالة اضغط الرقم سبعه"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:194
+#: ../vapp/voicemail/AsteriskVoicemail.py:202
 msgid "Press six to play the next message."
 msgstr "لسماع الرسالة الأخيرة أدخل الرقم سته"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:200
+#: ../vapp/voicemail/AsteriskVoicemail.py:208
 msgid "Press star for help or a pound to exit."
 msgstr "اضغط اشارة النجمة للمساعدة أو اشارة المربع للخروج"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:192
+#: ../vapp/voicemail/AsteriskVoicemail.py:200
 msgid "Press three for advanced options. Press five to repeat the current message."
 msgstr "لخيارات أخرىاضغط الرقم ثلاثة. لسماع الرساله الأخيرة اضغط الرقم خمسة."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:316
-#: ../vapp/voicemail/AsteriskVMRecord.py:171
+#: ../vapp/voicemail/AsteriskVMRecord.py:205
+#: ../vapp/voicemail/AsteriskVoicemail.py:337
 msgid "Press three to rerecord your message."
 msgstr "أدخل ثلاثة لتسجيل رسالتك"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:188
+#: ../vapp/voicemail/AsteriskVoicemail.py:196
 msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
 msgstr "أدخل اثنان لتغيير الملف. أدخل ثلاثة لخيارات أخرى. أدخل صفر لخيارات البريد"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:156
+#: ../vapp/voicemail/AsteriskVoicemail.py:164
 msgid "Sorry but the user's mailbox can't accept more messages."
 msgstr "نأسف.الرقم البريدي المطلوب لا يستطيع استقبال المزيد من الرسائل"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:245
+#: ../vapp/voicemail/AsteriskVoicemail.py:253
 msgid "The PIN codes you've entered and reentered did not match. Please try again."
 msgstr "الأرقام التي تم ادخالها غير  متتطابقة. الرجاء المحاولة مرة أخرى"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:65
+#: ../vapp/voicemail/AsteriskVMRecord.py:71
 msgid "To leave a message please enter a mailbox number"
 msgstr "لترك رسالة، أدخل رقم بريدي"
 
-#: ../vapp/IvrUtils.py:60
+#: ../vapp/voicemail/AsteriskVMRecord.py:104
+msgid "Voicemail box is full and cannot accept any messages at this time. Good bye."
+msgstr ""
+
+#: ../vapp/IvrUtils.py:63
 msgid "Wrong PIN code. Please enter your PIN code."
 msgstr "لقد أدخلت رقما خاطئا. الرجاء ادخال الرقم من جديد"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:210
+#: ../vapp/voicemail/AsteriskVoicemail.py:218
 msgid "You have %(num)n new"
 msgid_plural "You have %(num)n new"
 msgstr[0] "لديك %(num)[3]n جديدة"
 msgstr[1] "لديك %(num)[3]n جديدتين"
 msgstr[2] "لديك %(num)[3]n جديدة"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:218
+#: ../vapp/voicemail/AsteriskVoicemail.py:226
 #, python-format
 msgid "You have no %s messages"
 msgstr "ليس لديك %s جديدة"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:248
+#: ../vapp/voicemail/AsteriskVoicemail.py:256
 msgid "Your PIN code has been changed."
 msgstr "تم تغيير الرقم السري بنجاح"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:291
-#: ../vapp/voicemail/AsteriskVMRecord.py:138
+#: ../vapp/voicemail/AsteriskVMRecord.py:164
+#: ../vapp/voicemail/AsteriskVoicemail.py:299
 msgid "Your message has been saved."
 msgstr "تم تسجيل رسالتك"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:213
+#: ../vapp/voicemail/AsteriskVoicemail.py:221
 msgid "and %n old"
 msgid_plural "and %n old"
 msgstr[0] "لديك %[3]n قديمة"
@@ -189,7 +194,7 @@ msgstr[2] "لديك %[3]n قديمة"
 msgid "family"
 msgstr "عائلة"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:325
+#: ../vapp/voicemail/AsteriskVoicemail.py:346
 msgid "first message received %[S]D"
 msgstr "أول رساله وصلت %[S]D"
 
@@ -213,7 +218,7 @@ msgstr "ملف رقم سبعه"
 msgid "folder six"
 msgstr "ملف رقم سته"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:230
+#: ../vapp/voicemail/AsteriskVoicemail.py:238
 #, python-format
 msgid "for %s"
 msgstr "ل  %s"
@@ -222,22 +227,22 @@ msgstr "ل  %s"
 msgid "friends"
 msgstr "أصدقاء"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:327
+#: ../vapp/voicemail/AsteriskVoicemail.py:348
 msgid "last message received %[S]D"
 msgstr "اخر رساله وصلت في %[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:214
+#: ../vapp/voicemail/AsteriskVoicemail.py:222
 msgid "message"
 msgid_plural "messages"
 msgstr[0] "رسائل"
 msgstr[1] "رسائل"
 msgstr[2] "رسائل"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:329
+#: ../vapp/voicemail/AsteriskVoicemail.py:350
 msgid "message %(num)n received %(date)[S]D"
 msgstr "رسالة %(num)n وصلت %(date)[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:154
+#: ../vapp/voicemail/AsteriskVoicemail.py:162
 msgid "message %(num)n saved to %(folder)s"
 msgstr "الرسالة %(num)n تم حفظها في ملف رقم %(folder)s "
 
@@ -245,10 +250,10 @@ msgstr "الرسالة %(num)n تم حفظها في ملف رقم %(folder)s "
 msgid "new"
 msgstr "جديد"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:118
-#: ../vapp/voicemail/AsteriskVoicemail.py:129
-#: ../vapp/voicemail/AsteriskVoicemail.py:141
-#: ../vapp/voicemail/AsteriskVoicemail.py:165
+#: ../vapp/voicemail/AsteriskVoicemail.py:126
+#: ../vapp/voicemail/AsteriskVoicemail.py:137
+#: ../vapp/voicemail/AsteriskVoicemail.py:149
+#: ../vapp/voicemail/AsteriskVoicemail.py:173
 msgid "no more messages"
 msgstr "لا يوجد رسائل أخرى"
 
@@ -256,17 +261,17 @@ msgstr "لا يوجد رسائل أخرى"
 msgid "old"
 msgstr "قديم"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:232
-#: ../vapp/voicemail/AsteriskVoicemail.py:318
-#: ../vapp/voicemail/AsteriskVMRecord.py:173
+#: ../vapp/voicemail/AsteriskVMRecord.py:207
+#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:339
 msgid "or pound to cancel"
 msgstr "أو اشارة المربع للغي الأمر"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:227
+#: ../vapp/voicemail/AsteriskVoicemail.py:235
 msgid "press"
 msgstr "اضغط"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:147
+#: ../vapp/voicemail/AsteriskVoicemail.py:155
 msgid "which folder should I save the message to?"
 msgstr "في أي ملف يجب حفظ الرسالة ؟"
 

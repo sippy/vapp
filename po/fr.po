@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 18:07+0300\n"
+"POT-Creation-Date: 2018-08-15 16:00+0300\n"
 "PO-Revision-Date: 2011-03-03 16:51+0300\n"
 "Last-Translator: Andriy Pylypenko <bamby@sippysoft.com>\n"
 "Language-Team: none\n"
@@ -36,149 +36,153 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:258
+#: ../vapp/voicemail/AsteriskVoicemail.py:266
 msgid "After the tone say your busy message and then press the pound key."
 msgstr "Apres la tonalité dites votre message que vous etes occupé et tappez sur diaise."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:260
+#: ../vapp/voicemail/AsteriskVoicemail.py:268
 msgid "After the tone say your name and then press the pound key."
 msgstr "Apres la tonalité dites votre nom et tappez diaise."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:256
+#: ../vapp/voicemail/AsteriskVoicemail.py:264
 msgid "After the tone say your unavailable message and then press the pound key."
 msgstr "Apres la tonalité dites votre message que vous etes absent et tappez diaise."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:106
+#: ../vapp/voicemail/AsteriskVoicemail.py:114
 msgid "Change to which folder?"
 msgstr "Changer pour quelle farde?"
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:99
+#: ../vapp/voicemail/AsteriskVMRecord.py:120
 msgid "Extension is on the phone."
 msgstr "L'extension est en communication."
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:101
+#: ../vapp/voicemail/AsteriskVMRecord.py:122
 msgid "Extension is unavailable."
 msgstr "L'extension n'est pas disponible."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:72
-#: ../vapp/voicemail/AsteriskVoicemail.py:94
-#: ../vapp/voicemail/AsteriskVMRecord.py:125
+#: ../vapp/voicemail/AsteriskVMRecord.py:151
+#: ../vapp/voicemail/AsteriskVoicemail.py:77
+#: ../vapp/voicemail/AsteriskVoicemail.py:102
 msgid "Good bye"
 msgstr "Aurevoir"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:134
+#: ../vapp/voicemail/AsteriskVoicemail.py:142
 msgid "Message deleted."
 msgstr "Message effacé"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:136
+#: ../vapp/voicemail/AsteriskVoicemail.py:144
 msgid "Message undeleted."
 msgstr "Message non effacé"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:199
+#: ../vapp/voicemail/AsteriskVoicemail.py:207
 msgid "Or nine to save this message."
 msgstr "Ou neuf pour sauvegarder ce message."
 
-#: ../vapp/IvrUtils.py:54
+#: ../vapp/IvrUtils.py:57
 msgid "Please enter your PIN code."
 msgstr "Veuillez introduire votre PIN code."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:239
+#: ../vapp/voicemail/AsteriskVoicemail.py:247
 msgid "Please enter your new PIN code followed by the pound key."
 msgstr "Veuillez introduire votre nouveau PIN code suivi de la touche diaise."
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:102
-#: ../vapp/voicemail/AsteriskVMRecord.py:106
+#: ../vapp/voicemail/AsteriskVMRecord.py:123
+#: ../vapp/voicemail/AsteriskVMRecord.py:127
 msgid "Please leave your message after the tone. When done hang up or press the pound key"
 msgstr "Veuillez laisser votre message après la tonalité. Après avoir fini, raccrochez ou appuyer sur diaise"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:248
 msgid "Please reenter your PIN code followed by the pound key."
 msgstr "Veuillez reintroduire votre PIN code suivi de la touche diaise"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:251
+#: ../vapp/voicemail/AsteriskVoicemail.py:259
 msgid "Press 1 to record your unavailable message. Press 2 to record your busy message. Press 3 to record your name. Press 4 to change your PIN code. Press star to return to the main menu."
 msgstr "Tappez un pour enregistrer votre message en absence. Tappez 2 pour enregistrer votre message que vous etes occupé. Tapez trois pour enregistrer votre nom. Tapez quatre pour changer votre PIN code. Tapez etoile pour retourner sur le menu principal."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:191
+#: ../vapp/voicemail/AsteriskVoicemail.py:199
 msgid "Press four for the previous message."
 msgstr "Tappez quatre pour le message precedent."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:187
+#: ../vapp/voicemail/AsteriskVoicemail.py:195
 #, python-format
 msgid "Press one for %s messages"
 msgstr "Tappez un pour %s messages"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:314
-#: ../vapp/voicemail/AsteriskVMRecord.py:169
+#: ../vapp/voicemail/AsteriskVMRecord.py:203
+#: ../vapp/voicemail/AsteriskVoicemail.py:335
 msgid "Press one to accept this recording. Press two to listen to it. Press three to rerecord your message."
 msgstr "Tappez un pour accepter cet enregistrement. Tappez deux pour le re-ecouter. Tappez trois pour le re-enregistrer."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:198
+#: ../vapp/voicemail/AsteriskVoicemail.py:206
 msgid "Press seven to delete this message."
 msgstr "Tapez sept pour effacer ce message."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:196
+#: ../vapp/voicemail/AsteriskVoicemail.py:204
 msgid "Press seven to undelete this message."
 msgstr "Tapez sept pour garder ce message."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:194
+#: ../vapp/voicemail/AsteriskVoicemail.py:202
 msgid "Press six to play the next message."
 msgstr "Tapez six pour ecouter le message suivant."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:200
+#: ../vapp/voicemail/AsteriskVoicemail.py:208
 msgid "Press star for help or a pound to exit."
 msgstr "Tappez etoile pour obtenir l'aide ou diaise pour sortir."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:192
+#: ../vapp/voicemail/AsteriskVoicemail.py:200
 msgid "Press three for advanced options. Press five to repeat the current message."
 msgstr "Tapez trois pour les options avancées. Tapez cinq pour repeter le message actuel."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:316
-#: ../vapp/voicemail/AsteriskVMRecord.py:171
+#: ../vapp/voicemail/AsteriskVMRecord.py:205
+#: ../vapp/voicemail/AsteriskVoicemail.py:337
 msgid "Press three to rerecord your message."
 msgstr "Tappez trois pour re-enregistrer votre message"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:188
+#: ../vapp/voicemail/AsteriskVoicemail.py:196
 msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
 msgstr "Tappez deux pour changer de fardes. Tappez trois pour les options avancées. Tappez zero pour les options de la boite vocale."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:156
+#: ../vapp/voicemail/AsteriskVoicemail.py:164
 msgid "Sorry but the user's mailbox can't accept more messages."
 msgstr "Desolé, la boite vocal ne peut plus accepter des messages."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:245
+#: ../vapp/voicemail/AsteriskVoicemail.py:253
 msgid "The PIN codes you've entered and reentered did not match. Please try again."
 msgstr "Le PIN code que vous avez introduit et reintroduit n'est pas le meme. Veuillez essayer plus tard."
 
-#: ../vapp/voicemail/AsteriskVMRecord.py:65
+#: ../vapp/voicemail/AsteriskVMRecord.py:71
 msgid "To leave a message please enter a mailbox number"
 msgstr "Pour laisser un message introduisez le numero de la boite"
 
-#: ../vapp/IvrUtils.py:60
+#: ../vapp/voicemail/AsteriskVMRecord.py:104
+msgid "Voicemail box is full and cannot accept any messages at this time. Good bye."
+msgstr ""
+
+#: ../vapp/IvrUtils.py:63
 msgid "Wrong PIN code. Please enter your PIN code."
 msgstr "Mauvais PIN code. Veuillez introduire votre PIN code."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:210
+#: ../vapp/voicemail/AsteriskVoicemail.py:218
 msgid "You have %(num)n new"
 msgid_plural "You have %(num)n new"
 msgstr[0] "Vous avez %(num)n nouveau"
 msgstr[1] "Vous avez %(num)n nouveaux"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:218
+#: ../vapp/voicemail/AsteriskVoicemail.py:226
 #, python-format
 msgid "You have no %s messages"
 msgstr "Vous avez pas %s messages"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:248
+#: ../vapp/voicemail/AsteriskVoicemail.py:256
 msgid "Your PIN code has been changed."
 msgstr "Votre PIN code a été changé"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:291
-#: ../vapp/voicemail/AsteriskVMRecord.py:138
+#: ../vapp/voicemail/AsteriskVMRecord.py:164
+#: ../vapp/voicemail/AsteriskVoicemail.py:299
 msgid "Your message has been saved."
 msgstr "Votre message a été sauvegardé."
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:213
+#: ../vapp/voicemail/AsteriskVoicemail.py:221
 msgid "and %n old"
 msgid_plural "and %n old"
 msgstr[0] "et %n ancien"
@@ -188,7 +192,7 @@ msgstr[1] "et %n anciens"
 msgid "family"
 msgstr "famille"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:325
+#: ../vapp/voicemail/AsteriskVoicemail.py:346
 msgid "first message received %[S]D"
 msgstr "premier message recu %[S]D"
 
@@ -212,7 +216,7 @@ msgstr "dossier sept"
 msgid "folder six"
 msgstr "dossier  six"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:230
+#: ../vapp/voicemail/AsteriskVoicemail.py:238
 #, python-format
 msgid "for %s"
 msgstr "pour %s"
@@ -221,21 +225,21 @@ msgstr "pour %s"
 msgid "friends"
 msgstr "amis"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:327
+#: ../vapp/voicemail/AsteriskVoicemail.py:348
 msgid "last message received %[S]D"
 msgstr "dernier message recu %[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:214
+#: ../vapp/voicemail/AsteriskVoicemail.py:222
 msgid "message"
 msgid_plural "messages"
 msgstr[0] "message"
 msgstr[1] "messages"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:329
+#: ../vapp/voicemail/AsteriskVoicemail.py:350
 msgid "message %(num)n received %(date)[S]D"
 msgstr "message %(num)n recu %(date)[S]D"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:154
+#: ../vapp/voicemail/AsteriskVoicemail.py:162
 msgid "message %(num)n saved to %(folder)s"
 msgstr "message %(num)n sauvegardé dans la %(folder)s"
 
@@ -243,10 +247,10 @@ msgstr "message %(num)n sauvegardé dans la %(folder)s"
 msgid "new"
 msgstr "nouveau"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:118
-#: ../vapp/voicemail/AsteriskVoicemail.py:129
-#: ../vapp/voicemail/AsteriskVoicemail.py:141
-#: ../vapp/voicemail/AsteriskVoicemail.py:165
+#: ../vapp/voicemail/AsteriskVoicemail.py:126
+#: ../vapp/voicemail/AsteriskVoicemail.py:137
+#: ../vapp/voicemail/AsteriskVoicemail.py:149
+#: ../vapp/voicemail/AsteriskVoicemail.py:173
 msgid "no more messages"
 msgstr "plus de messages"
 
@@ -254,21 +258,20 @@ msgstr "plus de messages"
 msgid "old"
 msgstr "ancien"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:232
-#: ../vapp/voicemail/AsteriskVoicemail.py:318
-#: ../vapp/voicemail/AsteriskVMRecord.py:173
+#: ../vapp/voicemail/AsteriskVMRecord.py:207
+#: ../vapp/voicemail/AsteriskVoicemail.py:240
+#: ../vapp/voicemail/AsteriskVoicemail.py:339
 msgid "or pound to cancel"
 msgstr "ou diaise pour annuler"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:227
+#: ../vapp/voicemail/AsteriskVoicemail.py:235
 msgid "press"
 msgstr "Tappez"
 
-#: ../vapp/voicemail/AsteriskVoicemail.py:147
+#: ../vapp/voicemail/AsteriskVoicemail.py:155
 msgid "which folder should I save the message to?"
 msgstr "Dans quelle farde je dois sauvegarder le message?"
 
 #: ../vapp/voicemail/AbstractVoicemailStorage.py:68
 msgid "work"
 msgstr "travail"
-

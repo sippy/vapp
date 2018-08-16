@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-15 16:00+0300\n"
+"POT-Creation-Date: 2018-08-15 16:07+0300\n"
 "PO-Revision-Date: 2011-03-03 16:51+0300\n"
 "Last-Translator: Andriy Pylypenko <bamby@sippysoft.com>\n"
 "Language-Team: none\n"
@@ -130,8 +130,8 @@ msgid "Press star for help or a pound to exit."
 msgstr "Tappez etoile pour obtenir l'aide ou diaise pour sortir."
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:200
-msgid "Press three for advanced options. Press five to repeat the current message."
-msgstr "Tapez trois pour les options avancées. Tapez cinq pour repeter le message actuel."
+msgid "Press five to repeat the current message."
+msgstr "Tapez cinq pour repeter le message actuel."
 
 #: ../vapp/voicemail/AsteriskVMRecord.py:205
 #: ../vapp/voicemail/AsteriskVoicemail.py:337
@@ -139,8 +139,8 @@ msgid "Press three to rerecord your message."
 msgstr "Tappez trois pour re-enregistrer votre message"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:196
-msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
-msgstr "Tappez deux pour changer de fardes. Tappez trois pour les options avancées. Tappez zero pour les options de la boite vocale."
+msgid "Press two to change folders. Press zero for mailbox options."
+msgstr "Tappez deux pour changer de fardes. Tappez zero pour les options de la boite vocale."
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:164
 msgid "Sorry but the user's mailbox can't accept more messages."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-15 16:00+0300\n"
+"POT-Creation-Date: 2018-08-15 16:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,7 +112,7 @@ msgid "Press star for help or a pound to exit."
 msgstr ""
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:200
-msgid "Press three for advanced options. Press five to repeat the current message."
+msgid "Press five to repeat the current message."
 msgstr ""
 
 #: ../vapp/voicemail/AsteriskVMRecord.py:205
@@ -121,7 +121,7 @@ msgid "Press three to rerecord your message."
 msgstr ""
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:196
-msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
+msgid "Press two to change folders. Press zero for mailbox options."
 msgstr ""
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:164

@@ -31,7 +31,6 @@ three|three
 two|two
 one|one
 14|to repeat the current message.
-1|for advanced options.
 49|Press star for help or a pound to exit.
 12|to play the next message.
 17|to undelete this message.

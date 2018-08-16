@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-15 16:00+0300\n"
+"POT-Creation-Date: 2018-08-15 16:07+0300\n"
 "PO-Revision-Date: 2011-09-23 12:59+0300\n"
 "Last-Translator: Andriy Pylypenko <bamby@sippysoft.com>\n"
 "Language-Team: none\n"
@@ -111,7 +111,7 @@ msgid "Press star for help or a pound to exit."
 msgstr "Nhấn phím sao để được giúp đỡ hoặc nhấn phím thăng để thoát."
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:200
-msgid "Press three for advanced options. Press five to repeat the current message."
+msgid "Press five to repeat the current message."
 msgstr "Nhấn phím số 3 cho các tùy chọn nâng cao. Nhấn phím số 5 để lặp lại các tin nhắn hiện tại."
 
 #: ../vapp/voicemail/AsteriskVMRecord.py:205
@@ -120,7 +120,7 @@ msgid "Press three to rerecord your message."
 msgstr "Nhấn phím số 3 để ghi lại tin nhắn của bạn."
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:196
-msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
+msgid "Press two to change folders. Press zero for mailbox options."
 msgstr "Nhấn phím số 2 để thay đổi thư mục. Nhấn phím số 3 cho các tùy chọn nâng cao. Nhấn phím số 0 cho các lựa chọn về hôp thư."
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:164

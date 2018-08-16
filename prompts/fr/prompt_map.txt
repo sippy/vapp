@@ -17,9 +17,9 @@
 46|Tapez sept pour effacer ce message.
 47|Tapez sept pour garder ce message.
 48|Tapez six pour ecouter le message suivant.
-49|Tapez trois pour les options avancées. Tapez cinq pour repeter le message actuel.
+49|Tapez cinq pour repeter le message actuel.
 56|Tappez
-57|Tappez deux pour changer de fardes. Tappez trois pour les options avancées. Tappez zero pour les options de la boite vocale.
+57|Tappez deux pour changer de fardes. Tappez zero pour les options de la boite vocale.
 58|Tappez etoile pour obtenir l'aide ou diaise pour sortir.
 59|Tappez quatre pour le message precedent.
 60|Tappez trois pour re-enregistrer votre message

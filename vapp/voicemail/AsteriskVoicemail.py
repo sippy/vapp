@@ -193,11 +193,11 @@ class AbstractPlugin(BasePlugin):
             if (self.starting):
                 if (not self.vm_storage.folderIsEmpty()):
                     self.sayEx(self._tts("Press one for %s messages"), [self._tts(self.vm_storage.sayFolderName())])
-                self.sayEx(self._tts("Press two to change folders. Press three for advanced options. Press zero for mailbox options."))
+                self.sayEx(self._tts("Press two to change folders. Press zero for mailbox options."))
             else:
                 if (self.curMsg() > 0):
                     self.sayEx(self._tts("Press four for the previous message."))
-                self.sayEx(self._tts("Press three for advanced options. Press five to repeat the current message."))
+                self.sayEx(self._tts("Press five to repeat the current message."))
                 if (self.curMsg() < self.lastMsg()):
                     self.sayEx(self._tts("Press six to play the next message."))
                 if (self.isMsgDeleted()):

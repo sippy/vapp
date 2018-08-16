@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-15 16:00+0300\n"
+"POT-Creation-Date: 2018-08-15 16:07+0300\n"
 "PO-Revision-Date: 2010-03-30 15:17+0300\n"
 "Last-Translator: Andriy Pylypenko <bamby@sippysoft.com>\n"
 "Language-Team: none\n"
@@ -111,8 +111,8 @@ msgid "Press star for help or a pound to exit."
 msgstr "Für Hilfe drücken Sie bitte die Stern-Taste und um aus dem Menu auszusteigen die Raute-Taste."
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:200
-msgid "Press three for advanced options. Press five to repeat the current message."
-msgstr "Für Erweiterte Optionen drücken Sie bitte die 3. Um der aktuellen Nachricht abzuhören drücken Sie bitte die 5."
+msgid "Press five to repeat the current message."
+msgstr "Um der aktuellen Nachricht abzuhören drücken Sie bitte die 5."
 
 #: ../vapp/voicemail/AsteriskVMRecord.py:205
 #: ../vapp/voicemail/AsteriskVoicemail.py:337
@@ -120,8 +120,8 @@ msgid "Press three to rerecord your message."
 msgstr "Um die Nachricht neu zu speichern drücken Sie bitte die 3"
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:196
-msgid "Press two to change folders. Press three for advanced options. Press zero for mailbox options."
-msgstr "Um die Datei zu ändern drücken Sie bitte die 2. Für erweiterte Optionen drücken Sie bitte die 3. Für Postfach-Optionen drücken Sie bitte die Null."
+msgid "Press two to change folders. Press zero for mailbox options."
+msgstr "Um die Datei zu ändern drücken Sie bitte die 2. Für Postfach-Optionen drücken Sie bitte die Null."
 
 #: ../vapp/voicemail/AsteriskVoicemail.py:164
 msgid "Sorry but the user's mailbox can't accept more messages."

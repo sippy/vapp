@@ -24,7 +24,7 @@
 060|Februar
 061|Freunde
 062|Für
-063|Für Erweiterte Optionen drücken Sie bitte die 3. Um der aktuellen Nachricht abzuhören drücken Sie bitte die 5.
+063|Um der aktuellen Nachricht abzuhören drücken Sie bitte die 5.
 064|Für Hilfe drücken Sie bitte die Stern-Taste und um aus dem Menu auszusteigen die Raute-Taste.
 068|Für ein
 078|Ihr PIN-Nummer wurde geändert.
@@ -61,7 +61,7 @@
 123|Stunden
 124|Tschüss
 126|Uhr
-131|Um die Datei zu ändern drücken Sie bitte die 2. Für erweiterte Optionen drücken Sie bitte die 3. Für Postfach-Optionen drücken Sie bitte die Null.
+131|Um die Datei zu ändern drücken Sie bitte die 2. Für Postfach-Optionen drücken Sie bitte die Null.
 132|Um die Nachricht neu zu speichern drücken Sie bitte die 3
 133|Um die Nachricht “nicht erreichbar” zu speichern, drücken Sie bitte die 1. Für das Besetzt-Nachricht und drücken Sie bitte die 2. Um Ihren Namen zu speichern, drücken Sie bitte die 3. Um die PIN-Nummer zu ändern, drücken Sie bitte die 4. Um ins Hauptmenu zurück zu kommen, drücken Sie bitte die Stern-Taste.
 136|Um die nächte Nachrıcht zu kommen,drücken Sie bitte die 6

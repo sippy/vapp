@@ -36,9 +36,9 @@
 079|Prensa siete recuperar este mensaje.
 081|Pulse 1 para grabar su mensaje de no disponible. Presione 2 para grabar su mensaje de ocupado. Pulse 3 para grabar su nombre. Pulse 4 para cambiar su código PIN. Prensa estrella para volver al menú principal.
 082|Pulse cuatro para el mensaje anterior.
-083|Pulse dos para cambiar las carpetas. Pulse tres para opciones avanzadas. Pulse cero opciones de buzón de correo.
+083|Pulse dos para cambiar las carpetas. Pulse cero opciones de buzón de correo.
 088|Pulse para obtener ayuda o estrella una libra para salir.
-089|Pulse tres para opciones avanzadas. Pulse cinco a repetir el mensaje actual.
+089|Pulse cinco a repetir el mensaje actual.
 091|Pulse una de aceptar esta grabación. Pulse dos para escucharlo. Prensa rerecord tres a su mensaje.
 093|Pulse uno de los mensajes de
 095|Septiembre

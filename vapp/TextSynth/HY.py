@@ -310,7 +310,7 @@ if (__name__ == "__main__"):
         h = int(i / 3600)
         m = int(i / 60) % 60
         s = i % 60
-        print("%02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, None)))
+        print("%02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, True, None)))
     print "########## Armenian date and time ###########"
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)

@@ -22,6 +22,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+import datetime
 
 def _phrase_noop(str):
     return unicode(str, 'utf-8')
@@ -281,11 +282,11 @@ def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):
 def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
     retval = ""
     if (say_date):
-        if (date_time.date() == now.date()):
+        if (date_time.date() == date_time.date()):
             retval += _phrase_noop("hoy") + " " # today
-        elif (date_time.date() == now.date() - datetime.timedelta(1)):
+        elif (date_time.date() == date_time.date() - datetime.timedelta(1)):
             retval += _phrase_noop("ayer") + " " # yesterday
-        elif (date_time.date() == now.date() + datetime.timedelta(1)):
+        elif (date_time.date() == date_time.date() + datetime.timedelta(1)):
             retval += _phrase_noop("mañana") + " " # tomorrow
         else:
             retval += sayNumber(date_time.day, True, "") + " "

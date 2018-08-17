@@ -23,8 +23,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-import datetime
-
 __all__ = [ "JA" ]
 
 def _phrase_noop(str):
@@ -419,4 +417,4 @@ if (__name__ == "__main__"):
         h = int(i / 3600)
         m = int(i / 60) % 60
         s = i % 60
-        print("%02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, None)))
+        print("%02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, True, None)))

@@ -36,7 +36,7 @@ __all__ = [ "ivrAuthenticate", "AuthenticationError", "SipDialer" ]
 def generateSipCallId(host = '127.0.0.1'):
     if (':' in host):
         host, port = host.split(':')
-    return hashlib.md5(str((random.random() * 1000000000L) + time.time())).hexdigest() + '@' + host
+    return hashlib.md5(str((random.random() * 1000000000) + time.time())).hexdigest() + '@' + host
 
 class AuthenticationError(Exception):
     pass

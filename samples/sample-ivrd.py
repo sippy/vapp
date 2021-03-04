@@ -36,7 +36,7 @@ import Commons
 class SampleServer(ThreadingTCPServer):
     def __init__(self, handler):
         #
-        # We assume the server to be listening on local socket only, as we want 
+        # We assume the server to be listening on local socket only, as we want
 	# to have an easy and fast access to the recorded by Asterisk files,
         # easily pass own prompt files, etc
         #

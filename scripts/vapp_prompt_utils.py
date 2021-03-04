@@ -55,10 +55,10 @@ OPTIONS:
     -o, --optimize	  - optimize sentences in phrases
     --filter-untranslated - filter out untranslated phrases
     -d, --debug		  - enable debug info
-    --enum=start_num	  - add numbers as the first column starting with 
+    --enum=start_num	  - add numbers as the first column starting with
 			    start_num
     --enum-suffix	  - suffix to be appended to the enum values
-    --extra-extensions    - check prompts with these extensions 
+    --extra-extensions    - check prompts with these extensions
                             (comma or pipe separated list)
 
 COMMANDS:
@@ -73,7 +73,7 @@ COMMANDS:
     generate tests      - find all dynamic messages and generate test data
                           for them to allow to see the final phrases.
 """)
-    
+
 class PhraseContainer(object):
     def __init__(self, lang, opts):
 	self.setLang(lang)
@@ -316,7 +316,7 @@ class PhraseContainer(object):
 		    chunk = chunk.strip()
 		    if (chunk == ''):
 			continue
-		    if (self.opt_hash.has_key(chunk)):
+		    if chunk in self.opt_hash:
 			self.opt_hash[chunk].counter += 1
 			self.opt_hash[chunk].append(orig_chunk, self.orig_eng_by_chunk[orig_chunk], self.orig_local_by_chunk[orig_chunk])
 		    else:
@@ -329,13 +329,13 @@ class PhraseContainer(object):
 	    for k in c.orig_keys():
                 # flush all related chunks
                 for rel in rel_hash[k]:
-                    if (not self.orig_eng_by_chunk.has_key(rel.chunk)):
+                    if rel.chunk not in self.orig_eng_by_chunk:
                         for idx in range(0, len(rel.orig_phrases())):
                             cnt += self.addPhrase(rel.chunk, rel.orig_phrases()[idx], rel.orig_local()[idx])
-		if (self.orig_eng_by_chunk.has_key(k)):
+		if k in self.orig_eng_by_chunk:
 #		    print("Removing phrase " + self.orig_eng_by_chunk[k][0])
 		    self.orig_eng_by_chunk.pop(k)
-		if (not self.orig_eng_by_chunk.has_key(c.chunk)):
+		if c.chunk not in self.orig_eng_by_chunk:
 		    for idx in range(0, len(c.orig_phrases())):
                         cnt += self.addPhrase(c.chunk, c.orig_phrases()[idx], c.orig_local()[idx])
 	print("%d chunks created by the optimization process" % cnt)
@@ -347,19 +347,19 @@ class PhraseContainer(object):
                 tup = (orig_eng, orig_local, def_val)
                 if tup not in self.__tagged:
                     self.__tagged.append(tup)
-        if self.__stoplist.has_key(orig_eng):
+        if orig_eng in self.__stoplist:
             return
-        if (not self.orig_local_by_chunk.has_key(chunk)):
+        if chunk not in self.orig_local_by_chunk:
             self.orig_local_by_chunk[chunk] = [ orig_local ]
         else:
             self.orig_local_by_chunk[chunk].append(orig_local)
 
-	if (not self.orig_eng_by_chunk.has_key(chunk)):
+	if chunk not in self.orig_eng_by_chunk:
 	    self.orig_eng_by_chunk[chunk] = [ orig_eng ]
 	    self.control_phrases[chunk] = {}
 	    self.control_phrases[chunk][orig_eng] = 1
             return 1
-	elif (not self.control_phrases[chunk].has_key(orig_eng)):
+	elif orig_eng not in self.control_phrases[chunk]:
             self.orig_eng_by_chunk[chunk].append(orig_eng)
             self.control_phrases[chunk][orig_eng] = 1
             return 1
@@ -395,7 +395,7 @@ class Checker:
 
 	self.__lang = 'en'
 	try:
-	    opts, args = getopt.getopt(argv[1:], 'dol:f:p:', 
+	    opts, args = getopt.getopt(argv[1:], 'dol:f:p:',
 		    [ 'debug', 'optimize', 'lang=', 'promptpath',
 		      'filter-untranslated', 'enum=', 'enum-suffix=',
                       'extra-extensions='])
@@ -813,7 +813,7 @@ class Checker:
 		if (not f.startswith("prompt_map") and not f.endswith(".txt")):
 		    v = abspath(join(root, f))
 		    key = re.sub(r'\..*$', '', v)
-		    if (file_by_name.has_key(key)):
+		    if key in file_by_name:
 			file_by_name[key].append(v)
 		    else:
 			file_by_name[key] = [ v ]
@@ -828,7 +828,7 @@ class Checker:
 		seq = self.__speech_synth.promptFileSequence(i, True)
 		for f in seq:
 		    k = abspath(f)
-		    if (file_by_name.has_key(k)):
+		    if k in file_by_name:
 			file_by_name.pop(k)
 		    required_files[k] = 1
 	    except PromptException:
@@ -856,7 +856,7 @@ class Checker:
                     try:
                         (prompt, phrase) = line.rstrip().split("|", 1)
 			k = abspath(join(basedir, prompt))
-			if (not required_files.has_key(k)):
+			if k not in required_files:
 			    print("%s : %s" % (k, map_fname))
 		    except:
 			pass
@@ -896,7 +896,7 @@ class Checker:
 			# Find nonconvertable to G711 file formats
 			#
                         for ext in self.g711_nonconverable_exts:
-                            if (not missing_other.has_key(ext)):
+                            if ext not in missing_other:
                                 missing_other[ext] = {}
                             f = join(basedir, prompt) + "." + ext
                             if (os.access(f, os.F_OK) == 0):

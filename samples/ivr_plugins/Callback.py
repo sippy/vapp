@@ -45,7 +45,7 @@ class CallbackReq(object):
     def call(self):
         cli = "%(cli)s<%(cli)s>" % { 'cli' : Commons.config.callbackCli() }
         Commons.manager.originate(
-                self.__cld, 
+                self.__cld,
                 Commons.config.callbackTimeoutSec() * 1000,
                 Commons.config.callbackProxy(),
                 cli,

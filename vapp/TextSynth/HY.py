@@ -63,7 +63,7 @@ TENS = [
 	_phrase_noop("իննսուն")		# 90
 	]	
 
-MONTHS = [ 
+MONTHS = [
 	_phrase_noop("հունվարի"), 	# January's
 	_phrase_noop("փետրվարի"),	# February's
 	_phrase_noop("մարտի"),		# March
@@ -229,7 +229,7 @@ def sayDigits(num, flags):
         if (not i.isdigit()):
             pass
         retval += ONES[int(i)] + " "
-    
+
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):
@@ -301,7 +301,7 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
 
 if (__name__ == "__main__"):
     print("########## Armenian numbers ###########")
-    for i in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 23, 45, 78, 98, 123, 234, 345, 678, 876, 
+    for i in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 23, 45, 78, 98, 123, 234, 345, 678, 876,
              1234, 2345, 12345, 456789, 1234567, 12345678, 234567891, 3456789012, -1000000123
              -1, -12):
         print("%d: %s" % (i, sayNumber(i, False, "")))
@@ -314,7 +314,7 @@ if (__name__ == "__main__"):
     print("########## Armenian date and time ###########")
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
-    for i in ((now, '(today)'), 
+    for i in ((now, '(today)'),
               (now - datetime.timedelta(1), '(yesterday)'),
               (now + datetime.timedelta(1), '(tomorrow)'),
               (datetime.datetime(1970, 1, 20, 12, 0), ''),

@@ -50,11 +50,11 @@ class BaseIvrHandler(AgiHandler):
 
     def readLine(self, prompt, max_len, timeout_msec, editing_enabled = True):
         """
-        TTS enabled method that provides a way to read a string with 
-        possibility of editing. Special keys are '*' (clear input) and 
-        '#' (end of input). The method raises a NoInputException when 
-        entered string is empty and ClearRequestException when the '*' 
-        key is pressed. 
+        TTS enabled method that provides a way to read a string with
+        possibility of editing. Special keys are '*' (clear input) and
+        '#' (end of input). The method raises a NoInputException when
+        entered string is empty and ClearRequestException when the '*'
+        key is pressed.
 
         If editing_enabled is False the ClearRequestException is not
         generated.
@@ -63,7 +63,7 @@ class BaseIvrHandler(AgiHandler):
 
             while True:
                 try:
-                    number = self.readLine(_tts("Please enter a number"), 
+                    number = self.readLine(_tts("Please enter a number"),
                                 10, 10000)
                     print("User entered %s" % number)
                     break
@@ -166,9 +166,9 @@ class BaseIvrHandler(AgiHandler):
 	
     def execMenu(self, menu, start = None):
         """
-        This method allows to create IVR menus with single keypress 
-        navigation. The 'menu' argument is dictionary (see example). 
-        The 'start' argument allows to go directly to the specified 
+        This method allows to create IVR menus with single keypress
+        navigation. The 'menu' argument is dictionary (see example).
+        The 'start' argument allows to go directly to the specified
         menu item upon menu start.
 
         Example
@@ -199,14 +199,14 @@ class BaseIvrHandler(AgiHandler):
         #
         # Verify the existence of the quit handler
         #
-        if (menu.has_key('quit')):
+        if 'quit' in menu:
             quit_chars = menu['quit']
         else:
             quit_chars = '#'
         #
         # Check the default handler
         #
-        if (menu.has_key('default')):
+        if 'default' in menu:
             default = menu['default']
         else:
             default = lambda : self.waitForDigitEx(6000)
@@ -220,22 +220,22 @@ class BaseIvrHandler(AgiHandler):
         #
         # Play intro if any
         #
-        if (menu.has_key('intro')):
+        if 'intro' in menu:
             try:
                 menu['intro']()
             except AgiKeyStroke as keystroke:
                 cmd = keystroke
 	
 	max_attempts = 3
-	if (menu.has_key('max_attempts')):
+	if 'max_attempts' in menu:
 	    max_attempts = menu['max_attempts']
 	
 	on_err_handler = None
-	if (menu.has_key('error')):
+	if 'error' in menu:
 	    on_err_handler = menu['error']
 	
 	on_wrong_handler = None
-	if (menu.has_key('wrong')):
+	if 'wrong' in menu:
 	    on_wrong_handler = menu['wrong']
         #
         # Main loop
@@ -247,7 +247,7 @@ class BaseIvrHandler(AgiHandler):
 		if (cmd != None):
 		    if ((cmd.keyCode() < 0) or (cmd.key() in quit_chars)):
 			break
-		    if (menu.has_key(cmd.key())):
+		    if cmd.key() in menu:
 			repeats = 0
 			menu[cmd.key()]()
 			cmd = None

@@ -43,7 +43,7 @@ class AbstractPlugin(BasePlugin):
 
     def parseNetworkScript(self):
         """
-        Accepts the CLD that starts with 'vm' and contains the user 
+        Accepts the CLD that starts with 'vm' and contains the user
         identifier. Examples of possible CLDs:
 
             vm-505
@@ -143,7 +143,7 @@ class AbstractPlugin(BasePlugin):
 		'quit':'t#'
 	        }
             for k in self.additionalHandlers().keys():
-                if menu.has_key(k):
+                if k in menu:
                     continue
                 menu[k] = self.additionalHandlers()[k]
 

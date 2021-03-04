@@ -31,14 +31,14 @@ import glob
 VERSION = "0.36"
 
 LICENSE = """
-        The vapp library is distributed under version 2 of GNU Public 
-        License (GPL). For a license to use the vapp software under 
-        conditions other than those described here, or to purchase 
+        The vapp library is distributed under version 2 of GNU Public
+        License (GPL). For a license to use the vapp software under
+        conditions other than those described here, or to purchase
         support for this software, please contact Sippy Software, Inc.
 """
 
 DESCRIPTION = """
-IVR application framework designed to use the Asterisk AGI or 
+IVR application framework designed to use the Asterisk AGI or
 OpenPBX OGI protocol.
 """
 

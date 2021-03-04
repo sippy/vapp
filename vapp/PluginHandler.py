@@ -40,8 +40,8 @@ _daemons = dict()
 def loadPlugins(plugin_packages, exclude_modules = []):
     """
     This procedure must be called before using the PluginHandler class.
-    It searches and loads all available IVR plugins from packages specified 
-    in the plugin_packages parameter (array of strings). The exclude_modules 
+    It searches and loads all available IVR plugins from packages specified
+    in the plugin_packages parameter (array of strings). The exclude_modules
     parameter can contain a list of module names that must not be loaded.
 
     Note that the vapp.logger must be set before calling this function.
@@ -127,9 +127,9 @@ class PluginHandler(BaseIvrHandler):
     def parseNetworkScript(self):
 	"""
 	The purpose of this method is to determine which plugin wishes
-	to handle the call. This method iterates all loaded IVR plugins 
-	and runs the parseNetworkScript() method of each plugin. 
-	First plugin that returned True value becomes the session 
+	to handle the call. This method iterates all loaded IVR plugins
+	and runs the parseNetworkScript() method of each plugin.
+	First plugin that returned True value becomes the session
 	controller. Called by BaseIvrHandler.
 	"""
         self.setLocale(self.options().defaultSystemLocale())
@@ -149,8 +149,8 @@ class PluginHandler(BaseIvrHandler):
 	return self.__session_handler
 
     def answerSession(self):
-	""" 
-	Wrapper method. It calls the answerSession() method of 
+	"""
+	Wrapper method. It calls the answerSession() method of
 	the session controller plugin. Called by BaseIvrHandler.
 	"""
 	if (self.__session_handler != None):
@@ -158,7 +158,7 @@ class PluginHandler(BaseIvrHandler):
 
     def handleCall(self):
 	"""
-	Wrapper method. It calls the run() method of the session 
+	Wrapper method. It calls the run() method of the session
 	controller plugin. Called by BaseIvrHandler.
 	"""
 	if (self.__session_handler == None):
@@ -184,9 +184,9 @@ class PluginHandler(BaseIvrHandler):
 
     def logger(self):
 	"""
-	Returns a logger instance. It is the vapp.logger by default but 
+	Returns a logger instance. It is the vapp.logger by default but
 	this method can be overriden to make more advanced per session
-	logging such as to prepend the SIP Call-ID to each log message 
+	logging such as to prepend the SIP Call-ID to each log message
 	or something similar.
 	"""
 	return vapp.logger
@@ -212,7 +212,7 @@ class PluginHandler(BaseIvrHandler):
     #
     def speechSynth(self):
 	locale_name = self.locale().name()
-	if (not self.__speechSynthCache.has_key(locale_name)):
+	if locale_name not in self.__speechSynthCache:
             self.__speechSynthCache.setdefault(locale_name, self.createSpeechSynth(locale_name))
 	return self.__speechSynthCache[locale_name]
 
@@ -221,7 +221,7 @@ class PluginHandler(BaseIvrHandler):
 
     def textSynth(self):
 	locale_name = self.locale().name()
-	if (not self.__textSynthCache.has_key(locale_name)):
+	if locale_name not in self.__textSynthCache:
 	    self.__textSynthCache.setdefault(locale_name, self.createTextSynth(self.locale()))
 	return self.__textSynthCache[locale_name]
 
@@ -229,7 +229,7 @@ class PluginHandler(BaseIvrHandler):
         return TextSynth(locale)
 
     def setLocale(self, locale_name):
-        if (not self.__localeCache.has_key(locale_name)):
+        if locale_name not in self.__localeCache:
             self.__localeCache.setdefault(locale_name, self.createLocale(locale_name))
 	self.__locale = self.__localeCache[locale_name]
 

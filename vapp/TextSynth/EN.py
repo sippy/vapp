@@ -94,7 +94,7 @@ TENS_ORDINAL = [
 	_phrase_noop("ninetieth")
 	]
 
-MONTHS = [ 
+MONTHS = [
 	_phrase_noop("January"),
 	_phrase_noop("February"),
 	_phrase_noop("March"),
@@ -219,7 +219,7 @@ def sayDigits(num, flags):
             retval += ONES[int(i)] + " "
     if (prev_o):
         retval += _phrase_noop("oh")
-    
+
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):

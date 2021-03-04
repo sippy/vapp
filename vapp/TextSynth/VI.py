@@ -72,7 +72,7 @@ def sayNumber(number, ordinal, flags):
 
     if number >= 1000000:
         if minus:
-            return _phrase_noop("Nhỏ hơn âm một triệu") 
+            return _phrase_noop("Nhỏ hơn âm một triệu")
         else:
             return _phrase_noop("Hơn một triệu")
 
@@ -234,7 +234,7 @@ if (__name__ == "__main__"):
     print("=== Vietnamese date and time ===")
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
-    for i in ((now, '(today)'), 
+    for i in ((now, '(today)'),
               (now - datetime.timedelta(1), '(yesterday)'),
               (now + datetime.timedelta(1), '(tomorrow)'),
               (datetime.datetime(1970, 1, 20, 12, 0), ''),

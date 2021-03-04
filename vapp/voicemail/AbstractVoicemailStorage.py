@@ -108,8 +108,8 @@ class AbstractVoicemailStorage:
     Abstract interface to voicemail storage. Actual storage should
     inherit this class and implement the following methods:
 
-    setCurrentFolder(folder_id) 
-	where folder_id is integer in range from 0 to 9. 
+    setCurrentFolder(folder_id)
+	where folder_id is integer in range from 0 to 9.
 	No return value required.
 
     currentFolderId()
@@ -150,7 +150,7 @@ class AbstractVoicemailStorage:
 	No return value required.
 
     finalize()
-	Do post hangup procedures. Cleanup temporary files, 
+	Do post hangup procedures. Cleanup temporary files,
 	remove deleted messages, etc.
 	No return value required.
 

@@ -111,7 +111,7 @@ TENS_ORDINAL = [
 	_phrase_noop("doksanıncı")	# 90th
 	]
 
-MONTHS = [ 
+MONTHS = [
 	_phrase_noop("Ocak"), 		# January
 	_phrase_noop("Şubat"),		# February
 	_phrase_noop("Mart"),		# March
@@ -238,7 +238,7 @@ def sayDigits(num, flags):
         if (not i.isdigit()):
             pass
         retval += ONES[int(i)] + " "
-    
+
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):

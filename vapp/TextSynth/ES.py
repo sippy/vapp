@@ -105,7 +105,7 @@ TENS_ORDINAL = [
 	_phrase_noop("nonagésimo")
 	]
 
-MONTHS = [ 
+MONTHS = [
 	_phrase_noop("Enero"),
 	_phrase_noop("Febrero"),
 	_phrase_noop("Marzo"),
@@ -236,7 +236,7 @@ def sayDigits(num, flags):
             retval += UNOS[GENDER_NONE] + " "
         else:
             retval += ONES[i] + " "
-    
+
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):

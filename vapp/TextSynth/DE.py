@@ -104,7 +104,7 @@ TENS_ORDINAL = [
 	_phrase_noop("neunzigste")
 	]
 
-MONTHS = [ 
+MONTHS = [
 	_phrase_noop("Januar"),
 	_phrase_noop("Februar"),
 	_phrase_noop("März"),
@@ -304,7 +304,7 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
 if (__name__ == "__main__"):
     import datetime
     print("########## German numbers ###########")
-    for i in (123, 234, 345, 678, 876, 
+    for i in (123, 234, 345, 678, 876,
              1234, 2345, 12345, 456789, 1234567, 12345678, 234567891, 3456789012, -1000000123
              -1, -12):
         print("%d: %s" % (i, sayNumber(i, False, "")))
@@ -321,7 +321,7 @@ if (__name__ == "__main__"):
     print("########## German date and time ###########")
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
-    for i in ((now, '(today)'), 
+    for i in ((now, '(today)'),
               (now - datetime.timedelta(1), '(yesterday)'),
               (now + datetime.timedelta(1), '(tomorrow)'),
               (datetime.datetime(1970, 1, 20, 12, 0), ''),

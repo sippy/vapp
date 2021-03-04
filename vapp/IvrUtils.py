@@ -97,7 +97,7 @@ class SipDialer:
 
         def update(self, val):
             if (self.__val == val):
-                return 
+                return
             self.__val = val
             self.__changed = True
 
@@ -118,7 +118,7 @@ class SipDialer:
 
     def callId(self):
         """
-        Returns the current value for Call-ID header to be used for 
+        Returns the current value for Call-ID header to be used for
         the call.
         """
         return self.__call_id
@@ -187,9 +187,9 @@ class SipDialer:
         the same name.
 
         If the 'value' is set to None then previously defined SIP header
-        with the given name will be removed from the SIP request. 
+        with the given name will be removed from the SIP request.
         """
-        if (self.__hdr_by_name.has_key(hdr_name)):
+        if hdr_name in self.__hdr_by_name:
             hdr = self.__hdr_by_name[hdr_name]
             hdr.update(value)
         else:
@@ -208,7 +208,7 @@ class SipDialer:
 
     def dial(self, dest, agi_handler):
         """
-        Place the call. Returns nothing. Use the DIALSTATUS dialplan 
+        Place the call. Returns nothing. Use the DIALSTATUS dialplan
         variable to find out how the call ended.
         """
         if (self.__sip_proxy == None):

@@ -38,7 +38,7 @@ class TextSynth:
     def say(self, str, args = [], kw = {}):
 	#
 	# %(ident)[FLAGS]n - number substitution
-	# Where 
+	# Where
 	#   ident - identifier to search in function args
 	#   FLAGS - set of single digit flags
 	# Common flags:
@@ -51,7 +51,7 @@ class TextSynth:
 	# %(ident)[FLAGS]s - string substitution
 	# Currently no flags affect the substitution
 	#
-	# 
+	#
 	# %(ident)[FLAGS]d - duration substitution
 	# Common flags:
 	#   H - don't say hours
@@ -65,7 +65,7 @@ class TextSynth:
 	#   T - don't say time
 	#   S - don't say seconds
 	# For other flags please consult the appropriate language module
-	# 
+	#
 	res = re.findall(r'(%\([^)]*\)\[[^]]*\][nsdD]|%\([^)]*\)[nsdD]|%[nsdD]|%\[[^]]*\][nsdD])', str)
 	idx = 0
 	retval = str

@@ -166,7 +166,7 @@ HUNDREDS_ORDINAL = [
         _phrase_noop("მეცხრაასე"),  # 900th
         ]
 
-MONTHS = [ 
+MONTHS = [
 	_phrase_noop("იანვარი"),    # Jan
 	_phrase_noop("თებერვალი"),  # Feb
 	_phrase_noop("მარტი"),      # Mar
@@ -270,7 +270,7 @@ def sayDigits(num, flags):
             pass
         i = int(i)
         retval += ONES[i] + " "
-    
+
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):
@@ -328,7 +328,7 @@ if (__name__ == "__main__"):
     print("########## Numbers ###########")
     for i in range(0, 100):
         print("%d: %s" % (i, sayNumber(i, False, "")))
-    for i in (123, 234, 345, 678, 876, 
+    for i in (123, 234, 345, 678, 876,
              1234, 2345, 12345, 456789, 1234567, 12345678, 234567891, 3456789012, -1000000123
              -1, -12):
         print("%d: %s" % (i, sayNumber(i, False, "")))
@@ -348,7 +348,7 @@ if (__name__ == "__main__"):
     print("########## Date and time ###########")
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
-    for i in ((now, '(today)'), 
+    for i in ((now, '(today)'),
               (now - datetime.timedelta(1), '(yesterday)'),
               (now + datetime.timedelta(1), '(tomorrow)'),
               (datetime.datetime(1970, 1, 20, 12, 0), ''),

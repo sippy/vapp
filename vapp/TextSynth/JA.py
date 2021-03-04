@@ -223,7 +223,7 @@ SECONDS = [
 	_phrase_noop("九秒")	# 9
 	]
 
-#MONTHS = [ 
+#MONTHS = [
 #	_phrase_noop("一月"), 		# January
 #	_phrase_noop("二月"),		# February
 #	_phrase_noop("三月"),		# March
@@ -307,7 +307,7 @@ def sayDigits(num, flags):
         if (not i.isdigit()):
             pass
         retval += ONES[int(i)] + " "
-    
+
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):

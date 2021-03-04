@@ -27,9 +27,9 @@ from VoicemailStorage import VoicemailStorage
 class PluginUtils:
     __locale = None
 
-    def findUser(self, id):
+    def findUser(self, uid):
         try:
-            return User(id) # TODO
+            return User(uid) # TODO
         except Exception:
             return None
 

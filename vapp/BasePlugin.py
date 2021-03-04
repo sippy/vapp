@@ -31,12 +31,12 @@ class BasePlugin(object):
     """
     Abstract base class for IVR plugins.
 
-    Most methods are wrappers for PluginHandler, BaseIvrHandler and 
+    Most methods are wrappers for PluginHandler, BaseIvrHandler and
     AgiHandler methods.
 
     Real plugin must be the python module with arbitrary name and
     must contain class with fixed name 'Plugin'. The Plugin class
-    must inherit the BasePlugin and implement at least the 
+    must inherit the BasePlugin and implement at least the
     following methods:
 
 	parseNetworkScript()
@@ -44,8 +44,8 @@ class BasePlugin(object):
 
     The parseNetworkScript() must return boolean value. True means that
     the plugin wishes to handle current call.
-    
-    You can also override the answerSession() method to do nothing if 
+
+    You can also override the answerSession() method to do nothing if
     your application wants to use the early media mode.
     """
     def __init__(self, owner):

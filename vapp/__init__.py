@@ -47,9 +47,9 @@ def default_pot_files():
     files = []
     cfg = _translation_config
     for section in cfg.sections():
-        if (cfg.has_option(section, 'po_dir') and 
+        if (cfg.has_option(section, 'po_dir') and
                 cfg.has_option(section, 'text_domain')):
-            files.append(os.path.join(cfg.get(section, 'po_dir'), 
+            files.append(os.path.join(cfg.get(section, 'po_dir'),
                     cfg.get(section, 'text_domain') + ".pot"))
     return files
 

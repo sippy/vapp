@@ -78,12 +78,12 @@ class Chunked:
 	    found = False
 	    #dbg_dump += "TRY: '%s'\n" % phrase
 	    for pmap in pmaps:
-		if (pmap.has_key(phrase)): # match found
+		if phrase in pmap: # match found
 		    (prompt, basedir) = pmap[phrase]
 		    if (prepend_basedir and not prompt.startswith("/")):
 			prompt = basedir + prompt
 		    retval.append(prompt)
-		    dbg_dump += "MATCH: '%s', prompt %s\n" % (phrase, prompt) 
+		    dbg_dump += "MATCH: '%s', prompt %s\n" % (phrase, prompt)
 		    found = True
 		    break
 	    if (found):

@@ -22,8 +22,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
 """
-Simple voicemail storage. Mailbox locking is not implemented 
-intentionally as it will complicate the example but the purpose 
+Simple voicemail storage. Mailbox locking is not implemented
+intentionally as it will complicate the example but the purpose
 of this example is rather educational than practical.
 """
 import os
@@ -76,8 +76,8 @@ class Folder:
             for name in os.listdir(folder_path):
                 try:
                     (name, ext) = name.split('.', 1)
-                    id = int(name)
-                    self.__messages.append(Message(id, ext))
+                    fid = int(name)
+                    self.__messages.append(Message(fid, ext))
                 except ValueError:
                     pass
         except OSError:
@@ -107,8 +107,8 @@ class Folder:
     def setCurrentMessageHeard(self, heard):
         self.__messages[self.__current_msg].setHeard(heard)
 
-    def setCurrentMessage(self, id):
-        self.__current_msg = id
+    def setCurrentMessage(self, mid):
+        self.__current_msg = mid
 
     def finalize(self, owner):
         old_messages_path = "%s/%d" % (owner.home(), FOLDER_OLD)
@@ -161,15 +161,15 @@ class VoicemailStorage(AbstractVoicemailStorage):
     def home(self):
         return self.__home
 
-    def setCurrentFolder(self, id):
-        self.__current_folder = id
-        self.__loadFolder(id)
+    def setCurrentFolder(self, fid):
+        self.__current_folder = fid
+        self.__loadFolder(fid)
 
-    def __loadFolder(self, id):
-        if (not self.__folders.has_key(id)):
-            folder_path = "%s/%d" % (self.__home, id)
-            self.__folders[id] = Folder(folder_path)
-        return self.__folders[id]
+    def __loadFolder(self, fid):
+        if fid not in self.__folders:
+            folder_path = "%s/%d" % (self.__home, fid)
+            self.__folders[fid] = Folder(folder_path)
+        return self.__folders[fid]
 
     def currentFolderId(self):
         return self.__current_folder
@@ -177,8 +177,8 @@ class VoicemailStorage(AbstractVoicemailStorage):
     def numOfMessages(self):
         return self.__folders[self.__current_folder].numOfMessages()
 
-    def setCurrentMessage(self, id):
-        self.__folders[self.__current_folder].setCurrentMessage(id)
+    def setCurrentMessage(self, mid):
+        self.__folders[self.__current_folder].setCurrentMessage(mid)
 
     def setCurrentMessageDeleted(self, deleted):
         self.__folders[self.__current_folder].setCurrentMessageDeleted(deleted)

@@ -1604,20 +1604,20 @@ def _sayNumber(number, ordinal, gender, case):
                                             GENDER_FEMININE,
                                             tmp_case) + " "
                 singular = [
-                                _phrase_noop("тысяча"), 
-                                _phrase_noop("тысячи"), 
-                                _phrase_noop("тысяче"), 
-                                _phrase_noop("тысячу"), 
-                                _phrase_noop("тысячью"), 
-                                _phrase_noop("тысяче"), 
+                                _phrase_noop("тысяча"),
+                                _phrase_noop("тысячи"),
+                                _phrase_noop("тысяче"),
+                                _phrase_noop("тысячу"),
+                                _phrase_noop("тысячью"),
+                                _phrase_noop("тысяче"),
                            ][tmp_case]
                 plural1 = [
-                                _phrase_noop("тысячи"), 
-                                _phrase_noop("тысяч"), 
-                                _phrase_noop("тысячам"), 
-                                _phrase_noop("тысячи"), 
-                                _phrase_noop("тысячами"), 
-                                _phrase_noop("тысячах"), 
+                                _phrase_noop("тысячи"),
+                                _phrase_noop("тысяч"),
+                                _phrase_noop("тысячам"),
+                                _phrase_noop("тысячи"),
+                                _phrase_noop("тысячами"),
+                                _phrase_noop("тысячах"),
                           ][tmp_case]
                 plural2 = [
                             _phrase_noop("тысяч"),
@@ -1713,7 +1713,7 @@ def sayDigits(num, flags):
         if (not i.isdigit()):
             continue
         retval += ONES_M[0][int(i)] + " "
-    
+
     return retval.rstrip()
 
 def sayDatetime(date_time, say_date, say_time, say_seconds, flags):

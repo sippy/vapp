@@ -67,7 +67,7 @@ TENS = [
 TENS_ORDINAL = [
 	]
 
-MONTHS = [ 
+MONTHS = [
 	]
 
 def sayNumber(number, ordinal, flags):
@@ -151,7 +151,7 @@ def sayDigits(num, flags):
     for i in str(num):
         if (i.isdigit()):
             retval += ONES[int(i)] + " "
-    
+
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):

@@ -212,10 +212,10 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
     return " ".join(retval)
 
 if (__name__ == "__main__"):
-    print "=== Vietnamese numbers ==="
+    print("=== Vietnamese numbers ===")
     for i in range(10) + [10, 11, 14, 15, 100, 101, 102, 1004, 2045, 34567, 400001, 1000001, -1, -1000001]:
         print("  %d: %s" % (i, sayNumber(i, False, "")))
-    print "=== Vietnamese ordinal numbers ==="
+    print("=== Vietnamese ordinal numbers ===")
     for i in range(1, 10):
         sufx = "th"
         if i == 1:
@@ -225,13 +225,13 @@ if (__name__ == "__main__"):
         elif i == 3:
             sufx = "rd"
         print("  %d%s: %s" % (i, sufx, sayNumber(i, True, "")))
-    print "=== Durations in Vietnamese ==="
+    print("=== Durations in Vietnamese ===")
     for i in (0, 1, 23, 466, 78910, 11, 12, 100, 1004, 10003, 100002, 1000001):
         h = int(i / 3600)
         m = int(i / 60) % 60
         s = i % 60
         print("  %02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, True, None)))
-    print "=== Vietnamese date and time ==="
+    print("=== Vietnamese date and time ===")
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
     for i in ((now, '(today)'), 

@@ -72,7 +72,7 @@ class AbstractPlugin(BasePlugin):
         try:
 	    if not self.logged_in:
 		ivrAuthenticate(self)
-        except AuthenticationError, e:
+        except AuthenticationError as e:
             self.info("Auth error: " + str(e))
             self.say(self._tts("Good bye"))
             self.hangup()
@@ -112,7 +112,7 @@ class AbstractPlugin(BasePlugin):
     def changeFolder(self):
         try:
             self.getFolder2(self._tts("Change to which folder?"), 0)
-        except AgiKeyStroke, keystroke:
+        except AgiKeyStroke as keystroke:
             if ((keystroke.keyCode() > 0) and keystroke.key().isdigit()):
                 self.setFolder(int(keystroke.key()))
             self.starting = True
@@ -153,7 +153,7 @@ class AbstractPlugin(BasePlugin):
 	    return
         try:
             self.getFolder2(self._tts("which folder should I save the message to?"), 1)
-        except AgiKeyStroke, keystroke:
+        except AgiKeyStroke as keystroke:
             tmp_key = None
             if (keystroke.keyCode() > 0 and keystroke.key().isdigit()):
                 target_folder = int(keystroke.key())
@@ -162,7 +162,7 @@ class AbstractPlugin(BasePlugin):
 		    self.sayEx(self._tts("message %(num)n saved to %(folder)s"), kw = { 'num':self.curMsg() + 1, 'folder':self._tts(sayFolderNameById(target_folder)) })
                 except VM_MailboxFullError:
                     self.sayEx(self._tts("Sorry but the user's mailbox can't accept more messages."))
-                except AgiKeyStroke, keystroke:
+                except AgiKeyStroke as keystroke:
                     tmp_key = keystroke
 		except AgiError:
 		    return
@@ -324,7 +324,7 @@ class AbstractPlugin(BasePlugin):
                               escape = '#', \
                               beep = True, \
                               silence_sec = silence_sec)
-        except AgiKeyStroke, keystroke:
+        except AgiKeyStroke as keystroke:
             if (keystroke.keyCode() != -1):
                 self.prompt_exists = True
             else:
@@ -348,7 +348,7 @@ class AbstractPlugin(BasePlugin):
                 self.sayEx(self._tts("last message received %[S]D"), [self.curMsgDatetime()])
             if (self.curMsg() != 0 and self.curMsg() < self.lastMsg()):
 		self.sayEx(self._tts("message %(num)n received %(date)[S]D"), kw = { 'num':(self.curMsg() + 1), 'date':self.curMsgDatetime() })
-        except AgiKeyStroke, keystroke:
+        except AgiKeyStroke as keystroke:
             # Allow pressing '1' to skip intro
             if (keystroke.keyCode() != ord('1')):
                 raise

@@ -102,7 +102,7 @@ class AbstractPlugin(BasePlugin):
             self.debug("The voicemail box of the user %s is full" % self.user.username())
             try:
                 self.sayEx(self._tts("Voicemail box is full and cannot accept any messages at this time. Good bye."))
-            except AgiKeyStroke, keystroke:
+            except AgiKeyStroke as keystroke:
                 # Give a chance to the caller to enter the additional menu.
                 handler = self.additionalEarlyHandlers().get(keystroke.key(), None)
                 if handler != None:
@@ -125,7 +125,7 @@ class AbstractPlugin(BasePlugin):
                     self.streamFileEx(promptfile)
             elif (not self.silent):
                 self.sayEx(self._tts("Please leave your message after the tone. When done hang up or press the pound key"))
-        except AgiKeyStroke, keystroke:
+        except AgiKeyStroke as keystroke:
             handler = self.additionalEarlyHandlers().get(keystroke.key(), None)
             if handler != None:
                 handler()
@@ -190,7 +190,7 @@ class AbstractPlugin(BasePlugin):
                           escape = escapes, \
                           beep = True, \
                           silence_sec = silence_sec)
-        except AgiKeyStroke, keystroke:
+        except AgiKeyStroke as keystroke:
             if (keystroke.key() == '*' or keystroke.keyCode() == -1):
                 raise
 	# handle hangup

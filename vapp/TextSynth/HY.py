@@ -300,18 +300,18 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
     return retval.rstrip()
 
 if (__name__ == "__main__"):
-    print "########## Armenian numbers ###########"
+    print("########## Armenian numbers ###########")
     for i in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 23, 45, 78, 98, 123, 234, 345, 678, 876, 
              1234, 2345, 12345, 456789, 1234567, 12345678, 234567891, 3456789012, -1000000123
              -1, -12):
         print("%d: %s" % (i, sayNumber(i, False, "")))
-    print "########## Armenian durations ###########"
+    print("########## Armenian durations ###########")
     for i in (0, 1, 23, 466, 78912, 11, 14, 100, 1004, 10003, 100002, 1000001):
         h = int(i / 3600)
         m = int(i / 60) % 60
         s = i % 60
         print("%02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, True, None)))
-    print "########## Armenian date and time ###########"
+    print("########## Armenian date and time ###########")
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
     for i in ((now, '(today)'), 

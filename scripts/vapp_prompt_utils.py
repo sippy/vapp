@@ -46,7 +46,7 @@ class MyException(Exception):
     pass
 
 def usage(e):
-    print e
+    print(e)
     print("""
 usage: prompt_utils.py [OPTIONS] COMMAND
 OPTIONS:
@@ -236,12 +236,12 @@ class PhraseContainer(object):
 	    for tag in original_tags:
 		orig.append(self.stripTagFlags(tag[0]))
 	    if (len(original_tags) != len(translated_tags)):
-		print "ERROR: different number of %%-tags. Original phrase: %s" % orig_phrase
+		print("ERROR: different number of %%-tags. Original phrase: %s" % orig_phrase)
 		sys.exit(1)
 	    for tag in translated_tags:
 		t = self.stripTagFlags(tag[0])
 		if (t not in orig):
-		    print "ERROR: %%-tag mismatch. Original phrase: '%s'" % orig_phrase
+		    print("ERROR: %%-tag mismatch. Original phrase: '%s'" % orig_phrase)
 		    sys.exit(1)
 		else:
 		    orig.remove(t)
@@ -333,7 +333,7 @@ class PhraseContainer(object):
                         for idx in range(0, len(rel.orig_phrases())):
                             cnt += self.addPhrase(rel.chunk, rel.orig_phrases()[idx], rel.orig_local()[idx])
 		if (self.orig_eng_by_chunk.has_key(k)):
-#		    print "Removing phrase " + self.orig_eng_by_chunk[k][0]
+#		    print("Removing phrase " + self.orig_eng_by_chunk[k][0])
 		    self.orig_eng_by_chunk.pop(k)
 		if (not self.orig_eng_by_chunk.has_key(c.chunk)):
 		    for idx in range(0, len(c.orig_phrases())):
@@ -454,9 +454,9 @@ class Checker:
             self.__speech_synth = vapp.SpeechSynth.Chunked.Chunked(self.__lang, self.prompt_path)
             handler()
 
-	except MyException, e:
+	except MyException as e:
             usage(e)
-        except getopt.GetoptError, e:
+        except getopt.GetoptError as e:
             usage(e)
 
     def _generateTest(self, tag, def_val, tag_name, hints):
@@ -558,7 +558,7 @@ class Checker:
 </table>
 </body></html>
 """)
-        print "%s created" % out_fname
+        print("%s created" % out_fname)
 
     def doListPhrases(self):
         if (self.optimize):
@@ -838,11 +838,11 @@ class Checker:
 	print("\nUnused prompt files:\n")
 	for k in p:
 	    for f in file_by_name[k]:
-		print f
+		print(f)
 	#
 	# Find unused prompt mappings
 	#
-	print "\nUnused prompt mappings:\n"
+	print("\nUnused prompt mappings:\n")
         for map_fname in os.listdir(basedir):
             if (map_fname.startswith("prompt_map") and map_fname.endswith(".txt")):
                 mapfile = file(join(basedir, map_fname), "r")
@@ -908,11 +908,11 @@ class Checker:
 		p_g711.sort()
 		if (len(p_g711) > 0):
 		    no_problem = False
-		    print """
+		    print("""
 Missing G711 compatible prompts:
-"""
+""")
 		    for f in p_g711:
-			print " " + abspath(join(basedir, f))
+			print(" " + abspath(join(basedir, f)))
                 other_names = {}
                 found_names = 0
                 for ext in missing_other.keys():
@@ -923,15 +923,15 @@ Missing G711 compatible prompts:
 		if (found_names > 0):
 		    no_problem = False
                     for ext in self.g711_nonconverable_exts:
-                        print """
+                        print("""
 Missing %s prompts:
-""" % ext.upper()
+""" % ext.upper())
                         for f in other_names[ext]:
-                            print " " + abspath(join(basedir, f + "." + ext))
+                            print(" " + abspath(join(basedir, f + "." + ext)))
 		if (no_problem):
-		    print ""
-		    print "No problems found"
-		print "-" * 70
+		    print("")
+		    print("No problems found")
+		print("-" * 70)
 
 
     def writeHeader(self, out):

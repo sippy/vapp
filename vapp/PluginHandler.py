@@ -169,7 +169,7 @@ class PluginHandler(BaseIvrHandler):
 	except vapp.AgiError:
 	    self.debug("User hung up")
 	    self.hangup()
-        except PromptException, e:
+        except PromptException as e:
             e.dump()
             self.error("BAD PROMPT. Trace dumped into %s" % e.dumpFileName())
 	except:

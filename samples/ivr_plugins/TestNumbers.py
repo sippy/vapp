@@ -55,7 +55,7 @@ class Plugin(vapp.BasePlugin):
 		if (counter > 3):
 		    return
 		counter += 1
-	    except vapp.AgiKeyStroke, k:
+	    except vapp.AgiKeyStroke as k:
 		if (k.key().isdigit()):
 		    i = int(k.key()) - 1
 		    if (i >= 0 and i < len(locales)):
@@ -70,7 +70,7 @@ class Plugin(vapp.BasePlugin):
 	    while (True):
 		try:
 		    self.waitForDigitEx(10000)
-		except vapp.AgiKeyStroke, k:
+		except vapp.AgiKeyStroke as k:
 		    if (k.key().isdigit()):
 			num += k.key()
 		    else:

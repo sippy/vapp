@@ -44,7 +44,7 @@ OpenPBX OGI protocol.
 
 class install(_install):
     def run(self):
-        print "compiling gettext files"
+        print("compiling gettext files")
         os.chdir("po")
         for fname in glob.glob("*.po"):
             os.spawnl(os.P_WAIT, "./compilepo.sh", "./compilepo.sh", fname[:-3], self.root, self.prefix)
@@ -75,6 +75,6 @@ setup(name = "vapp",
                    'vapp.voicemail' ],
       scripts = [ 'scripts/vapp_prompt_utils.py' ],
       data_files = [ ('share/vapp/po/', [ 'po/vapp.pot' ]) ] + prompts,
-      platforms = "Python 2.4 and later",
+      platforms = "Python 3.5 and later",
       cmdclass = { 'install' : install }
       )

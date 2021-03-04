@@ -473,7 +473,7 @@ class AgiHandler(StreamRequestHandler, object):
 		try:
 		    agi_handler.waitForDigitEx(long_event_interdigit_delay)
 		    key = None
-		except AgiKeyStroke, k:
+		except AgiKeyStroke as k:
 		    key = k
 		    self.__last_key = key
 

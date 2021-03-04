@@ -65,7 +65,7 @@ class BaseIvrHandler(AgiHandler):
                 try:
                     number = self.readLine(_tts("Please enter a number"), 
                                 10, 10000)
-                    print "User entered %s" % number
+                    print("User entered %s" % number)
                     break
                 except NoInputException:
                     # user entered an empty string
@@ -84,7 +84,7 @@ class BaseIvrHandler(AgiHandler):
 			self.sayEx(prompt)
 		    self.waitForDigitEx(timeout_msec)
 		    raise AgiKeyStroke('#')
-		except AgiKeyStroke, e:
+		except AgiKeyStroke as e:
 		    if (e.key() == '*'):
 			raise ClearRequestException(retval)
 		    elif (e.key() == '#'):
@@ -117,7 +117,7 @@ class BaseIvrHandler(AgiHandler):
 		    for prompt in prompts:
 			self.streamFileEx(prompt)
 		self.waitForDigitEx(timeout_msec)
-	    except AgiKeyStroke, key:
+	    except AgiKeyStroke as key:
 		timeout = False
 		if (key.key() == '#'):
 		    done = True
@@ -223,7 +223,7 @@ class BaseIvrHandler(AgiHandler):
         if (menu.has_key('intro')):
             try:
                 menu['intro']()
-            except AgiKeyStroke, keystroke:
+            except AgiKeyStroke as keystroke:
                 cmd = keystroke
 	
 	max_attempts = 3
@@ -267,5 +267,5 @@ class BaseIvrHandler(AgiHandler):
 		    default()
 		    self.waitForDigitEx(self.options().defaultPromptTimeoutMsec())
                 cmd = AgiKeyStroke(0)
-            except AgiKeyStroke, keystroke:
+            except AgiKeyStroke as keystroke:
                 cmd = keystroke

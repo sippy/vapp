@@ -310,7 +310,7 @@ class AsteriskManager(threading.Thread):
 	    if (self.__sock == None):
 		try:
 		    self.__reconnect()
-		except socket.error, e:
+		except socket.error as e:
 		    if (self.__logger):
 			self.__logger.info("AsteriskMgr: Connection to Asterisk Manager failed: %s." % (e))
 		    continue
@@ -534,7 +534,7 @@ class AsteriskManager(threading.Thread):
 	self.__action_lock.release()
 
     def __processPacket(self, pkt):
-	#print "### %s" % str(pkt)
+	#print("### %s" % str(pkt))
 
         if pkt.event() == 'Newchannel':
             self.__send_cmd("Action: GetVar\r\n"

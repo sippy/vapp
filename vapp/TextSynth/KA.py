@@ -325,7 +325,7 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
     return retval.rstrip()
 
 if (__name__ == "__main__"):
-    print "########## Numbers ###########"
+    print("########## Numbers ###########")
     for i in range(0, 100):
         print("%d: %s" % (i, sayNumber(i, False, "")))
     for i in (123, 234, 345, 678, 876, 
@@ -334,18 +334,18 @@ if (__name__ == "__main__"):
         print("%d: %s" % (i, sayNumber(i, False, "")))
     val = "1234560987"
     res = sayDigits(val, None)
-    print "########## Ordinal numbers ###########"
+    print("########## Ordinal numbers ###########")
     for i in range(0, 30):
         print("%d: %s" % (i, sayNumber(i, True, "")))
-    print "########## Digit string ###########"
+    print("########## Digit string ###########")
     print("%s: %s" % (val, res))
-    print "########## Durations ###########"
+    print("########## Durations ###########")
     for i in (0, 1, 23, 466, 78912, 11, 14, 100, 1004, 10003, 100002, 1000001):
         h = int(i / 3600)
         m = int(i / 60) % 60
         s = i % 60
         print("%02d:%02d:%02d - %s" % (h, m, s, sayDuration(i, True, True, True, None)))
-    print "########## Date and time ###########"
+    print("########## Date and time ###########")
     tmp = datetime.datetime.now()
     now = datetime.datetime(tmp.year, tmp.month, tmp.day, tmp.hour, tmp.minute, tmp.second)
     for i in ((now, '(today)'), 

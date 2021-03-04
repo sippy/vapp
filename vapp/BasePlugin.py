@@ -21,13 +21,15 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
+from abc import abstractmethod, ABC
+
 """
 Base class for plugins to be managed by PluginHandler.
 """
 
 __all__ = [ "BasePlugin" ]
 
-class BasePlugin(object):
+class BasePlugin(ABC):
     """
     Abstract base class for IVR plugins.
 
@@ -39,8 +41,8 @@ class BasePlugin(object):
     must inherit the BasePlugin and implement at least the
     following methods:
 
-	parseNetworkScript()
-	run()
+        parseNetworkScript()
+        run()
 
     The parseNetworkScript() must return boolean value. True means that
     the plugin wishes to handle current call.
@@ -49,107 +51,113 @@ class BasePlugin(object):
     your application wants to use the early media mode.
     """
     def __init__(self, owner):
-	""" Constructor. 'owner' is PluginHandler instance. """
-	self.__owner = owner
+        """ Constructor. 'owner' is PluginHandler instance. """
+        self.__owner = owner
+
+    @abstractmethod
+    def findUser(self, user): pass
+
+    @abstractmethod
+    def format(self): pass
 
     def owner(self):
-	""" The PluginHandler instance owning this plugin instance. """
-	return self.__owner
+        """ The PluginHandler instance owning this plugin instance. """
+        return self.__owner
 
     def answerSession(self):
-	self.answer()
+        self.answer()
 
     def _tts(self, str):
-	return self.locale().gettext(str)
+        return self.locale().gettext(str)
 
     def _ntts(self, text_singular, text_plural, num):
-	return self.locale().ngettext(text_singular, text_plural, num)
+        return self.locale().ngettext(text_singular, text_plural, num)
 
     # logging methods
     def logger(self):
-	return self.__owner.logger()
+        return self.__owner.logger()
 
     def debug(self, msg):
-	self.__owner.debug(msg)
+        self.__owner.debug(msg)
 
     def info(self, msg):
-	self.__owner.info(msg)
+        self.__owner.info(msg)
 
     def error(self, msg):
-	self.__owner.error(msg)
+        self.__owner.error(msg)
 
     def warn(self, msg):
-	self.__owner.warn(msg)
+        self.__owner.warn(msg)
 
     # AgiHandler wrappers
     def network_script(self):
-	return self.__owner.network_script
+        return self.__owner.network_script
 
     def answer(self):
-	return self.__owner.answer()
+        return self.__owner.answer()
 
     def setVariable(self, var, value):
-	return self.__owner.setVariable(var, value)
+        return self.__owner.setVariable(var, value)
 
     def getVariable(self, var):
-	return self.__owner.getVariable(var)
+        return self.__owner.getVariable(var)
 
     def getFullVariable(self, var):
-	return self.__owner.getVariable(var)
+        return self.__owner.getVariable(var)
 
     def execApp(self, app, options = ""):
-	self.__owner.execApp(app, options)
+        self.__owner.execApp(app, options)
 
     def extension(self):
-	return self.__owner.extension
+        return self.__owner.extension
 
     def setExtension(self, ext):
-	""" Replace AgiHandler.extension with custom value """
-	self.__owner.extension = ext
+        """ Replace AgiHandler.extension with custom value """
+        self.__owner.extension = ext
 
     def dnid(self):
-	return self.__owner.dnid
+        return self.__owner.dnid
 
     def rawCallerid(self):
-	return self.__owner.raw_callerid
+        return self.__owner.raw_callerid
 
     def callerid(self):
-	return self.__owner.callerid
+        return self.__owner.callerid
 
     def calleridname(self):
-	return self.__owner.calleridname
+        return self.__owner.calleridname
 
     def channel(self):
-	return self.__owner.channel
+        return self.__owner.channel
 
     def execMenu(self, menu, start = None):
-	return self.__owner.execMenu(menu, start)
+        return self.__owner.execMenu(menu, start)
 
     def waitForDigitEx(self, timeout_msec):
-	self.__owner.waitForDigitEx(timeout_msec)
+        self.__owner.waitForDigitEx(timeout_msec)
 
     def hangup(self):
-	return self.__owner.hangup()
+        return self.__owner.hangup()
 
     def streamFileEx(self, filename, escape = "*#0123456789", sample_offset = ""):
-	self.__owner.streamFileEx(filename, escape, sample_offset)
+        self.__owner.streamFileEx(filename, escape, sample_offset)
 
     def streamFile(self, filename, escape = "", sample_offset = ""):
-	return self.__owner.streamFileEx(filename, escape, sample_offset)
+        return self.__owner.streamFileEx(filename, escape, sample_offset)
 
     def getData(self, file, timeout_msec = "", max_digits = ""):
-	return self.__owner.getData(file, timeout_msec, max_digits)
+        return self.__owner.getData(file, timeout_msec, max_digits)
 
     def recordFileEx(self, filename, format, escape, timeout_msec, offset = None, beep = False, silence_sec = None):
-	if (beep):
-	    self.streamFileEx(self.locale().beepFile(), escape)
-	self.__owner.recordFileEx(filename, format, escape, timeout_msec, offset, False, silence_sec)
+        if (beep):
+            self.streamFileEx(self.locale().beepFile(), escape)
+        self.__owner.recordFileEx(filename, format, escape, timeout_msec, offset, False, silence_sec)
 
     def sayTimeEx(self, time):
-	self.__owner.sayTimeEx(time)
+        self.__owner.sayTimeEx(time)
 
     def wait(self, timeout):
-	self.__owner.wait(timeout)
+        self.__owner.wait(timeout)
 
     def options(self):
         return self.__owner.options()
@@ -158,27 +166,27 @@ class BasePlugin(object):
     # TTS
     #
     def readString(self, prompt, max_len, timeout_msec = None):
-	if (timeout_msec == None):
-	    timeout_msec = self.options().defaultPromptTimeoutMsec()
-	return self.__owner.readString(prompt, max_len, timeout_msec)
+        if (timeout_msec == None):
+            timeout_msec = self.options().defaultPromptTimeoutMsec()
+        return self.__owner.readString(prompt, max_len, timeout_msec)
 
     def sayEx(self, text, args = [], kw = {}, escape="0123456789*#", long_escapes=None):
-	self.__owner.sayEx(text, args, kw, escape, long_escapes)
+        self.__owner.sayEx(text, args, kw, escape, long_escapes)
 
     def say(self, text, args = [], kw = {}, escape = "", long_escapes=None):
         self.__owner.say(text, args, kw, escape, long_escapes)
 
     def textSynth(self):
-	return self.__owner.textSynth()
+        return self.__owner.textSynth()
 
     def speechSynth(self):
-	return self.__owner.speechSynth()
+        return self.__owner.speechSynth()
 
     def readLine(self, prompt, max_len, timeout_msec, editing_enabled = True):
         return self.__owner.readLine(prompt, max_len, timeout_msec, editing_enabled)
 
     def setLocale(self, locale):
-	self.__owner.setLocale(locale)
+        self.__owner.setLocale(locale)
 
     def locale(self):
-	return self.__owner.locale()
+        return self.__owner.locale()

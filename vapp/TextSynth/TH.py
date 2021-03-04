@@ -24,8 +24,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
 
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 ONES = [
 	_phrase_noop("ศูนย์"),

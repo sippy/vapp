@@ -21,7 +21,9 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from AbstractVoicemailStorage import *
+from abc import abstractmethod
+
+from .AbstractVoicemailStorage import *
 from vapp.BasePlugin import *
 from vapp.IvrUtils import *
 from vapp.Agi import *
@@ -38,11 +40,14 @@ class AbstractPlugin(BasePlugin):
     vm_storage = None
     logged_in = False
 
+    @abstractmethod
+    def createStorage(self): pass
+
     def parseNetworkScript(self):
-	arr = self.dnid().split("_")
-	if (arr[0] == "vm"):
-	    return True
-	return False
+        arr = self.dnid().split("_")
+        if (arr[0] == "vm"):
+            return True
+        return False
 
     def run(self):
         #
@@ -70,8 +75,8 @@ class AbstractPlugin(BasePlugin):
         else:
             self.setLocale(self.options().defaultSystemLocale())
         try:
-	    if not self.logged_in:
-		ivrAuthenticate(self)
+            if not self.logged_in:
+                ivrAuthenticate(self)
         except AuthenticationError as e:
             self.info("Auth error: " + str(e))
             self.say(self._tts("Good bye"))
@@ -81,28 +86,28 @@ class AbstractPlugin(BasePlugin):
             self.debug("The user %s is not VM enabled" % self.user.username())
             return
         self.vm_storage = self.createStorage()
-	try:
-	    #
-	    # Main menu
-	    #
-	    self.starting = True
-	    self.execMenu({ \
-		    '1':self.firstMessage, \
-		    '2':self.changeFolder, \
-		    '4':self.prevMessage, \
-		    '5':self.replayMessage, \
-		    '6':self.nextMessage, \
-		    '7':self.toggleDeleteMessage, \
-		    '9':self.saveToFolder, \
-		    '0':self.changeOptions, \
-		    'quit':'#t', \
+        try:
+            #
+            # Main menu
+            #
+            self.starting = True
+            self.execMenu({ \
+                    '1':self.firstMessage, \
+                    '2':self.changeFolder, \
+                    '4':self.prevMessage, \
+                    '5':self.replayMessage, \
+                    '6':self.nextMessage, \
+                    '7':self.toggleDeleteMessage, \
+                    '9':self.saveToFolder, \
+                    '0':self.changeOptions, \
+                    'quit':'#t', \
                     'default':self.instructions, \
                     'intro':self.mainIntro \
-	    })
-	    self.say(self._tts("Good bye"))
+            })
+            self.say(self._tts("Good bye"))
             self.hangup()
-	except AgiError:
-	    pass
+        except AgiError:
+            pass
         self.vm_storage.finalize()
 
     def firstMessage(self):
@@ -138,19 +143,19 @@ class AbstractPlugin(BasePlugin):
 
     def toggleDeleteMessage(self):
         self.toggleDelete()
-	if (self.isMsgDeleted()):
-	    self.sayEx(self._tts("Message deleted."))
-	else:
-	    self.sayEx(self._tts("Message undeleted."))
-	if (self.options().skipAfterCmd()):
-	    if (self.curMsg() < self.lastMsg()):
-		self.setCurMsg(self.curMsg() + 1)
-	    else:
-		self.sayEx(self._tts("no more messages"))
+        if (self.isMsgDeleted()):
+            self.sayEx(self._tts("Message deleted."))
+        else:
+            self.sayEx(self._tts("Message undeleted."))
+        if (self.options().skipAfterCmd()):
+            if (self.curMsg() < self.lastMsg()):
+                self.setCurMsg(self.curMsg() + 1)
+            else:
+                self.sayEx(self._tts("no more messages"))
 
     def saveToFolder(self):
-	if (self.curMsg() < 0):
-	    return
+        if (self.curMsg() < 0):
+            return
         try:
             self.getFolder2(self._tts("which folder should I save the message to?"), 1)
         except AgiKeyStroke as keystroke:
@@ -159,13 +164,13 @@ class AbstractPlugin(BasePlugin):
                 target_folder = int(keystroke.key())
                 try:
                     self.vm_storage.saveCurrentMessageToFolder(target_folder)
-		    self.sayEx(self._tts("message %(num)n saved to %(folder)s"), kw = { 'num':self.curMsg() + 1, 'folder':self._tts(sayFolderNameById(target_folder)) })
+                    self.sayEx(self._tts("message %(num)n saved to %(folder)s"), kw = { 'num':self.curMsg() + 1, 'folder':self._tts(sayFolderNameById(target_folder)) })
                 except VM_MailboxFullError:
                     self.sayEx(self._tts("Sorry but the user's mailbox can't accept more messages."))
                 except AgiKeyStroke as keystroke:
                     tmp_key = keystroke
-		except AgiError:
-		    return
+                except AgiError:
+                    return
                 if (self.options().skipAfterCmd()):
                     if (self.curMsg() < self.lastMsg()):
                         self.setCurMsg(self.curMsg() + 1)
@@ -212,14 +217,14 @@ class AbstractPlugin(BasePlugin):
                 raise AgiKeyStroke('t')
 
     def mainIntro(self):
-	new = self.vm_storage.newMessages()
-	old = self.vm_storage.oldMessages()
+        new = self.vm_storage.newMessages()
+        old = self.vm_storage.oldMessages()
 
-	txt = self._ntts("You have %(num)n new", "You have %(num)n new", new)
-	self.sayEx(txt, kw = {'num':new})
+        txt = self._ntts("You have %(num)n new", "You have %(num)n new", new)
+        self.sayEx(txt, kw = {'num':new})
         if (old > 0):
             self.sayEx(self._ntts("and %n old", "and %n old", old), [ old ])
-	self.sayEx(self._ntts("message", "messages", old + new))
+        self.sayEx(self._ntts("message", "messages", old + new))
 
     def browseMessages(self):
         if (self.vm_storage.folderIsEmpty()):
@@ -347,13 +352,13 @@ class AbstractPlugin(BasePlugin):
             elif (self.curMsg() == self.lastMsg()):
                 self.sayEx(self._tts("last message received %[S]D"), [self.curMsgDatetime()])
             if (self.curMsg() != 0 and self.curMsg() < self.lastMsg()):
-		self.sayEx(self._tts("message %(num)n received %(date)[S]D"), kw = { 'num':(self.curMsg() + 1), 'date':self.curMsgDatetime() })
+                self.sayEx(self._tts("message %(num)n received %(date)[S]D"), kw = { 'num':(self.curMsg() + 1), 'date':self.curMsgDatetime() })
         except AgiKeyStroke as keystroke:
             # Allow pressing '1' to skip intro
             if (keystroke.keyCode() != ord('1')):
                 raise
         self.setHeard(True)
-	msg = self.curMsgFile()
+        msg = self.curMsgFile()
         self.streamFileEx(msg)
 
     #
@@ -369,7 +374,7 @@ class AbstractPlugin(BasePlugin):
         return self.vm_storage.lastMessage()
 
     def toggleDelete(self):
-	self.vm_storage.setCurrentMessageDeleted(not self.vm_storage.isCurrentMessageDeleted())
+        self.vm_storage.setCurrentMessageDeleted(not self.vm_storage.isCurrentMessageDeleted())
 
     def setFolder(self, folder_id):
         self.vm_storage.setCurrentFolder(folder_id)

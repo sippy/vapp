@@ -21,6 +21,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
+from abc import ABC, abstractmethod
 """
 Abstract interface to voicemail storage.
 """
@@ -103,7 +104,7 @@ def folderNameById(ID):
     elif (ID == FOLDER_CUST5):
         return "Cust5"
 
-class AbstractVoicemailStorage:
+class AbstractVoicemailStorage(ABC):
     """
     Abstract interface to voicemail storage. Actual storage should
     inherit this class and implement the following methods:
@@ -158,11 +159,20 @@ class AbstractVoicemailStorage:
 	Save the message from the temporary file on disk to the real
 	storage.
 
-	fd - active file() object with message data
+	fd - active file object with message data
 
 	format - the format of the message data
-	
+
     """
+    @abstractmethod
+    def setCurrentFolder(self, fl): pass
+
+    @abstractmethod
+    def currentFolderId(self): pass
+
+    @abstractmethod
+    def numOfMessages(self): pass
+
     def __init__(self):
         self.setCurrentFolder(FOLDER_INBOX)
 

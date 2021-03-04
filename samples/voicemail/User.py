@@ -21,7 +21,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from VoicemailStorage import VoicemailStorage, basePath
+from .VoicemailStorage import VoicemailStorage, basePath
 from vapp.Prompt import *
 import os
 
@@ -34,7 +34,7 @@ class User:
         self.__password = ""
         passwordfile = self.__vm_storage.home() + "/password.txt"
         try:
-            self.__password = file(passwordfile).readline()
+            self.__password = open(passwordfile).readline()
         except IOError:
             pass
 
@@ -73,12 +73,12 @@ class User:
         else:
             return
         fname = "%s/%s.%s" % (self.__vm_storage.home(), pfile, format)
-        out = file(fname, "w")
-	while True:
-	    buf = os.read(fd, 8192)
-	    if (buf == None or buf == ""):
-		break
-	    out.write(buf)
+        out = open(fname, "w")
+        while True:
+            buf = os.read(fd, 8192)
+            if (buf == None or buf == ""):
+                break
+            out.write(buf)
         out.close()
 
     def saveMessage(self, fd, format, cli, logger):
@@ -93,6 +93,6 @@ class User:
     def setPassword(self, passwd):
         self.__password = passwd
         passwordfile = self.__vm_storage.home() + "/password.txt"
-        out = file(passwordfile, "w")
+        out = open(passwordfile, "w")
         out.write(passwd)
         out.close()

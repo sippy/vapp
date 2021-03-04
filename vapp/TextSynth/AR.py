@@ -25,8 +25,8 @@
 
 import datetime
 
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 MONTHS = [
     # Jan
@@ -332,7 +332,7 @@ def sayNumber(number, ordinal, flags):
     if ordinal:
         return ONES_ORDINAL[number] # This currently applies to hours only
 
-    retval = unicode("")
+    retval = ""
     minus = False
 
     two_thousand = _phrase_noop("الفان")
@@ -401,7 +401,7 @@ def sayNumber(number, ordinal, flags):
     return retval.rstrip()
 
 def __say_number(number, ones_arr):
-    retval = unicode("")
+    retval = ""
     if (number < 20):
         return ones_arr[number]
     tens = int(number / 10)
@@ -423,7 +423,7 @@ def sayDigits(num, flags):
     return retval.rstrip()
 
 def sayDuration(seconds, say_hours, say_minutes, say_seconds, flags):
-    retval = unicode("")
+    retval = ""
     s = seconds
     hours = 0
     minutes = 0

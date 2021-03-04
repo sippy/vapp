@@ -25,10 +25,8 @@
 
 import datetime
 
-__all__ = [ "TR" ]
-
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 ONES_POSTPOSITIONED = [
 	_phrase_noop("0a"),

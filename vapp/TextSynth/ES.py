@@ -24,8 +24,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 import datetime
 
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 GENDER_FEMININE	    = 0
 GENDER_MASCULINE    = 1

@@ -28,22 +28,22 @@ log_lock = Lock()
 
 class PromptException(Exception):
     def __init__(self, *args):
-	Exception.__init__(self, *args)
-	self.__msg = None
-	if (len(args) > 0):
-	    self.__msg = args[0]
+        Exception.__init__(self, *args)
+        self.__msg = None
+        if (len(args) > 0):
+            self.__msg = args[0]
 
     def dump(self):
-	if (self.__msg != None):
-	    log_lock.acquire()
-	    try:
-		out = codecs.open(self.dumpFileName(), "a", 'utf-8')
-		out.write(self.__msg)
-		out.write("\n")
-		out.close()
-	    except:
-		pass
-	    log_lock.release()
+        if (self.__msg != None):
+            log_lock.acquire()
+            try:
+                out = codecs.open(self.dumpFileName(), "a", 'utf-8')
+                out.write(self.__msg)
+                out.write("\n")
+                out.close()
+            except:
+                pass
+            log_lock.release()
 
     def dumpFileName(self):
-	return "/tmp/vapp_bad_phrases.trace"
+        return "/tmp/vapp_bad_phrases.trace"

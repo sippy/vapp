@@ -25,8 +25,8 @@
 
 import datetime
 
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 ONES = [
 	_phrase_noop("զրո"),  		# 0
@@ -61,7 +61,7 @@ TENS = [
 	_phrase_noop("յոթանասուն"),	# 70
 	_phrase_noop("ութսուն"),		# 80
 	_phrase_noop("իննսուն")		# 90
-	]	
+	]
 
 MONTHS = [
 	_phrase_noop("հունվարի"), 	# January's

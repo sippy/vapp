@@ -25,6 +25,8 @@ import vapp
 import Commons
 
 class SamplePluginHandler(vapp.PluginHandler):
+    callerid = None
+
     def parseNetworkScript(self):
         args = self.network_script.split('/')
         if len(args) == 2 and args[0] == 'callback':

@@ -28,8 +28,8 @@ import datetime
 MASCULINE = 1
 FEMININE = 2
 
-def _phrase_noop(str):
-    return unicode(str, 'ISO-8859-1')
+def _phrase_noop(s):
+    return s
 
 ONES_M = [
 	_phrase_noop("zéro"),

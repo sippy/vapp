@@ -25,7 +25,7 @@
 Abstract implementation of voicemail IVR application with behavior
 similar to Asterisk app_voicemail implementation.
 """
-from AbstractVoicemailStorage import *
+from .AbstractVoicemailStorage import *
 from vapp.BasePlugin import *
 from vapp.Prompt import *
 from vapp.Agi import *
@@ -56,19 +56,19 @@ class AbstractPlugin(BasePlugin):
         'do not play any prompt' before starting message recording.
 
         """
-	arr = self.dnid().split("_")
-	if (arr[0].startswith("vm") and len(arr[0]) > 2):
-	    return True
-	return False
+        arr = self.dnid().split("_")
+        if (arr[0].startswith("vm") and len(arr[0]) > 2):
+            return True
+        return False
 
     def run(self):
-	self.debug("Starting message recording...")
+        self.debug("Starting message recording...")
         tmp = self.extension()
         if (tmp == None or tmp == ""):
             tmp = self.dnid()
         if (tmp == None or tmp == ""):
             # ask the target number
-	    tmp = self.readString(self._tts("To leave a message please enter a mailbox number"), self.options().maxLoginLen())
+            tmp = self.readString(self._tts("To leave a message please enter a mailbox number"), self.options().maxLoginLen())
         self.target = ""
         self.silent = False
         if (self.user == None and tmp != ""):
@@ -134,23 +134,23 @@ class AbstractPlugin(BasePlugin):
         (self.messageFd, self.messageFilename) = tempfile.mkstemp(suffix = "." + self.format(), dir = self.options().tmpDir())
         m = re.search("(.+)\\." + self.format() + "$", self.messageFilename)
         self.messageFilenameNoExt = m.groups()[0]
-	try:
+        try:
             menu = { \
-		'1':self.__saveMessage, \
-		'2':self.reviewMessage, \
-		'3':self.recordMessage, \
-		'default':self.messageDefault, \
-		'quit':'t#'
-	        }
+                '1':self.__saveMessage, \
+                '2':self.reviewMessage, \
+                '3':self.recordMessage, \
+                'default':self.messageDefault, \
+                'quit':'t#'
+                }
             for k in self.additionalHandlers().keys():
                 if k in menu:
                     continue
                 menu[k] = self.additionalHandlers()[k]
 
-	    self.execMenu(menu , '3')
-	    self.say(self._tts("Good bye"))
-	except AgiError:
-	    pass
+            self.execMenu(menu , '3')
+            self.say(self._tts("Good bye"))
+        except AgiError:
+            pass
         os.close(self.messageFd)
         os.unlink(self.messageFilename)
 
@@ -160,7 +160,7 @@ class AbstractPlugin(BasePlugin):
         else:
             os.lseek(self.messageFd, 0, 0)
             self.user.saveMessage(self.messageFd, self.format(), self.callerid(), self.logger())
-	    self.debug("New message for user %s saved successfully" % self.user.username())
+            self.debug("New message for user %s saved successfully" % self.user.username())
             self.sayEx(self._tts("Your message has been saved."))
             raise AgiKeyStroke('t')
 
@@ -193,9 +193,9 @@ class AbstractPlugin(BasePlugin):
         except AgiKeyStroke as keystroke:
             if (keystroke.key() == '*' or keystroke.keyCode() == -1):
                 raise
-	# handle hangup
-	except AgiError:
-	    pass
+        # handle hangup
+        except AgiError:
+            pass
         self.__saveMessage()
 
     def messageDefault(self):

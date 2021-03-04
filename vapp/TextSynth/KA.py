@@ -27,8 +27,8 @@
 
 import datetime
 
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 GENDER_FEMININE	    = 0
 GENDER_MASCULINE    = 1
@@ -206,8 +206,8 @@ def sayNumber(number, ordinal, flags):
     if ordinal and number == 1:
         return retval + _phrase_noop("პირველი") # 1st
     num = number % 1000
-    num_thousands = (number / 1000) % 1000
-    num_millions = (number / 1000000) % 1000
+    num_thousands = int(number / 1000) % 1000
+    num_millions = int(number / 1000000) % 1000
 
     if num_millions > 0:
         if num_millions > 1:
@@ -247,8 +247,8 @@ def __say_number(number, ordinal, bound):
         ones = ONES_START
     retval = ""
     num = number % 20
-    num_twelves = (number % 100) / 20
-    num_hundreds = number / 100
+    num_twelves = int((number % 100) / 20)
+    num_hundreds = int(number / 100)
     if num_hundreds > 0:
         if num_twelves + num > 0:
             retval += HUNDREDS_START[num_hundreds] + " "

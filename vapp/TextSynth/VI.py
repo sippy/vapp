@@ -25,10 +25,8 @@
 
 import datetime
 
-__all__ = [ "VI" ]
-
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 ONES = [
 	_phrase_noop("không"),	# 0
@@ -77,7 +75,7 @@ def sayNumber(number, ordinal, flags):
             return _phrase_noop("Hơn một triệu")
 
     if number >= 1000: # and number < 10000
-        retval += _say_num(number / 1000, False)
+        retval += _say_num(int(number / 1000), False)
         retval.append(_phrase_noop("ngàn")) # "thousand"
         build_started = True
     number = number % 1000
@@ -89,13 +87,13 @@ def _say_num(num, build_started):
     ret = []
     orig_num = num
     if num >= 100 or build_started:
-        ret.append(ONES[(num % 1000) / 100])
+        ret.append(ONES[int((num % 1000) / 100)])
         ret.append(_phrase_noop("trăm"))
         build_started = True
     num = num % 100
-    tens = num / 10
+    tens = int(num / 10)
     if num >= 20:
-        ret.append(ONES[num / 10])
+        ret.append(ONES[int(num / 10)])
         ret.append(_phrase_noop("mươi"))
     elif num >= 10:
         ret.append(_phrase_noop("mười"))
@@ -213,7 +211,7 @@ def sayDatetime(date_time, say_date, say_time, say_seconds, flags):
 
 if (__name__ == "__main__"):
     print("=== Vietnamese numbers ===")
-    for i in range(10) + [10, 11, 14, 15, 100, 101, 102, 1004, 2045, 34567, 400001, 1000001, -1, -1000001]:
+    for i in list(range(10)) + [10, 11, 14, 15, 100, 101, 102, 1004, 2045, 34567, 400001, 1000001, -1, -1000001]:
         print("  %d: %s" % (i, sayNumber(i, False, "")))
     print("=== Vietnamese ordinal numbers ===")
     for i in range(1, 10):

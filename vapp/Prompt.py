@@ -33,11 +33,11 @@ PROMPT_NAME = 2
 
 class Prompt:
     def __init__(self, tmpdir):
-	self.__basename = tempfile.mktemp(dir = tmpdir)
+        self.__basename = tempfile.mktemp(dir = tmpdir)
 
     def addAudio(self, data, ext):
         fname = ("%s%s" % (self.__basename, ext))
-        f = file(fname, "w")
+        f = open(fname, "w")
         f.write(data)
         f.close()
 
@@ -61,4 +61,4 @@ class Prompt:
     def appendFile(self, fname):
         for f in glob.glob(fname + "*"):
             ext = f[len(fname):]
-            file(self.__basename + ext, "a").write(file(f).read())
+            open(self.__basename + ext, "a").write(open(f).read())

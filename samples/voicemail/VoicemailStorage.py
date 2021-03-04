@@ -210,19 +210,19 @@ class VoicemailStorage(AbstractVoicemailStorage):
         except OSError:
             os.makedirs(folder_path)
         try:
-            last_id = int(file(last_id_filename).readline()) + 1
+            last_id = int(open(last_id_filename).readline()) + 1
         except IOError:
             last_id = 0
-        tmp = file(last_id_filename, "w")
+        tmp = open(last_id_filename, "w")
         tmp.write("%d" % last_id)
         tmp.close()
         outfile = "%s/%d.%s" % (folder_path, last_id, format)
-        out = file(outfile, "w")
-	while True:
-	    buf = os.read(fd, 8192)
-	    if (buf == None or buf == ""):
-		break
-	    out.write(buf)
+        out = open(outfile, "w")
+        while True:
+            buf = os.read(fd, 8192)
+            if (buf == None or buf == ""):
+                break
+            out.write(buf)
 
     def setCurrentMessageHeard(self, heard):
         if (self.__current_folder != FOLDER_INBOX):
@@ -230,5 +230,5 @@ class VoicemailStorage(AbstractVoicemailStorage):
         return self.__folders[self.__current_folder].setCurrentMessageHeard(heard)
 
     def finalize(self):
-        for fld in self.__folders.itervalues():
+        for fld in self.__folders.values():
             fld.finalize(self)

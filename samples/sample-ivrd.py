@@ -26,7 +26,7 @@
 import os
 import signal
 import sys
-from SocketServer import ThreadingTCPServer
+from socketserver import ThreadingTCPServer
 import vapp
 import traceback
 import logging
@@ -37,7 +37,7 @@ class SampleServer(ThreadingTCPServer):
     def __init__(self, handler):
         #
         # We assume the server to be listening on local socket only, as we want
-	# to have an easy and fast access to the recorded by Asterisk files,
+        # to have an easy and fast access to the recorded by Asterisk files,
         # easily pass own prompt files, etc
         #
         self.allow_reuse_address = True
@@ -63,16 +63,16 @@ if __name__ == '__main__':
     #daemonize()
     try:
         Commons.startManager(logger)
-	vapp.loadPlugins([ "ivr_plugins" ])
+        vapp.loadPlugins([ "ivr_plugins" ])
 
-	server = SampleServer(SamplePluginHandler)
-	server.serve_forever()
+        server = SampleServer(SamplePluginHandler)
+        server.serve_forever()
     except KeyboardInterrupt:
-	pass
+        pass
     except SystemExit:
-	pass
+        pass
     except:
-	for msg in traceback.format_exception(*sys.exc_info()):
-	    logger.error(msg)
-	logger.error("Unrecoverable error. Exiting...")
-	sys.exit(1)
+        for msg in traceback.format_exception(*sys.exc_info()):
+            logger.error(msg)
+        logger.error("Unrecoverable error. Exiting...")
+        sys.exit(1)

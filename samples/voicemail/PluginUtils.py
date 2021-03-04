@@ -21,11 +21,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from User import User
-from VoicemailStorage import VoicemailStorage
+from .User import User
+from .VoicemailStorage import VoicemailStorage
 
 class PluginUtils:
     __locale = None
+    user = None
 
     def findUser(self, uid):
         try:

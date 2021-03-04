@@ -21,11 +21,11 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-from Agi import AgiHandler, AgiError, AgiKeyStroke
-from BasePlugin import BasePlugin
-from PluginHandler import PluginHandler, loadPlugins, pluginInstance
-from Locale import Locale
-from ConfigParser import ConfigParser
+from .Agi import AgiHandler, AgiError, AgiKeyStroke
+from .BasePlugin import BasePlugin
+from .PluginHandler import PluginHandler, loadPlugins, pluginInstance
+from .Locale import Locale
+from configparser import ConfigParser
 import sys
 import os
 

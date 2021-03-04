@@ -27,8 +27,8 @@ Utility functions for Voicemail IVR application.
 import time
 import random
 import hashlib
-from Prompt import Prompt
-from SpeechSynth.PromptException import PromptException
+from .Prompt import Prompt
+from .SpeechSynth.PromptException import PromptException
 from vapp import get_arg_delimiter
 
 __all__ = [ "ivrAuthenticate", "AuthenticationError", "SipDialer" ]

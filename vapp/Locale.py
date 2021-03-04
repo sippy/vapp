@@ -34,8 +34,8 @@ class Locale:
         def_domain = cfg.get('default_config', 'text_domain')
         def_catalog = cfg.get('default_config', 'msg_catalog_dir')
         self.__prompt_path = cfg.get('default_config', 'prompt_catalog_dir')
-	try:
-	    self.__translator = gettext.translation(def_domain, def_catalog, [ localename ])
+        try:
+            self.__translator = gettext.translation(def_domain, def_catalog, [ localename ])
             for section in cfg.sections():
                 if (cfg.has_option(section, 'msg_catalog_dir') and cfg.has_option(section, 'text_domain')):
                     directory =  cfg.get(section, 'msg_catalog_dir')
@@ -45,22 +45,22 @@ class Locale:
                         self.__translator.add_fallback(tr)
                     except IOError:
                         pass
-	    self.__gettext = self.__translator.ugettext
-	    self.__ngettext = self.__translator.ungettext
-	except IOError:
+            self.__gettext = self.__translator.ugettext
+            self.__ngettext = self.__translator.ungettext
+        except IOError:
             self.__translator = None
-	    self.__name = "en"
-	    self.__gettext = gettext.gettext
-	    self.__ngettext = gettext.ngettext
+            self.__name = "en"
+            self.__gettext = gettext.gettext
+            self.__ngettext = gettext.ngettext
 
     def gettext(self, str):
-	return self.__gettext(str)
+        return self.__gettext(str)
 
     def ngettext(self, singular, plural, num):
-	return self.__ngettext(singular, plural, num)
+        return self.__ngettext(singular, plural, num)
 
     def name(self):
-	return self.__name
+        return self.__name
 
     def beepFile(self):
         return self.__prompt_path + '/beep'

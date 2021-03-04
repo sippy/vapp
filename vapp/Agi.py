@@ -54,7 +54,7 @@ Example:
 import sys
 import traceback
 import re
-from SocketServer import StreamRequestHandler
+from socketserver import StreamRequestHandler
 import vapp
 
 __all__ = ["AgiKeyStroke", "AgiError", "AgiHandler", "AgiLongKeyStroke"]
@@ -446,7 +446,7 @@ class AgiHandler(StreamRequestHandler, object):
                 for y in range(0, len(escapes)):
                     if x == y:
                         continue
-                    if (long_escapes[y].startswith(x)):
+                    if (escapes[y].startswith(x)):
                         unique = False
                         break
                 self.__escapes.append((escapes[x], unique))

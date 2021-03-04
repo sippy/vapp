@@ -24,7 +24,8 @@
 """
 Improved version of AgiHandler supporting TTS and IVR menus.
 """
-from Agi import *
+from .Agi import *
+from abc import abstractmethod
 
 __all__ = ["BaseIvrHandler", "NoInputException", "ClearRequestException"]
 
@@ -37,16 +38,27 @@ class ClearRequestException(Exception):
     that has been entered before the '*' button is pressed.
     """
     def __init__(self, deleted_text):
-	self.__deleted_text = deleted_text
+        self.__deleted_text = deleted_text
 
     def deletedText(self):
-	return self.__deleted_text
+        return self.__deleted_text
 
 class BaseIvrHandler(AgiHandler):
     """
     Base IVR handler containing TTS support and IVR menu infrastructure.
     This is an abstract class.
     """
+    @abstractmethod
+    def textSynth(self): pass
+
+    @abstractmethod
+    def speechSynth(self): pass
+
+    @abstractmethod
+    def cleanup(self): pass
+
+    @abstractmethod
+    def options(self): pass
 
     def readLine(self, prompt, max_len, timeout_msec, editing_enabled = True):
         """
@@ -74,69 +86,69 @@ class BaseIvrHandler(AgiHandler):
                     # user wants to reenter the number
                     pass
         """
-	if (editing_enabled):
-	    retval = ""
-	    prompt_played = False
-	    while (True):
-		try:
-		    if (not prompt_played):
-			prompt_played = True
-			self.sayEx(prompt)
-		    self.waitForDigitEx(timeout_msec)
-		    raise AgiKeyStroke('#')
-		except AgiKeyStroke as e:
-		    if (e.key() == '*'):
-			raise ClearRequestException(retval)
-		    elif (e.key() == '#'):
-			if (retval == ""):
-			    raise NoInputException()
-			return retval
-		    else:
-			retval += e.key()
-			if (len(retval) >= max_len):
-			    return retval
-	else:
-	    retval = self.readString(prompt, max_len, timeout_msec);
-	    if (retval == "" or type(retval) != type(str())):
-		raise NoInputException()
-	    return retval
+        if (editing_enabled):
+            retval = ""
+            prompt_played = False
+            while (True):
+                try:
+                    if (not prompt_played):
+                        prompt_played = True
+                        self.sayEx(prompt)
+                    self.waitForDigitEx(timeout_msec)
+                    raise AgiKeyStroke('#')
+                except AgiKeyStroke as e:
+                    if (e.key() == '*'):
+                        raise ClearRequestException(retval)
+                    elif (e.key() == '#'):
+                        if (retval == ""):
+                            raise NoInputException()
+                        return retval
+                    else:
+                        retval += e.key()
+                        if (len(retval) >= max_len):
+                            return retval
+        else:
+            retval = self.readString(prompt, max_len, timeout_msec);
+            if (retval == "" or type(retval) != type(str())):
+                raise NoInputException()
+            return retval
 
     def readString(self, prompt_txt, max_len, timeout_msec):
         """
         TTS enabled method allowing to read input ending with pound (#).
         """
-	text = self.textSynth().say(prompt_txt)
-	prompts = self.speechSynth().promptFileSequence(text, True)
+        text = self.textSynth().say(prompt_txt)
+        prompts = self.speechSynth().promptFileSequence(text, True)
 
-	retval = ""
-	done = False
-	while (not done):
-	    timeout = True
-	    try:
-		if (retval == ""):
-		    for prompt in prompts:
-			self.streamFileEx(prompt)
-		self.waitForDigitEx(timeout_msec)
-	    except AgiKeyStroke as key:
-		timeout = False
-		if (key.key() == '#'):
-		    done = True
-		else:
-		    retval += key.key()
-		    if (len(retval) >= max_len):
-			done = True
-	    if (timeout):
-		done = True
-	return retval
+        retval = ""
+        done = False
+        while (not done):
+            timeout = True
+            try:
+                if (retval == ""):
+                    for prompt in prompts:
+                        self.streamFileEx(prompt)
+                self.waitForDigitEx(timeout_msec)
+            except AgiKeyStroke as key:
+                timeout = False
+                if (key.key() == '#'):
+                    done = True
+                else:
+                    retval += key.key()
+                    if (len(retval) >= max_len):
+                        done = True
+            if (timeout):
+                done = True
+        return retval
 
     def sayEx(self, prompt_txt, args = [], kw = {}, escape = "#*1234567890", long_escapes = None):
         """
         TTS enabled method similar to AgiHandler.streamFileEx().
         """
-	text = self.textSynth().say(prompt_txt, args, kw)
-	prompts = self.speechSynth().promptFileSequence(text, True)
-	for p in prompts:
-	    self.streamFileEx(p, escape = escape, long_escapes = long_escapes)
+        text = self.textSynth().say(prompt_txt, args, kw)
+        prompts = self.speechSynth().promptFileSequence(text, True)
+        for p in prompts:
+            self.streamFileEx(p, escape = escape, long_escapes = long_escapes)
 
     def say(self, text, args = [], kw = {}, escape = "", long_escapes=None):
         """
@@ -153,7 +165,7 @@ class BaseIvrHandler(AgiHandler):
             self.parseNetworkScript()
             self.answerSession()
             self.handleCall()
-	    self.cleanup()
+            self.cleanup()
         """
         try:
             self.parseNetworkScript()
@@ -162,8 +174,8 @@ class BaseIvrHandler(AgiHandler):
         except:
             self.cleanup()
             raise
-	self.cleanup()
-	
+        self.cleanup()
+
     def execMenu(self, menu, start = None):
         """
         This method allows to create IVR menus with single keypress
@@ -225,18 +237,18 @@ class BaseIvrHandler(AgiHandler):
                 menu['intro']()
             except AgiKeyStroke as keystroke:
                 cmd = keystroke
-	
-	max_attempts = 3
-	if 'max_attempts' in menu:
-	    max_attempts = menu['max_attempts']
-	
-	on_err_handler = None
-	if 'error' in menu:
-	    on_err_handler = menu['error']
-	
-	on_wrong_handler = None
-	if 'wrong' in menu:
-	    on_wrong_handler = menu['wrong']
+
+        max_attempts = 3
+        if 'max_attempts' in menu:
+            max_attempts = menu['max_attempts']
+
+        on_err_handler = None
+        if 'error' in menu:
+            on_err_handler = menu['error']
+
+        on_wrong_handler = None
+        if 'wrong' in menu:
+            on_wrong_handler = menu['wrong']
         #
         # Main loop
         #
@@ -244,28 +256,28 @@ class BaseIvrHandler(AgiHandler):
         while (True):
             try:
                 # quit on error or on the quit command
-		if (cmd != None):
-		    if ((cmd.keyCode() < 0) or (cmd.key() in quit_chars)):
-			break
-		    if cmd.key() in menu:
-			repeats = 0
-			menu[cmd.key()]()
-			cmd = None
-			continue
-		    else:
-			repeats += 1
-			if (repeats >= max_attempts):
-			    if (on_err_handler != None):
-				on_err_handler()
-			    break
-			# Key has no handler assosiated - use the default
-			if (on_wrong_handler != None):
-			    on_wrong_handler()
-			default()
-			self.waitForDigitEx(self.options().defaultPromptTimeoutMsec())
-		else:
-		    default()
-		    self.waitForDigitEx(self.options().defaultPromptTimeoutMsec())
+                if (cmd != None):
+                    if ((cmd.keyCode() < 0) or (cmd.key() in quit_chars)):
+                        break
+                    if cmd.key() in menu:
+                        repeats = 0
+                        menu[cmd.key()]()
+                        cmd = None
+                        continue
+                    else:
+                        repeats += 1
+                        if (repeats >= max_attempts):
+                            if (on_err_handler != None):
+                                on_err_handler()
+                            break
+                        # Key has no handler assosiated - use the default
+                        if (on_wrong_handler != None):
+                            on_wrong_handler()
+                        default()
+                        self.waitForDigitEx(self.options().defaultPromptTimeoutMsec())
+                else:
+                    default()
+                    self.waitForDigitEx(self.options().defaultPromptTimeoutMsec())
                 cmd = AgiKeyStroke(0)
             except AgiKeyStroke as keystroke:
                 cmd = keystroke

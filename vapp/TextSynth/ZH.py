@@ -23,10 +23,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
 
-__all__ = [ "ZH" ]
-
-def _phrase_noop(str):
-    return unicode(str, 'utf-8')
+def _phrase_noop(s):
+    return s
 
 ONES = [
 	_phrase_noop("零"),  	# 0
@@ -71,7 +69,7 @@ def sayNumber(number, ordinal, flags):
     if (num > 0):
         retval += _say10000(num) + " " + _phrase_noop("亿") + " "
 
-    num = (number / 10000) % 10000
+    num = int(number / 10000) % 10000
     if (num > 0):
         retval += _say10000(num) + " " + _phrase_noop("万") + " "
 

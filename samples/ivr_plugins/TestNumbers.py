@@ -23,56 +23,55 @@
 
 import os
 import vapp
-from ConfigParser
 
 class Plugin(vapp.BasePlugin):
     def parseNetworkScript(self):
-	if (self.extension() == "testnum"):
-	    return True
-	return False
+        if (self.extension() == "testnum"):
+            return True
+        return False
 
     def answerSession(self):
-	pass
+        pass
 
     def run(self):
-	self.debug("TestNumbers started")
-	self.answer()
-	key = 1
-	locales = list()
-	base_dir = vapp._translation_config.get('default_config', 'prompt_catalog_dir')
-	for l in os.listdir(base_dir):
-	    if (os.access(base_dir + "/" + l + "/prompt_map.txt", os.F_OK)):
-		locales.append(l)
-	counter = 0
-	while(True):
-	    try:
-		key = 1
-		for l in locales:
-		    self.setLocale(l)
-		    self.sayEx(self._tts("For English press %n"), [ key ])
-		    key += 1
-		self.waitForDigitEx(self.options().defaultPromptTimeoutMsec())
-		if (counter > 3):
-		    return
-		counter += 1
-	    except vapp.AgiKeyStroke as k:
-		if (k.key().isdigit()):
-		    i = int(k.key()) - 1
-		    if (i >= 0 and i < len(locales)):
-			self.setLocale(locales[i])
-			break
+        self.debug("TestNumbers started")
+        self.answer()
+        key = 1
+        locales = list()
+        base_dir = vapp._translation_config.get('default_config', 'prompt_catalog_dir')
+        for l in os.listdir(base_dir):
+            if (os.access(base_dir + "/" + l + "/prompt_map.txt", os.F_OK)):
+                locales.append(l)
+        counter = 0
+        while(True):
+            try:
+                key = 1
+                for l in locales:
+                    self.setLocale(l)
+                    self.sayEx(self._tts("For English press %n"), [ key ])
+                    key += 1
+                self.waitForDigitEx(self.options().defaultPromptTimeoutMsec())
+                if (counter > 3):
+                    return
+                counter += 1
+            except vapp.AgiKeyStroke as k:
+                if (k.key().isdigit()):
+                    i = int(k.key()) - 1
+                    if (i >= 0 and i < len(locales)):
+                        self.setLocale(locales[i])
+                        break
         self.testNumbers()
-	self.debug("TestNumbers ended")
+        self.debug("TestNumbers ended")
 
     def testNumbers(self):
-	while (True):
-	    num = ''
-	    while (True):
-		try:
-		    self.waitForDigitEx(10000)
-		except vapp.AgiKeyStroke as k:
-		    if (k.key().isdigit()):
-			num += k.key()
-		    else:
-			break
-	    self.say("%n", [int(num)])
+        while (True):
+            num = ''
+            while (True):
+                try:
+                    self.waitForDigitEx(10000)
+                except vapp.AgiKeyStroke as k:
+                    if (k.key().isdigit()):
+                        num += k.key()
+                    else:
+                        break
+            self.say("%n", [int(num)])

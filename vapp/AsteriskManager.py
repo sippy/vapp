@@ -222,9 +222,14 @@ class AsteriskManager(threading.Thread):
 
         self.__host = host
         self.__port = port
-        self.__username = username
-        self.__password = password
+        self.__username = self.__ensure_bytes(username)
+        self.__password = self.__ensure_bytes(password)
         self.__logger = logger
+
+    def __ensure_bytes(self, s):
+        if s == None or isinstance(s, bytes):
+            return s
+        return s.encode('utf-8')
 
     def __del__(self):
         try:
@@ -237,9 +242,9 @@ class AsteriskManager(threading.Thread):
             pass
 
     def __parse(self, buf):
-        if (buf.startswith('Asterisk Call Manager')):
+        if (buf.startswith(b'Asterisk Call Manager')):
             return [ Packet([]) ]
-        self.__parse_buf += buf
+        self.__parse_buf += buf.decode('utf-8', 'ignore')
         ret = []
         tmp = []
         lines = self.__parse_buf.split('\r\n')
@@ -343,10 +348,10 @@ class AsteriskManager(threading.Thread):
                 if (not self.__authenticated):
                     if (not self.__auth_sent):
                         self.__sock.send((
-                            "Action: login\r\n"
-                            "Username: %s\r\n"
-                            "Secret: %s\r\n"
-                            "\r\n") %
+                            b"Action: login\r\n"
+                            b"Username: %s\r\n"
+                            b"Secret: %s\r\n"
+                            b"\r\n") %
                             (self.__username,
                              self.__password))
                         self.__auth_sent = True
@@ -454,12 +459,12 @@ class AsteriskManager(threading.Thread):
         self.__cmd_lock.acquire()
         self.__cmd_queue.append(qry)
         self.__cmd_lock.release()
-        os.write(self.__write_cmd, "1") # notify worker thread
+        os.write(self.__write_cmd, b"1") # notify worker thread
 
     def __checkConnection(self):
         self.__auth_cond.acquire()
         while (not self.__authenticated):
-            os.write(self.__write_cmd, "1") # request reconnect
+            os.write(self.__write_cmd, b"1") # request reconnect
             self.__auth_cond.wait()
         self.__auth_cond.release()
 

@@ -142,7 +142,7 @@ class AgiHandler(StreamRequestHandler, object):
     def handle(self):
         """ The main loop of AGI session.   """
         while True:
-            line = self.rfile.readline()
+            line = self.rfile.readline().decode('utf-8', 'ignore')
             line = line.rstrip()
             if (line == ""):
                 break
@@ -251,11 +251,14 @@ class AgiHandler(StreamRequestHandler, object):
     def __execcommand(self, command):
         if (command == None):
             return -1
-        self.wfile.write(command + "\n")
+        self.wfile.write((command + "\n").encode('utf-8'))
 
     def __readresponse(self):
         while True:
-            response = self.rfile.readline()
+            try:
+                response = self.rfile.readline().decode('utf-8', 'ignore')
+            except ConnectionResetError:
+                response = b''
             if re.search("^[0-9][0-9][0-9] ", response):
                 return response.rstrip()
             elif (response == ""):

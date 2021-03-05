@@ -46,24 +46,24 @@ class Chunked:
                 mapfile = open(basedir + map_fname, "rb")
                 encoding = 'utf-8'
                 for line in mapfile.readlines():
-                    if (line.lstrip().startswith('#')):
+                    if (line.lstrip().startswith(b'#')):
                         if (line.startswith(b'# encoding: ')):
                             encoding = line[12:].rstrip()
-                            vapp.logger.debug("Detected encoding: %s" % encoding.decode(encoding))
+                            vapp.logger.debug("Detected encoding: %s" % encoding)
                         continue
-                    try:
-                        (prompt, phrase) = line.rstrip().split(b"|", 1)
-                        phrase = phrase.decode(encoding)
-                        pmap[phrase.lower()] = (prompt, basedir)
-                        #
-                        # Hash also the phrase without puctuation at the end
-                        #
-                        res = re.findall(r"^(.*)([.?!]+$)", phrase)
-                        if (res):
-                            s = res[0][0].rstrip().lower()
-                            pmap[res[0][0].rstrip().lower()] = (prompt, basedir)
-                    except:
-                        pass
+                    line = line.decode(encoding, 'ignore')
+                    arr = line.rstrip().split("|", 1)
+                    if len(arr) < 2:
+                        continue
+                    prompt, phrase = arr
+                    pmap[phrase.lower()] = prompt, basedir
+                    #
+                    # Hash also the phrase without puctuation at the end
+                    #
+                    res = re.findall(r"^(.*)([.?!]+$)", phrase)
+                    if (res):
+                        s = res[0][0].rstrip().lower()
+                        pmap[res[0][0].rstrip().lower()] = (prompt, basedir)
 
     def promptFileSequence(self, msg, prepend_basedir = False):
         return self._promptFileSequence(msg, prepend_basedir, (self._map, ))

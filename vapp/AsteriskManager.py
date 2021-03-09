@@ -387,7 +387,7 @@ class AsteriskManager(threading.Thread):
         while (len(self.__cmd_queue) > 0):
             cmd = self.__cmd_queue.pop()
             try:
-                self.__sock.send(cmd)
+                self.__sock.send(cmd.encode('utf-8'))
             except:
                 self.__sock = None
                 break

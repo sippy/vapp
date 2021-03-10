@@ -32,7 +32,7 @@ LOCALE=${1}
 ROOT_DIR=${2}
 if [ x"$3" = x ]
 then
-    PREFIX=`python -c 'import sys; print sys.prefix'`
+    PREFIX=`python -c 'import sys; print(sys.prefix)'`
 else
     PREFIX=${3}
 fi

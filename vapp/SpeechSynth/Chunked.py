@@ -48,7 +48,7 @@ class Chunked:
                 for line in mapfile.readlines():
                     if (line.lstrip().startswith(b'#')):
                         if (line.startswith(b'# encoding: ')):
-                            encoding = line[12:].rstrip()
+                            encoding = line[12:].rstrip().decode('utf-8')
                             vapp.logger.debug("Detected encoding: %s" % encoding)
                         continue
                     line = line.decode(encoding, 'ignore')

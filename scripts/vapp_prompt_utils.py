@@ -196,19 +196,19 @@ class PhraseContainer(object):
         # Read appropriate language module
         #
         fname = pkgutil.find_loader('vapp.TextSynth.%s' % self.__lang.upper()).get_filename()
-        f = open(fname, 'r')
+        f = open(fname, 'rb')
         encoding = None
         for line in f.readlines():
             line = line.rstrip()
             if (encoding == None):
-                if (line.startswith('# -*- coding:')):
-                    encoding = line[14:(len(line) - 4)]
-                elif (line.startswith('#')):
+                if (line.startswith(b'# -*- coding:')):
+                    encoding = line[14:(len(line) - 4)].decode('utf-8')
+                elif (line.startswith(b'#')):
                     continue
                 else:
-                    encoding = 'ISO8859-1'
+                    encoding = 'UTF-8'
             else:
-                if (line.startswith('#')):
+                if (line.startswith(b'#')):
                     continue
                 l = line.decode(encoding)
                 if (l.find('_phrase_noop') >= 0):
@@ -366,7 +366,7 @@ class PhraseContainer(object):
         return 0
 
     def chunks(self):
-        return self.orig_eng_by_chunk.keys()
+        return list(self.orig_eng_by_chunk.keys())
 
     def phraseByChunk(self, chunk):
         return self.orig_local_by_chunk[chunk]
@@ -581,7 +581,7 @@ class Checker:
 """)
         num = self.enum_start
 
-        chunks = self.__phrases.chunks()
+        chunks = list(self.__phrases.chunks())
         chunks.sort()
         for chunk in chunks:
             out.write("<TR><TD>")
@@ -727,7 +727,7 @@ class Checker:
                     for o in orig:
                         if (o != None):
                             stoplist[o] = 1
-        stoplist = stoplist.keys()
+        stoplist = list(stoplist.keys())
         stoplist.sort()
         for o in stoplist:
             out.write(o + "\n")
@@ -833,7 +833,7 @@ class Checker:
                     required_files[k] = 1
             except PromptException:
                 pass
-        p = file_by_name.keys()
+        p = list(file_by_name.keys())
         p.sort()
         print("\nUnused prompt files:\n")
         for k in p:
@@ -904,7 +904,7 @@ class Checker:
                     except:
                         pass
                 no_problem = True
-                p_g711 = missing_g711.keys()
+                p_g711 = list(missing_g711.keys())
                 p_g711.sort()
                 if (len(p_g711) > 0):
                     no_problem = False
@@ -916,7 +916,7 @@ Missing G711 compatible prompts:
                 other_names = {}
                 found_names = 0
                 for ext in missing_other.keys():
-                    p = missing_other[ext].keys()
+                    p = list(missing_other[ext].keys())
                     p.sort()
                     other_names[ext] = p
                     found_names += len(p)

@@ -45,8 +45,8 @@ class Locale:
                         self.__translator.add_fallback(tr)
                     except IOError:
                         pass
-            self.__gettext = self.__translator.ugettext
-            self.__ngettext = self.__translator.ungettext
+            self.__gettext = self.__translator.lgettext
+            self.__ngettext = self.__translator.lngettext
         except IOError:
             self.__translator = None
             self.__name = "en"
@@ -54,10 +54,10 @@ class Locale:
             self.__ngettext = gettext.ngettext
 
     def gettext(self, str):
-        return self.__gettext(str)
+        return self.__gettext(str).decode('utf-8')
 
     def ngettext(self, singular, plural, num):
-        return self.__ngettext(singular, plural, num)
+        return self.__ngettext(singular, plural, num).decode('utf-8')
 
     def name(self):
         return self.__name

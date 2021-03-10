@@ -53,11 +53,17 @@ class Locale:
             self.__gettext = gettext.gettext
             self.__ngettext = gettext.ngettext
 
-    def gettext(self, str):
-        return self.__gettext(str).decode('utf-8')
+    def gettext(self, s):
+        ret = self.__gettext(s)
+        if isinstance(ret, bytes):
+            ret = ret.decode('utf-8')
+        return ret
 
     def ngettext(self, singular, plural, num):
-        return self.__ngettext(singular, plural, num).decode('utf-8')
+        ret = self.__ngettext(singular, plural, num)
+        if isinstance(ret, bytes):
+            ret = ret.decode('utf-8')
+        return ret
 
     def name(self):
         return self.__name

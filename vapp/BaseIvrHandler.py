@@ -49,6 +49,15 @@ class BaseIvrHandler(AgiHandler):
     This is an abstract class.
     """
     @abstractmethod
+    def parseNetworkScript(self): pass
+
+    @abstractmethod
+    def answerSession(self): pass
+
+    @abstractmethod
+    def handleCall(self): pass
+
+    @abstractmethod
     def textSynth(self): pass
 
     @abstractmethod

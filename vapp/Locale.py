@@ -36,6 +36,7 @@ class Locale:
         self.__prompt_path = cfg.get('default_config', 'prompt_catalog_dir')
         try:
             self.__translator = gettext.translation(def_domain, def_catalog, [ localename ])
+            self.__translator.set_output_charset('utf-8')
             for section in cfg.sections():
                 if (cfg.has_option(section, 'msg_catalog_dir') and cfg.has_option(section, 'text_domain')):
                     directory =  cfg.get(section, 'msg_catalog_dir')

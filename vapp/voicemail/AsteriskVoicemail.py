@@ -163,19 +163,17 @@ class AbstractPlugin(BasePlugin):
             if (keystroke.keyCode() > 0 and keystroke.key().isdigit()):
                 target_folder = int(keystroke.key())
                 try:
+                    cur_msg = self.curMsg()
                     self.vm_storage.saveCurrentMessageToFolder(target_folder)
-                    self.sayEx(self._tts("message %(num)n saved to %(folder)s"), kw = { 'num':self.curMsg() + 1, 'folder':self._tts(sayFolderNameById(target_folder)) })
+                    self.sayEx(self._tts("message %(num)n saved to %(folder)s"), kw = { 'num':cur_msg + 1, 'folder':self._tts(sayFolderNameById(target_folder)) })
                 except VM_MailboxFullError:
                     self.sayEx(self._tts("Sorry but the user's mailbox can't accept more messages."))
                 except AgiKeyStroke as keystroke:
                     tmp_key = keystroke
                 except AgiError:
                     return
-                if (self.options().skipAfterCmd()):
-                    if (self.curMsg() < self.lastMsg()):
-                        self.setCurMsg(self.curMsg() + 1)
-                    else:
-                        self.sayEx(self._tts("no more messages"))
+                if self.vm_storage.folderIsEmpty():
+                    self.sayEx(self._tts("no more messages"))
                 if (tmp_key != None):
                     raise AgiKeyStroke(tmp_key.keyCode())
 
@@ -199,7 +197,7 @@ class AbstractPlugin(BasePlugin):
                 if (not self.vm_storage.folderIsEmpty()):
                     self.sayEx(self._tts("Press one for %s messages"), [self._tts(self.vm_storage.sayFolderName())])
                 self.sayEx(self._tts("Press two to change folders. Press zero for mailbox options."))
-            else:
+            elif not self.vm_storage.folderIsEmpty():
                 if (self.curMsg() > 0):
                     self.sayEx(self._tts("Press four for the previous message."))
                 self.sayEx(self._tts("Press five to repeat the current message."))

@@ -327,7 +327,7 @@ class AsteriskManager(threading.Thread):
                 continue
 
             res = self.__sock.recv(16384)
-            if (res == ""):
+            if len(res) == 0:
                 if (self.__logger):
                     self.__logger.info("AsteriskMgr: Connection to Asterisk Manager broke. Reconnecting...")
                 self.__auth_cond.acquire()

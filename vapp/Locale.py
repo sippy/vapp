@@ -26,6 +26,14 @@ import vapp
 
 __all__ = [ "Locale" ]
 
+def gettext_translation_compat(*args, **kwargs):
+    try:
+        return gettext.translation(*args, **kwargs)
+    except TypeError:
+        # codeset parameter is deprecated in python 3.11
+        del kwargs['codeset']
+        return gettext.translation(*args, **kwargs)
+
 class Locale:
 
     def __init__(self, localename):
@@ -35,13 +43,13 @@ class Locale:
         def_catalog = cfg.get('default_config', 'msg_catalog_dir')
         self.__prompt_path = cfg.get('default_config', 'prompt_catalog_dir')
         try:
-            self.__translator = gettext.translation(def_domain, def_catalog, [ localename ], codeset = 'utf-8')
+            self.__translator = gettext_translation_compat(def_domain, def_catalog, [ localename ], codeset = 'utf-8')
             for section in cfg.sections():
                 if (cfg.has_option(section, 'msg_catalog_dir') and cfg.has_option(section, 'text_domain')):
                     directory =  cfg.get(section, 'msg_catalog_dir')
                     domain =  cfg.get(section, 'text_domain')
                     try:
-                        tr = gettext.translation(domain, directory, [ self.__name ], codeset = 'utf-8')
+                        tr = gettext_translation_compat(domain, directory, [ self.__name ], codeset = 'utf-8')
                         self.__translator.add_fallback(tr)
                     except IOError:
                         pass

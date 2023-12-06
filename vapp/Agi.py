@@ -206,7 +206,7 @@ class AgiHandler(StreamRequestHandler, object):
         except:
             if (vapp.logger != None):
                 for msg in traceback.format_exception(*sys.exc_info()):
-                    vapp.logger.error(msg)
+                    vapp.logger.error(msg.rstrip())
 
     def runSession(self):
         raise NotImplementedError()

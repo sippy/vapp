@@ -279,7 +279,7 @@ class AsteriskManager(threading.Thread):
                 self.__sock = None # force reconnect
                 if (self.__logger):
                     for msg in traceback.format_exception(*sys.exc_info()):
-                        self.__logger.error(msg)
+                        self.__logger.error(msg.rstrip())
 
                 try:
                     tmp.close()
@@ -484,7 +484,7 @@ class AsteriskManager(threading.Thread):
         except:
             if (self.__logger):
                 for msg in traceback.format_exception(*sys.exc_info()):
-                    self.__logger.error(msg)
+                    self.__logger.error(msg.rstrip())
         self.__chan_lock.release()
 
     def unregisterChannel(self, listener):

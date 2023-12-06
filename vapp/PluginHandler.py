@@ -64,7 +64,7 @@ def loadPlugins(plugin_packages, exclude_modules = []):
                     mod = __import__(full_name, fromlist = [''])
                 except:
                     for msg in traceback.format_exception(*sys.exc_info()):
-                        _logger.error(msg)
+                        _logger.error(msg.rstrip())
                     sys.exit(1)
 
                 try:
@@ -174,7 +174,7 @@ class PluginHandler(BaseIvrHandler):
             self.error("BAD PROMPT. Trace dumped into %s" % e.dumpFileName())
         except:
             for msg in traceback.format_exception(*sys.exc_info()):
-                self.error(msg)
+                self.error(msg.rstrip())
 
     def cleanup(self):
         """

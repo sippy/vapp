@@ -72,7 +72,7 @@ class Daemon(Thread):
                 callbacks_lock.release()
             except:
                 for msg in traceback.format_exception(*sys.exc_info()):
-                    vapp.logger.error(msg)
+                    vapp.logger.error(msg.rstrip())
             time.sleep(5)
 
 class Plugin(vapp.BasePlugin):

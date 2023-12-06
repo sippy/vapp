@@ -73,6 +73,6 @@ if __name__ == '__main__':
         pass
     except:
         for msg in traceback.format_exception(*sys.exc_info()):
-            logger.error(msg)
+            logger.error(msg.rstrip())
         logger.error("Unrecoverable error. Exiting...")
         sys.exit(1)

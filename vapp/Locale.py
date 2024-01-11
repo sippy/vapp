@@ -53,8 +53,8 @@ class Locale:
                         self.__translator.add_fallback(tr)
                     except IOError:
                         pass
-            self.__gettext = self.__translator.lgettext
-            self.__ngettext = self.__translator.lngettext
+            self.__gettext = self.__translator.gettext
+            self.__ngettext = self.__translator.ngettext
         except IOError:
             self.__translator = None
             self.__name = "en"

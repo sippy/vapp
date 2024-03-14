@@ -192,6 +192,7 @@ class AsteriskManager(threading.Thread):
     The class running an Asterisk Manager protocol implementation.
     """
 
+    daemon = True
     __authenticated = False
     __auth_sent = False
     __sock = None
@@ -210,7 +211,6 @@ class AsteriskManager(threading.Thread):
         self.__cmd_queue = []
         self.__cmd_lock = threading.Lock()
         threading.Thread.__init__(self)
-        self.setDaemon(True)
         self.__channels = {}
         self.__auth_cond = threading.Condition()
         self.__chan_lock = threading.Lock()

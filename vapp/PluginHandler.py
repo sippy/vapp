@@ -84,7 +84,7 @@ def loadPlugins(plugin_packages, exclude_modules = []):
                     _daemons[full_name] = daemon
                     _logger.debug("Daemon %s imported successfully." % modname)
                     if (isinstance(daemon, Thread)):
-                        daemon.setDaemon(True)
+                        daemon.daemon = True
                         daemon.start()
                 except AttributeError:
                     pass
